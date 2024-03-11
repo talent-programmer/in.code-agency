@@ -20,8 +20,8 @@ const ComingSoon = () => {
                 <RedCircle />
             </div>
             <div className="flex justify-center items-center gap-2 lg:gap-4">
-                <Image src={logoDesktop} className="hidden lg:block" />
-                <Image src={logoMobile} className="block lg:hidden" />
+                <Image src={logoDesktop} alt="logo" className="hidden lg:block" />
+                <Image src={logoMobile} alt="logo" className="block lg:hidden" />
                 <h3 className="text-white font-semibold font-syne text-xl lg:text-[40px]">in.code</h3>
             </div>
             <div className="flex flex-col justify-center items-center mt-60 px-11 sm:px-28 sm:mt-[440px] lg:mt-48">
@@ -31,7 +31,7 @@ const ComingSoon = () => {
                 </p>
                 <button className="px-8 py-3 bg-red-600 rounded-full flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-8 hover:bg-red-700">
                     <h5 className="text-white font-medium font-Grotesk text-base">Past Projects</h5>
-                    <Image src={arrow} />
+                    <Image src={arrow} alt="arrow" />
                 </button>
             </div>
             <div className="mt-72 flex flex-col gap-8 justify-center items-center">
