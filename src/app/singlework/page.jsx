@@ -25,7 +25,7 @@ const SingleWork = () => {
                 <nav className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <Image src={logoDesktop} className="hidden lg:block" />
-                        <Image src={logoMobile} className="lg:block" />
+                        <Image src={logoMobile} className="lg:hidden" />
                         <h3 className="font-syne font-semibold text-white text-xl lg:text-3xl">in.code</h3>
                     </div>
                     <div className="flex items-center gap-20">
