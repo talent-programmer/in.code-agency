@@ -21,7 +21,7 @@ import BrandMarque from "@/components/work/BrandMaque";
 import LeftArrow from "@/components/work/LeftArrow";
 import RightArrow from "@/components/work/RightArrow";
 import Footer from "@/components/Footer";
-import { logoDesktop, logoMobile, arrow, mount, daitech, fortion, ghana, whiteLeft, whiteRight } from "../../../public/assetes/img";
+import { logoDesktop, logoMobile, arrow, mount, daitech, fortion, ghana, } from "../../../public/assetes/img";
 
 import "./work.scss"
 
@@ -75,7 +75,10 @@ const Work = () => {
                     </button>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-5 sm:px-16 lg:px-24 pt-20 pb-60 lg:rounded-2xl lg:mt-5">
+            <section className="bg-[#1B1612] relative overflow-hidden px-5 sm:px-16 lg:px-24 pt-20 pb-32 sm:pb-40 lg:pb-60 lg:rounded-2xl lg:mt-5">
+                <div className="absolute bottom-[700px] -left-72 hidden lg:block">
+                    <RedCircle />
+                </div>
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">04 / 09</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
@@ -115,7 +118,7 @@ const Work = () => {
                                 </div>
                             </div>
                             <div className="lg:hidden flex flex-col gap-10">
-                                <div className="flex flex-col sm:flex-row justify-between">
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
                                     <div className="w-full sm:w-[48%]">
                                         <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
                                     </div>
@@ -123,7 +126,7 @@ const Work = () => {
                                         <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
                                     </div>
                                 </div>
-                                <div className="flex flex-col sm:flex-row justify-between">
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
                                     <div className="w-full sm:w-[48%]">
                                         <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
                                     </div>
@@ -134,7 +137,7 @@ const Work = () => {
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="flex justify-between flex-col sm:flex-row mt-10">
+                            <div className="hidden lg:flex justify-between flex-col sm:flex-row mt-10">
                                 <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20">
                                     <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
                                     <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
@@ -144,9 +147,27 @@ const Work = () => {
                                     <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
                                 </div>
                             </div>
+                            <div className="lg:hidden flex flex-col gap-10">
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
+                                    </div>
+                                </div>
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="flex sm:justify-between flex-col sm:flex-row mt-10">
+                            <div className="hidden lg:flex sm:justify-between flex-col sm:flex-row mt-10">
                                 <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20">
                                     <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
                                     <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
@@ -154,6 +175,24 @@ const Work = () => {
                                 <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20 lg:mt-40">
                                     <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
                                     <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
+                                </div>
+                            </div>
+                            <div className="lg:hidden flex flex-col gap-10">
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
+                                    </div>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -166,7 +205,7 @@ const Work = () => {
                     </button>
                 </div>
             </section>
-            <section id="booking" className="flex flex-col justify-center items-center">
+            <section id="booking" className="bg-[#1B1612] lg:bg-white flex flex-col justify-center items-center p-8">
                 <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{width: "100%", height:720}} />
             </section>
             <Footer />

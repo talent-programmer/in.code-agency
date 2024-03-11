@@ -4,6 +4,9 @@ import SocialMarque from "@/components/work/SocialMarque";
 import BrandMarque from "@/components/work/BrandMaque";
 import Footer from "@/components/Footer";
 import { logoDesktop, logoMobile, bg1, bg2, bg3, bg4, bg5, arrowBlack, arrowLeft, menu, arrowLeftMobile, bg1Mobile, bg2Mobile, bg3Mobile, bg4Mobile, bg5Mobile } from "../../../public/assetes/img";
+import Link from "next/link";
+
+import "./singlework.scss"
 
 const SingleWork = () => {
 
@@ -39,11 +42,13 @@ const SingleWork = () => {
                     </div>
                 </nav>
                 <div className="mt-32 w-full lg:w-1/2 flex flex-col gap-8 lg:gap-10">
-                    <div className="flex items-center gap-5">
-                        <Image src={arrowLeft} />
-                        <h3 className="font-Jakarata lg:italic text-[#ccc] text-xl">Case Study</h3>
-                        <h3 className="hidden font-Jakarata italic text-[#ccc] text-xl lg:block">Edumean - Online Courses</h3>
-                    </div>
+                    <Link href="/work">
+                        <div className="flex items-center gap-5">
+                            <Image src={arrowLeft} />
+                            <h3 className="link font-Jakarata lg:italic text-[#ccc] text-xl hover:text-white">Case Study</h3>
+                            <h3 className="hidden font-Jakarata italic text-[#ccc] text-xl lg:block">Edumean - Online Courses</h3>
+                        </div>
+                    </Link>
                     <h1 className="font-Grotesk font-medium text-white text-3xl lg:text-6xl">
                         Online courses delivered by the industry's best.
                     </h1>
