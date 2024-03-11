@@ -12,6 +12,12 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        'syne': ['Syne', 'Inter'],
+        'Grotesk': ['SharpGroteskBook25-Regular', 'SharpGroteskMedium25-Regular'],
+        'Jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+        'Petit' : ['Petit Formal Script', 'sans-serif']
+      },
       screens: {
         sm: "640px",
         md: "768px",

@@ -1,0 +1,29 @@
+.swiper-container {
+    position: relative;
+}
+
+.swipe-button-prev, .swipe-button-next {
+    position: absolute;
+    bottom: 80px;
+    z-index: 10;
+}
+
+.swipe-button-prev {
+    left: calc(50% - 200px);
+}
+
+@media (max-width: 650px) {
+    .swipe-button-prev {
+        left: calc(50% - 100px);
+    }
+  }
+
+.swipe-button-next {
+    right: calc(50% - 200px);
+}
+
+@media (max-width: 650px) {
+    .swipe-button-next {
+        right: calc(50% - 100px);
+    }
+  }
