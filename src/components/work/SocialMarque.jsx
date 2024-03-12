@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import "./Marquee.scss"
 
 const SocialMarque = () => {

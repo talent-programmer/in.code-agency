@@ -84,7 +84,7 @@ const Work = () => {
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Features - we want to share these stories with you.
                     </h1>
-                    <h3 data-aos="fade-up" className="w-6/7 lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
+                    <h3 data-aos="fade-up" className="lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
                         Brand adds value to your organisation, provides guidance in times of growth or uncertainty, and gives your business a competitive edge.
                     </h3>
                 </div>

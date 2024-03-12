@@ -21,6 +21,22 @@ import arrowBlack from "./arrow-black.svg"
 import arrowLeft from "./arrow-left.svg"
 import arrowLeftMobile from "./arrow-left-mobile.svg"
 import menu from "./menu.svg"
+import homeBg from "./home-bg.svg"
+import brand1 from "./brand1.svg"
+import brand2 from "./brand2.svg"
+import brand3 from "./brand3.svg"
+import brand4 from "./brand4.svg"
+import brand5 from "./brand5.svg"
+import brand6 from "./brand6.svg"
+import brand7 from "./brand7.svg"
+import brand8 from "./brand8.svg"
+import minus from "./minus.svg"
+import plus from "./plus.svg"
+import coWorkersMovement from "./co-workers-movement.svg"
+import line from "./line.svg"
+import Dali from "./Dali.svg"
+import man from "./man.svg"
+import woman from "./woman.svg"
 
 export {
     logoDesktop,
@@ -45,5 +61,21 @@ export {
     arrowBlack,
     arrowLeft,
     menu,
-    arrowLeftMobile
+    arrowLeftMobile,
+    homeBg,
+    brand1,
+    brand2,
+    brand3,
+    brand4,
+    brand5,
+    brand6,
+    brand7,
+    brand8,
+    minus,
+    plus,
+    coWorkersMovement,
+    line,
+    Dali,
+    man,
+    woman
 }
