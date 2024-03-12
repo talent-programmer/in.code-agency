@@ -12,8 +12,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script src="https://c.webfontfree.com/c.js?f=SharpGroteskMedium25-Regular" type="text/javascript"></script>
-        <script src="https://c.webfontfree.com/c.js?f=SharpGroteskBook25-Regular" type="text/javascript"></script>
+        <script async src="https://c.webfontfree.com/c.js?f=SharpGroteskMedium25-Regular" type="text/javascript"></script>
+        <script async src="https://c.webfontfree.com/c.js?f=SharpGroteskBook25-Regular" type="text/javascript"></script>
         <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Syne:wght@400..800&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Syne:wght@400..800&display=swap" rel="stylesheet"></link>
