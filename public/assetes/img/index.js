@@ -37,6 +37,14 @@ import line from "./line.svg"
 import Dali from "./Dali.svg"
 import man from "./man.svg"
 import woman from "./woman.svg"
+import serviceBg from "./service-bg.svg"
+import design from "./design.svg"
+import singleServiceVid from "./single-service.svg"
+import line1 from "./line-1.svg"
+import singleServiceSample1 from "./single-service-sample-1.svg"
+import singleServiceSample2 from "./single-service-sample-2.svg"
+import singleServiceSample3 from "./single-service-sample-3.svg"
+import approach from "./approach.svg"
 
 export {
     logoDesktop,
@@ -77,5 +85,13 @@ export {
     line,
     Dali,
     man,
-    woman
+    woman,
+    serviceBg,
+    design,
+    singleServiceVid,
+    line1,
+    singleServiceSample1,
+    singleServiceSample2,
+    singleServiceSample3,
+    approach
 }
