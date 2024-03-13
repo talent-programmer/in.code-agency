@@ -25,7 +25,7 @@ const SingleService = () => {
                 </div>
                 <NavBar />
                 <div className="mt-32 w-full lg:w-1/2 flex flex-col gap-8 lg:gap-10">
-                    <Link href="/work">
+                    <Link href="/service">
                         <div className="flex items-center gap-5">
                             <Image src={arrowLeft} alt="left-arrow" />
                             <h3 className="link font-Jakarata lg:italic text-[#ccc] text-xl hover:text-white">Services</h3>
@@ -53,7 +53,7 @@ const SingleService = () => {
                         The widespread adoption of web apps, which aid communication with customers, collaboration with employees, data storage, etc., is revamping how businesses are run and clients are served. The enterprise UX is all about the wants, needs, drivers, and pain points of employees, thereby creating an effective, efficient, and pleasant experience.
                     </h3>
                 </div>
-                <Image src={singleServiceVid} className="mt-24" />
+                <Image src={singleServiceVid} className="mt-24 w-full" />
             </section>
             <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:rounded-2xl">     
                 <div className="hidden absolute left-1/2 -bottom-72 transform -translate-x-1/2 z-0 lg:block">
@@ -122,7 +122,7 @@ const SingleService = () => {
                         </button>
                     </div>
                 </div>
-                <div className="flex gap-10 mt-36">
+                <div className="flex gap-10 justify-between mt-36">
                     <Image src={singleServiceSample1} />
                     <Image src={singleServiceSample2} />
                     <Image src={singleServiceSample3} />

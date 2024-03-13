@@ -6,10 +6,15 @@ import NavBar from "@/components/NavBar";
 import SocialMarque from "@/components/work/SocialMarque";
 import BrandMarque from "@/components/work/BrandMaque";
 import RedCircle from "@/components/RedCircle";
+import Instagram from "@/components/comingsoon/Instagram";
+import Threads from "@/components/comingsoon/Threads";
+import Facebook from "@/components/comingsoon/Facebook";
+import LinkedIn from "@/components/comingsoon/LinkedIn";
 import Footer from "@/components/Footer";
 import { approach, minus, plus } from "../../../public/assetes/img";
+import { InlineWidget } from "react-calendly";
 
-const Approach = () => {
+const Contact = () => {
     
     const [visible1, setVisible1] = useState(false)
     const [visible2, setVisible2] = useState(false)
@@ -27,29 +32,46 @@ const Approach = () => {
                 <BrandMarque />
             </div>
             <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 lg:rounded-2xl">
-                <div className="absolute -right-72">
+                <div className="absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
                 <NavBar />
-                <div className="max-w-[1580px] mx-auto relative flex flex-col gap-8 z-10 mt-52">
-                    <h1 className="font-Grotesk font-medium text-white text-6xl">Process Approach</h1>
-                    <h3 className="font-Jakarta font-normal text-white text-xl w-2/5">
-                        Leveraging a human-centered design methodology, we create solutions tailored to the needs of your target audience and aimed at growing your business.
-                    </h3>
+                <div className="max-w-[1580px] mx-auto flex justify-between">
+                    <div className="flex flex-col gap-10 z-10 mt-52 w-2/5">
+                        <h1 className="font-Grotesk font-medium text-white text-6xl">Hello there!</h1>
+                        <h3 className="font-Jakarta font-normal text-white text-xl">
+                            We'd love to learn more about you and what we can design and build together.
+                        </h3>
+                        <h3 className="font-Jakarta font-normal text-white text-xl">
+                            Become a client: <br/>
+                            <a href="mailto:hello@incodeagency.com" className="font-bold">hello@incodeagency.com</a>
+                        </h3>
+                        <h3 className="font-Jakarta font-normal text-white text-xl mt-20">
+                            Or just skip formality and find us on:
+                        </h3>
+                        <div className="flex gap-7 items-center">
+                            <Instagram className="hover:fill-white" />
+                            <Threads className="hover:fill-white" />
+                            <LinkedIn className="hover:fill-white" />
+                            <Facebook className="hover:fill-white" />
+                        </div>
+                    </div>
+                    <div className="w-1/2">
+                        <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{width: "100%", height: 900}} />
+                    </div>
                 </div>
-                <Image src={approach} className="mt-36 mx-auto" />
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:rounded-2xl">
-                <div className="absolute -left-72 -bottom-72">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+                <div className="absolute -left-72 -top-72">
                     <RedCircle />
                 </div>
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">03 / 09</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
-                        The way we do it.
+                        We got asked these questions often...
                     </h1>
                     <h3 data-aos="fade-up" className="w-6/7 lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
-                        Every challenge is different, and so every solution evolves in its own bespoke way, shaped by what we discover and the response this demands. Yet here’s a broad outline of how that response might evolve, some tried and tested means to help your brand rise to any challenge and define your new reality.
+                        But if you don’t find your answer here, feel free to contact us via email or social media platforms.
                     </h3>
                 </div>
                 <div>
@@ -58,7 +80,7 @@ const Approach = () => {
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">01</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Discovery Session</h1>
+                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">What separates in.code from other digital web design agencies?</h1>
                                 </div>
                                 { visible1 &&
                                     <Image src={minus} />
@@ -80,7 +102,7 @@ const Approach = () => {
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">02</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Ideation and evaluation</h1>
+                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Do you work with clients in different timezones?</h1>
                                 </div>
                                 { visible2 &&
                                     <Image src={minus} />
@@ -102,7 +124,7 @@ const Approach = () => {
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">03</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Product design</h1>
+                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Do you work with startups?</h1>
                                 </div>
                                 { visible3 &&
                                     <Image src={minus} />
@@ -124,7 +146,7 @@ const Approach = () => {
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">04</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Product Development</h1>
+                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Can you help us remote our B2B/enterprise software?</h1>
                                 </div>
                                 { visible4 &&
                                     <Image src={minus} />
@@ -146,7 +168,7 @@ const Approach = () => {
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">05</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Testing and Optimization</h1>
+                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Do you support outsource business model?</h1>
                                 </div>
                                 { visible5 &&
                                     <Image src={minus} />
@@ -168,7 +190,7 @@ const Approach = () => {
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">06</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Lomg-term partnership</h1>
+                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">How do I schedule a online meet with you to discuss new idea?</h1>
                                 </div>
                                 { visible6 &&
                                     <Image src={minus} />
@@ -186,23 +208,9 @@ const Approach = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">03 / 04</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5">
-                    <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
-                        How does this works for you?
-                    </h1>
-                    <h3 data-aos="fade-up" className="w-6/7 lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
-                        Quality assurance begins at the start of the project and continues throughout its entirety. It's a necessary part of the.
-                    </h3>
-                </div>
-                <button className="px-8 py-3 bg-red-600 rounded-full flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
-                    <h5 className="text-white font-medium font-Grotesk text-base">Become a client</h5>
-                </button>
-            </section>
             <Footer />
         </main>
     )
 }
 
-export default Approach;
+export default Contact;

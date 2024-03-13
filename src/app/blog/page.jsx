@@ -1,0 +1,219 @@
+'use client';
+
+import { useState, useRef } from "react";
+import Image from "next/image";
+import NavBar from "@/components/NavBar";
+import SocialMarque from "@/components/work/SocialMarque";
+import BrandMarque from "@/components/work/BrandMaque";
+import RedCircle from "@/components/RedCircle";
+import EachWork from "@/components/work/EachWork";
+import {
+    Navigation,
+    Pagination,
+    EffectCards
+  } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";
+import "swiper/css/pagination"
+import 'swiper/css/effect-cards';
+import LeftArrow from "@/components/work/LeftArrow";
+import RightArrow from "@/components/work/RightArrow";
+import Footer from "@/components/Footer";
+import { approach, mount, fortion, daitech, ghana } from "../../../public/assetes/img";
+
+import "./blog.scss"
+
+const Blog = () => {
+    
+    const [activeMenu, setActiveMenu] = useState("All");
+
+    const handleClick = (menuName) => {
+        setActiveMenu(menuName); // Update the active menu
+    };
+
+    const getClass = (menuName) => {
+        let baseClasses = "font-Jakarta font-normal text-[#cccccc] text-xl cursor-pointer";
+        if (menuName === activeMenu) {
+          // Add extra classes for the active menu
+          return `${baseClasses} px-4 py-2 border border-2 border-[#ccc] bg-white bg-opacity-15 rounded-3xl`;
+        }
+        return baseClasses;
+    };
+
+    const slideRef = useRef(null)
+    const prevBtnRef = useRef(null);
+    const nextBtnRef = useRef(null);
+
+    return (
+        <main className="bg-[#FFFAF6] w-full lg:px-10">
+            <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
+                <SocialMarque />
+            </div>
+            <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
+                <BrandMarque />
+            </div>
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 lg:rounded-2xl">
+                <div className="absolute -right-72">
+                    <RedCircle />
+                </div>
+                <NavBar />
+                <div className="max-w-[1580px] mx-auto relative flex flex-col gap-8 z-10 mt-52">
+                    <h1 className="font-Grotesk font-medium text-white text-6xl">Blog and News</h1>
+                    <h3 className="font-Jakarta font-normal text-white text-xl w-2/5">
+                        Learn web design and development tips & tricks, get started with Webflow, and read the latest news about Flow Ninja.
+                    </h3>
+                </div>
+                <Image src={approach} className="mt-36 mx-auto" />
+            </section>
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-32 sm:pb-40 lg:pb-60 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+                <div className="absolute top-1/2 -left-72 hidden lg:block">
+                    <RedCircle />
+                </div>
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">04 / 09</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5">
+                    <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
+                        Categories
+                    </h1>
+                    <div className="flex justify-between items-center lg:w-2/5">
+                        <h3 data-aos="fade-up" className={getClass("All")} onClick={() => handleClick("All")}>
+                            All
+                        </h3>
+                        <h3 data-aos="fade-up" className={getClass("Design")} onClick={() => handleClick("Design")}>
+                            Design
+                        </h3>
+                        <h3 data-aos="fade-up" className={getClass("Business")} onClick={() => handleClick("Business")}>
+                            Business
+                        </h3>
+                        <h3 data-aos="fade-up" className={getClass("Dev stuff")} onClick={() => handleClick("Dev stuff")}>
+                            Dev stuff
+                        </h3>
+                        <h3 data-aos="fade-up" className={getClass("Culture")} onClick={() => handleClick("Culture")}>
+                            Culture
+                        </h3>
+                    </div>
+                </div>
+                <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
+                    <Swiper
+                        slidesPerView={1}
+                        ref={slideRef}
+                        modules={[
+                            Navigation,
+                            Pagination
+                        ]}
+                        loop={true}
+                        navigation={{
+                            prevEl: prevBtnRef.current,
+                            nextEl: nextBtnRef.current,
+                        }}
+                        pagination={{
+                            el: ".swiper-pagination",
+                            clickable: true,
+                        }}
+                    >
+                        <SwiperSlide className="rounded-[30px]">
+                            <div className="justify-between flex-col sm:flex-row mt-10 hidden lg:flex">
+                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20">
+                                    <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
+                                    <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
+                                </div>
+                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20 lg:mt-40">
+                                    <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
+                                    <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
+                                </div>
+                            </div>
+                            <div className="lg:hidden flex flex-col gap-10">
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="hidden lg:flex justify-between flex-col sm:flex-row mt-10">
+                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20">
+                                    <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
+                                    <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
+                                </div>
+                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20 lg:mt-40">
+                                    <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
+                                    <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
+                                </div>
+                            </div>
+                            <div className="lg:hidden flex flex-col gap-10">
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="hidden lg:flex sm:justify-between flex-col sm:flex-row mt-10">
+                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20">
+                                    <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
+                                    <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
+                                </div>
+                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20 lg:mt-40">
+                                    <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
+                                    <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
+                                </div>
+                            </div>
+                            <div className="lg:hidden flex flex-col gap-10">
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-10 sm:flex-row justify-between">
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
+                                    </div>
+                                    <div className="w-full sm:w-[48%]">
+                                        <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
+                    <button ref={prevBtnRef} className="swipe-button-prev">
+                        <LeftArrow className="hover:stroke-white" />
+                    </button>
+                    <button ref={nextBtnRef} className="swipe-button-next">
+                        <RightArrow className="hover:stroke-white" />
+                    </button>
+                </div>
+            </section>
+            <Footer />
+        </main>
+    )
+}
+
+export default Blog;

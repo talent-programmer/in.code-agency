@@ -45,6 +45,9 @@ import singleServiceSample1 from "./single-service-sample-1.svg"
 import singleServiceSample2 from "./single-service-sample-2.svg"
 import singleServiceSample3 from "./single-service-sample-3.svg"
 import approach from "./approach.svg"
+import singleblog1 from "./singleblog1.svg"
+import singleblog2 from "./singleblog2.svg"
+import singleblog3 from "./singleblog3.svg"
 
 export {
     logoDesktop,
@@ -93,5 +96,8 @@ export {
     singleServiceSample1,
     singleServiceSample2,
     singleServiceSample3,
-    approach
+    approach,
+    singleblog1,
+    singleblog2,
+    singleblog3,
 }
