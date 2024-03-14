@@ -105,7 +105,7 @@ const SingleBlog = () => {
                             We think so too and are excited to watch RedBrain scale even more.
                         </h3>
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            If you look for a design team to make your product vision a reality, let’s see how we can help you. Contact us at <a href="mailto:hello@lazarev.agency"><i className="text-red-700">hello@lazarev.agency</i></a>.
+                            If you look for a design team to make your product vision a reality, let’s see how we can help you. Contact us at <a href="mailto:hello@lazarev.agency"><span className="text-red-700">hello@lazarev.agency</span></a>.
                         </h3>
                     </div>
                 </div>

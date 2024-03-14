@@ -46,7 +46,7 @@ const SingleService = () => {
                 <div className="flex flex-col lg:flex-row justify-between mt-36 mb-20 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Create
-                        <i className="font-Petit ml-3">perfect conditions for end-users</i>
+                        <span className="font-Petit ml-3">perfect conditions for end-users</span>
                         through performance, which brings lucrative business benefits.
                     </h1>
                     <h3 data-aos="fade-up" className="lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
@@ -63,7 +63,7 @@ const SingleService = () => {
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Create
-                        <i className="font-Petit ml-3">perfect conditions for end-users</i>
+                        <span className="font-Petit ml-3">perfect conditions for end-users</span>
                         through performance
                     </h1>
                     <h3 data-aos="fade-up" className="lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
@@ -107,7 +107,7 @@ const SingleService = () => {
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Elevate the
-                        <i className="font-Petit ml-3">user experience of your digital product</i>
+                        <span className="font-Petit ml-3">user experience of your digital product</span>
                         to realize it's potential.
                     </h1>
                     <div className="lg:w-2/5">

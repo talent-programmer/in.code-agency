@@ -16,13 +16,21 @@ const Service = () => {
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 lg:pb-72 lg:rounded-2xl">
-                <Image src={serviceBg} className="absolute z-0 w-full left-0 top-0" />
+            <section className="relative bg-[#1B1612] lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-40 md:pb-48 lg:pb-56 xl:pb-64 xxl:pb-72 lg:rounded-2xl">
+                <div className="absolute -bottom-48 -left-48">
+                    <RedCircle />
+                </div>
+                <div className="absolute right-0 top-0 h-1/2">
+                    <div className="relative">
+                        <div className="absolute w-1/4 bg-gradient-to-r from-[#1B1612] to-[#1B1612]/0 h-full z-10"></div>
+                        <Image src={serviceBg} className="" />
+                    </div>
+                </div>
                 <NavBar />
                 <div className="max-w-[1580px] mx-auto relative z-10 mt-52">
                     <div className="w-2/3 flex flex-col gap-10">
                         <h1 className="font-Grotesk font-medium text-white text-4xl lg:text-6xl">
-                            <i className="font-Petit mr-5">A full service</i>
+                            <span className="font-Petit mr-5">A full service</span>
                             digital innovaion partner
                         </h1>
                         <h3 className="font-Jakarta font-normal text-white text-xl w-2/3">
@@ -39,7 +47,7 @@ const Service = () => {
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We combine
-                        <i className="font-Petit ml-3">human empathy and intelligent data</i>
+                        <span className="font-Petit ml-3">human empathy and intelligent data</span>
                         to provide the highest level of
                     </h1>
                     <h3 data-aos="fade-up" className="lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">

@@ -56,7 +56,7 @@ const Contact = () => {
                             <Facebook className="hover:fill-white" />
                         </div>
                     </div>
-                    <div className="w-1/2">
+                    <div className="w-1/2 flex flex-row-reverse">
                         <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{width: "100%", height: 900}} />
                     </div>
                 </div>
@@ -76,7 +76,7 @@ const Contact = () => {
                 </div>
                 <div>
                     <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible1(!visible1)}>
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-6">
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">01</h3>
@@ -87,7 +87,7 @@ const Contact = () => {
                                 }
                             </div>
                             { visible1 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
+                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
@@ -98,7 +98,7 @@ const Contact = () => {
                     </div>
                     <hr className="border-[#ccc] opacity-10" />
                     <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible2(!visible2)}>
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-6">
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">02</h3>
@@ -109,7 +109,7 @@ const Contact = () => {
                                 }
                             </div>
                             { visible2 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
+                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
@@ -120,7 +120,7 @@ const Contact = () => {
                     </div>
                     <hr className="border-[#ccc] opacity-10" />
                     <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible3(!visible3)}>
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-6">
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">03</h3>
@@ -131,7 +131,7 @@ const Contact = () => {
                                 }
                             </div>
                             { visible3 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
+                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
@@ -142,7 +142,7 @@ const Contact = () => {
                     </div>
                     <hr className="border-[#ccc] opacity-10" />
                     <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible4(!visible4)}>
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-6">
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">04</h3>
@@ -153,7 +153,7 @@ const Contact = () => {
                                 }
                             </div>
                             { visible4 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
+                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
@@ -164,7 +164,7 @@ const Contact = () => {
                     </div>
                     <hr className="border-[#ccc] opacity-10" />
                     <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible5(!visible5)}>
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-6">
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">05</h3>
@@ -175,7 +175,7 @@ const Contact = () => {
                                 }
                             </div>
                             { visible5 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
+                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
@@ -186,7 +186,7 @@ const Contact = () => {
                     </div>
                     <hr className="border-[#ccc] opacity-10" />
                     <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible6(!visible6)}>
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-6">
                             <div className="flex justify-between">
                                 <div className="flex items-center gap-4">
                                     <h3 className="font-Grotesk font-medium text-white text-xl">06</h3>
@@ -197,7 +197,7 @@ const Contact = () => {
                                 }
                             </div>
                             { visible6 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
+                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }

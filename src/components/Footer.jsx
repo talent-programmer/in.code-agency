@@ -17,7 +17,7 @@ const Footer = () => {
             <div className="flex flex-col lg:flex-row mt-10 lg:justify-between">
                 <div className="lg:w-[45%]">
                     <h1 className="font-Grotesk font-medium text-white text-2xl lg:text-4xl">
-                        Starting a <i className="font-Petit mx-3">new project</i> or want to collaborate with us?
+                        Starting a <span className="font-Petit mx-3">new project</span> or want to collaborate with us?
                     </h1>
                     <button className="lg:hidden flex items-center gap-2 border-2 border-white rounded-full px-6 py-3 mt-6 sm:mt-8 text-white hover:bg-white hover:text-black">
                         <h3 className="font-Grotesk font-medium text-base">Get in touch</h3>

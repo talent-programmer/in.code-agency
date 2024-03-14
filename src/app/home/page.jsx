@@ -45,17 +45,25 @@ const Home = () => {
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 lg:pb-72 lg:rounded-2xl">
-                <Image src={homeBg} className="absolute z-0 w-full left-0 top-0" />
+            <section className="relative bg-[#1B1612] lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-40 md:pb-48 lg:pb-56 xl:pb-64 xxl:pb-72 lg:rounded-2xl">
+                <div className="absolute bottom-0 -left-72">
+                    <RedCircle />
+                </div>
+                <div className="absolute -right-[20%] top-0 h-1/2">
+                    <div className="relative">
+                        <div className="absolute w-1/2 bg-gradient-to-r from-[#1B1612] to-[#1B1612]/0 h-full z-10"></div>
+                        <Image src={homeBg} className="" />
+                    </div>
+                </div>
                 <NavBar />
                 <div className="max-w-[1580px] mx-auto relative z-10 mt-52">
-                    <div className="w-2/3 flex flex-col gap-10">
-                        <h1 className="font-Grotesk font-medium text-white text-4xl lg:text-6xl">
+                    <div className="w-full flex flex-col gap-10">
+                        <h1 className="font-Grotesk font-medium text-white text-4xl xl:text-5xl xxl:text-6xl">
                             Next-gen 
-                            <i className="font-Petit mx-5">digital product</i><br />
+                            <span className="font-Petit mx-5">digital product</span><br />
                             development agency.
                         </h1>
-                        <h3 className="font-Jakarta font-normal text-white text-xl w-1/2">
+                        <h3 className="font-Jakarta font-normal text-white text-xl w-1/3">
                             We build engaging user experience for early-stage startups by connecting the dots between users’ needs and the client’s business model.
                         </h3>
                         <button className="px-8 py-3 bg-red-600 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
@@ -64,7 +72,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:rounded-2xl">
                 <div className="absolute -right-72 -bottom-72">
                     <RedCircle />
                 </div>
@@ -72,7 +80,7 @@ const Home = () => {
                 <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Maybe not famous brands but for us they
-                        <i className="font-Petit ml-3">are enough</i>
+                        <span className="font-Petit ml-3">are enough</span>
                         .
                     </h1>
                     <h3 data-aos="fade-up" className="w-6/7 lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
@@ -97,7 +105,7 @@ const Home = () => {
                 <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We combine
-                        <i className="font-Petit ml-3">human empathy and intelligent data</i>
+                        <span className="font-Petit ml-3">human empathy and intelligent data</span>
                         to provide the highest lever of satisfaction to our customers.
                     </h1>
                     <h3 data-aos="fade-up" className="w-6/7 lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
@@ -288,7 +296,7 @@ const Home = () => {
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We see brands as they meant
-                        <i className="font-Petit ml-3">to be seen</i>
+                        <span className="font-Petit ml-3">to be seen</span>
                         .
                     </h1>
                     <div className="lg:w-2/5">
@@ -349,26 +357,27 @@ const Home = () => {
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">05 / 09</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
-                        <i className="font-Petit mr-2">Don't believe us?</i>
+                        <span className="font-Petit mr-2">Don't believe us?</span>
                         See what our clients say;
                     </h1>
                     <h3 data-aos="fade-up" className="lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
                         So... to make it easier, think of us as your special ops digital product development team - tackling with your challenges and needs. Whether you are adding a new feature, a new product, or redesigning an existing product, we will help set you up for success.
                     </h3>
                 </div>
-                <div className="flex justify-between relative mt-12">
-                    <div className="w-2/5">
-                        <div className="mt-12 sm:mt-20 lg:mt-28 relative flex justify-center w-full">
+                <div className="flex justify-between items-center relative mt-12">
+                    <div className="w-2/5 flex justify-center">
+                        <div className="relative mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
                             <Swiper
                                 slidesPerView={1}
                                 ref={slideRef}
                                 modules={[
                                     Navigation,
                                     Pagination,
-                                    EffectCards,
+                                    EffectCards
                                 ]}
-                                effect={'cards'}
                                 loop={true}
+                                effect={'cards'}
+                                grabCursor={true}
                                 navigation={{
                                     prevEl: prevBtnRef.current,
                                     nextEl: nextBtnRef.current,
@@ -379,16 +388,19 @@ const Home = () => {
                                 }}
                             >
                                 <SwiperSlide className="rounded-[30px]">
-                                    <Image src={man} />
+                                    <Image src={man} className="mx-auto" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <Image src={woman} />
+                                    <Image src={man} className="mx-auto" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <Image src={woman} />
+                                    <Image src={man} className="mx-auto" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <Image src={man} />
+                                    <Image src={man} className="mx-auto" />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image src={man} className="mx-auto" />
                                 </SwiperSlide>
                             </Swiper>
                             <button ref={prevBtnRef} className="swipe-button-prev">

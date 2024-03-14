@@ -21,7 +21,7 @@ import BrandMarque from "@/components/work/BrandMaque";
 import LeftArrow from "@/components/work/LeftArrow";
 import RightArrow from "@/components/work/RightArrow";
 import Footer from "@/components/Footer";
-import { logoDesktop, logoMobile, arrow, mount, daitech, fortion, ghana, } from "../../../public/assetes/img";
+import { logoDesktop, logoMobile, mount, daitech, fortion, ghana, } from "../../../public/assetes/img";
 
 import "./work.scss"
 
