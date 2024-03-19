@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef ,useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { InlineWidget } from "react-calendly";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import {
-  Navigation,
-  Pagination
+    Navigation,
+    Pagination
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -30,6 +30,14 @@ const Work = () => {
     const slideRef = useRef(null)
     const prevBtnRef = useRef(null);
     const nextBtnRef = useRef(null);
+
+    const [totalSlides, setTotalSlides] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const handleSwiper = (swiper) => {
+        setTotalSlides(swiper.slides.length);
+        swiper.on('slideChange', () => setCurrentSlide(swiper.realIndex + 1));
+    };
 
     useEffect(() => {
         Aos.init(); // Initialize AOS
@@ -60,7 +68,7 @@ const Work = () => {
                         <button className="flex items-center gap-2 border-2 border-white rounded-full px-4 py-2 sm:px-6 sm:py-3 text-white hover:bg-white hover:text-black">
                             <h3 className="font-Grotesk font-medium text-base">Contact us</h3>
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth="1.5"/>
+                                <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth="1.5" />
                             </svg>
                         </button>
                     </a>
@@ -90,6 +98,7 @@ const Work = () => {
                 </div>
                 <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
                     <Swiper
+                        onSwiper={handleSwiper}
                         slidesPerView={1}
                         ref={slideRef}
                         modules={[
@@ -197,16 +206,17 @@ const Work = () => {
                             </div>
                         </SwiperSlide>
                     </Swiper>
-                    <button ref={prevBtnRef} className="swipe-button-prev">
+                    <button ref={prevBtnRef} className="swipe-button-prev" >
                         <LeftArrow className="hover:stroke-white" />
                     </button>
                     <button ref={nextBtnRef} className="swipe-button-next">
                         <RightArrow className="hover:stroke-white" />
                     </button>
+                    <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white">{currentSlide}  of  {totalSlides}</pre>
                 </div>
             </section>
             <section id="booking" className="bg-[#1B1612] lg:bg-white flex flex-col justify-center items-center p-8">
-                <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{width: "100%", height:720}} />
+                <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{ width: "100%", height: 720 }} />
             </section>
             <Footer />
         </main>

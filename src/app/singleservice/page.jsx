@@ -25,18 +25,18 @@ const SingleService = () => {
     const slideRef = useRef(null)
 
     return (
-        <main className="bg-[#FFFAF6] w-full lg:px-10">
+        <main className="bg-[#FFFAF6] w-full">
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:rounded-2xl">
+            <NavBar />
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden absolute -right-96 top-72 lg:block">
                     <RedCircle />
                 </div>
-                <NavBar />
                 <div className="mt-32 w-full relative overflow-hidden flex flex-col gap-8 lg:gap-10 pb-20">
                     <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[500px] lg:hidden">
                         <RedCircle />
@@ -69,9 +69,9 @@ const SingleService = () => {
                         The widespread adoption of web apps, which aid communication with customers, collaboration with employees, data storage, etc., is revamping how businesses are run and clients are served. The enterprise UX is all about the wants, needs, drivers, and pain points of employees, thereby creating an effective, efficient, and pleasant experience.
                     </h3>
                 </div>
-                <Image src={singleServiceVid} className="mt-8 sm:mt-12 lg:mt-28 w-full" />
+                <Image src={singleServiceVid} alt="singleservicevid" className="mt-8 sm:mt-12 lg:mt-28 w-full" />
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-10 lg:pb-20 lg:pb-35 lg:mt-5 lg:rounded-2xl">     
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-10 lg:pb-20 lg:pb-35 lg:mt-5 lg:mx-10 lg:rounded-2xl">     
                 <div className="hidden absolute left-1/2 -bottom-72 transform -translate-x-1/2 z-0 lg:block">
                     <RedCircle />
                 </div>
@@ -118,7 +118,7 @@ const SingleService = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-20 lg:pb-35 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-20 lg:pb-35 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl">
                 <div className="block absolute left-1/2 -bottom-[500px] transform -translate-x-1/2 z-0 sm:hidden">
                     <RedCircle />
                 </div>
@@ -142,9 +142,9 @@ const SingleService = () => {
                     </div>
                 </div>
                 <div className="hidden sm:flex justify-between mt-8 sm:mt-12 lg:mt-36 relative z-10">
-                    <Image src={singleServiceSample1} className="w-[30%] hover:scale-105" />
-                    <Image src={singleServiceSample2} className="w-[30%] hover:scale-105" />
-                    <Image src={singleServiceSample3} className="w-[30%] hover:scale-105" />
+                    <Image src={singleServiceSample1} alt="singleservicesample" className="w-[30%] hover:scale-105" />
+                    <Image src={singleServiceSample2} alt="singleservicesample" className="w-[30%] hover:scale-105" />
+                    <Image src={singleServiceSample3} alt="singleservicesample" className="w-[30%] hover:scale-105" />
                 </div>
                 <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center items-center w-full sm:hidden">
                     <Swiper
@@ -154,13 +154,13 @@ const SingleService = () => {
                         spaceBetween={30}
                     >
                         <SwiperSlide className="rounded-[30px]">
-                            <Image src={singleServiceSample1} className="hover:scale-105" />
+                            <Image src={singleServiceSample1} alt="singleservicesample" className="hover:scale-105" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image src={singleServiceSample2} className="hover:scale-105" />
+                            <Image src={singleServiceSample2} alt="singleservicesample" className="hover:scale-105" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image src={singleServiceSample3} className="hover:scale-105" />
+                            <Image src={singleServiceSample3} alt="singleservicesample" className="hover:scale-105" />
                         </SwiperSlide>
                     </Swiper>
                 </div>

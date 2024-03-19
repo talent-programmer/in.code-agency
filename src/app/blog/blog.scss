@@ -9,14 +9,28 @@
     z-index: 10;
 }
 
+.pagination {
+    position: absolute;
+    bottom: 90px;
+    z-index: 10;
+}
+
 .swipe-button-prev {
     left: calc(50% - 200px);
+}
+
+.swipe-button-next {
+    right: calc(50% - 200px);
 }
 
 @media (max-width: 1024px) {
     .swipe-button-prev {
         left: calc(50% - 150px);
         bottom: 50px;
+    }
+      
+    .pagination {
+        bottom:66px;
     }
 }
 
@@ -25,11 +39,12 @@
         left: calc(50% - 100px);
         bottom: 30px;
     }
+
+    .pagination {
+        bottom:46px;
+    }
 }
 
-.swipe-button-next {
-    right: calc(50% - 200px);
-}
 
 @media (max-width: 1024px) {
     .swipe-button-next {

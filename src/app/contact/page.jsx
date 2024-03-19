@@ -16,7 +16,7 @@ import { InlineWidget } from "react-calendly";
 
 const Contact = () => {
     
-    const [visible1, setVisible1] = useState(false)
+    const [visible1, setVisible1] = useState(true)
     const [visible2, setVisible2] = useState(false)
     const [visible3, setVisible3] = useState(false)
     const [visible4, setVisible4] = useState(false)
@@ -37,18 +37,18 @@ const Contact = () => {
     }
     
     return (
-        <main className="bg-[#FFFAF6] w-full lg:px-10">
+        <main className="bg-[#FFFAF6] w-full">
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:rounded-2xl">
+            <NavBar />
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden lg:block absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
-                <NavBar />
                 <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between">
                     <div className="flex flex-col gap-10 z-10 mt-24 lg:mt-36">
                         <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Hello there!</h1>
@@ -79,7 +79,7 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden lg:block absolute -left-72 -top-72">
                     <RedCircle />
                 </div>
@@ -109,8 +109,8 @@ const Contact = () => {
                                     </div>
                                 </div>
                                 {visible1 ?
-                                    <div><Image src={minus} className="mt-1" /></div> :
-                                    <div><Image src={plus} className="mt-1" /></div>
+                                    <div><Image src={minus} alt="minus" className="mt-1" /></div> :
+                                    <div><Image src={plus} alt="plus" className="mt-1" /></div>
                                 }
                             </div>
                             {visible1 &&
@@ -135,8 +135,8 @@ const Contact = () => {
                                     <h1 className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</h1>
                                 </div>
                                 {visible2 ?
-                                    <div><Image src={minus} className="mt-1" /></div> :
-                                    <div><Image src={plus} className="mt-1" /></div>
+                                    <div><Image src={minus} alt="minus" className="mt-1" /></div> :
+                                    <div><Image src={plus} alt="plus" className="mt-1" /></div>
                                 }
                             </div>
                             {visible2 &&
@@ -161,8 +161,8 @@ const Contact = () => {
                                     <div className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</div>
                                 </div>
                                 {visible3 ?
-                                    <div><Image src={minus} className="mt-1" /></div> :
-                                    <div><Image src={plus} className="mt-1" /></div>
+                                    <div><Image src={minus} alt="minus" className="mt-1" /></div> :
+                                    <div><Image src={plus} alt="plus" className="mt-1" /></div>
                                 }
                             </div>
                             {visible3 &&
@@ -187,8 +187,8 @@ const Contact = () => {
                                     <div className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</div>
                                 </div>
                                 {visible4 ?
-                                    <div><Image src={minus} className="mt-1" /></div> :
-                                    <div><Image src={plus} className="mt-1" /></div>
+                                    <div><Image src={minus} alt="minus" className="mt-1" /></div> :
+                                    <div><Image src={plus} alt="plus" className="mt-1" /></div>
                                 }
                             </div>
                             {visible4 &&
@@ -213,8 +213,8 @@ const Contact = () => {
                                     <div className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</div>
                                 </div>
                                 {visible5 ?
-                                    <div><Image src={minus} className="mt-1" /></div> :
-                                    <div><Image src={plus} className="mt-1" /></div>
+                                    <div><Image src={minus} alt="minus" className="mt-1" /></div> :
+                                    <div><Image src={plus} alt="plus" className="mt-1" /></div>
                                 }
                             </div>
                             {visible5 &&
@@ -239,8 +239,8 @@ const Contact = () => {
                                     <div className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</div>
                                 </div>
                                 {visible6 ?
-                                    <div><Image src={minus} className="mt-1" /></div> :
-                                    <div><Image src={plus} className="mt-1" /></div>
+                                    <div><Image src={minus} alt="minus" className="mt-1" /></div> :
+                                    <div><Image src={plus} alt="plus" className="mt-1" /></div>
                                 }
                             </div>
                             {visible6 &&

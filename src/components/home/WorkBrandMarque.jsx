@@ -8,24 +8,24 @@ const WorkBrandMarque = () => {
         <div className="">
             <div className="marquee">
                 <div className="marquee_group_work_brand">
-                    <Image src={brand1} />
-                    <Image src={brand2} />
-                    <Image src={brand3} />
-                    <Image src={brand4} />
-                    <Image src={brand5} />
-                    <Image src={brand6} />
-                    <Image src={brand7} />
-                    <Image src={brand8} />
+                    <Image src={brand1} alt="brand" />
+                    <Image src={brand2} alt="brand" />
+                    <Image src={brand3} alt="brand" />
+                    <Image src={brand4} alt="brand" />
+                    <Image src={brand5} alt="brand" />
+                    <Image src={brand6} alt="brand" />
+                    <Image src={brand7} alt="brand" />
+                    <Image src={brand8} alt="brand" />
                 </div>
                 <div aria-hidden="true" className="marquee_group_work_brand">
-                    <Image src={brand1} />
-                    <Image src={brand2} />
-                    <Image src={brand3} />
-                    <Image src={brand4} />
-                    <Image src={brand5} />
-                    <Image src={brand6} />
-                    <Image src={brand7} />
-                    <Image src={brand8} />
+                    <Image src={brand1} alt="brand" />
+                    <Image src={brand2} alt="brand" />
+                    <Image src={brand3} alt="brand" />
+                    <Image src={brand4} alt="brand" />
+                    <Image src={brand5} alt="brand" />
+                    <Image src={brand6} alt="brand" />
+                    <Image src={brand7} alt="brand" />
+                    <Image src={brand8} alt="brand" />
                 </div>
             </div>
         </div>

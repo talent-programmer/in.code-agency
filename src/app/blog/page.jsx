@@ -11,7 +11,7 @@ import EachWork from "@/components/work/EachWork";
 import {
     Navigation,
     Pagination,
-  } from "swiper/modules";
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -27,7 +27,7 @@ import "./blog.scss"
 import 'aos/dist/aos.css';
 
 const Blog = () => {
-    
+
     const [activeMenu, setActiveMenu] = useState("All");
 
     const handleClick = (menuName) => {
@@ -37,10 +37,18 @@ const Blog = () => {
     const getClass = (menuName) => {
         let baseClasses = "font-Jakarta font-normal text-[#cccccc] text-xl cursor-pointer";
         if (menuName === activeMenu) {
-          // Add extra classes for the active menu
-          return `${baseClasses} px-4 py-2 border border-2 border-[#ccc] bg-white bg-opacity-15 rounded-3xl`;
+            // Add extra classes for the active menu
+            return `${baseClasses} px-4 py-2 border border-2 border-[#ccc] bg-white bg-opacity-15 rounded-3xl`;
         }
         return baseClasses;
+    };
+
+    const [totalSlides, setTotalSlides] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const handleSwiper = (swiper) => {
+        setTotalSlides(swiper.slides.length);
+        swiper.on('slideChange', () => setCurrentSlide(swiper.realIndex + 1));
     };
 
     const slideRef = useRef(null)
@@ -52,18 +60,18 @@ const Blog = () => {
     }, []);
 
     return (
-        <main className="bg-[#FFFAF6] w-full lg:px-10">
+        <main className="bg-[#FFFAF6] w-full">
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:rounded-2xl">
+            <NavBar />
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden lg:block absolute -right-[500px]">
                     <RedCircle />
                 </div>
-                <NavBar />
                 <div className="max-w-[1580px] mx-auto relative flex flex-col gap-8 z-10 mt-40 sm:mt-28 lg:mt-36">
                     <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Blog and News</h1>
                     <h3 className="font-Jakarta font-normal text-white text-base sm:text-lg lg:text-xl sm:w-1/2 lg:w-2/5">
@@ -79,13 +87,13 @@ const Blog = () => {
                             spaceBetween={30}
                         >
                             <SwiperSlide className="rounded-[30px]">
-                                <Image src={approach} className="mx-auto relative z-10 custom-cursor" />
+                                <Image src={approach} alt="approach" className="mx-auto relative z-10 custom-cursor" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Image src={approach} className="mx-auto relative z-10 custom-cursor" />
+                                <Image src={approach} alt="approach" className="mx-auto relative z-10 custom-cursor" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Image src={approach} className="mx-auto relative z-10 custom-cursor" />
+                                <Image src={approach} alt="approach" className="mx-auto relative z-10 custom-cursor" />
                             </SwiperSlide>
                         </Swiper>
                     </div>
@@ -94,7 +102,7 @@ const Blog = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-32 sm:pb-40 lg:pb-60 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-32 sm:pb-40 lg:pb-60 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl">
                 <div className="absolute top-1/2 -left-72 hidden lg:block">
                     <RedCircle />
                 </div>
@@ -123,6 +131,7 @@ const Blog = () => {
                 </div>
                 <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
                     <Swiper
+                        onSwiper={handleSwiper}
                         slidesPerView={1}
                         ref={slideRef}
                         modules={[
@@ -236,6 +245,7 @@ const Blog = () => {
                     <button ref={nextBtnRef} className="swipe-button-next">
                         <RightArrow className="hover:stroke-white" />
                     </button>
+                    <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white">{currentSlide}  of  {totalSlides}</pre>
                 </div>
             </section>
             <Footer />

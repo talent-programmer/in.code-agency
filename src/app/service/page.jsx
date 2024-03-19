@@ -9,14 +9,15 @@ import { serviceBg, design } from "../../../public/assetes/img";
 const Service = () => {
     
     return (
-        <main className="bg-[#FFFAF6] w-full lg:px-10">
+        <main className="bg-[#FFFAF6] w-full">
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 lg:pb-72 lg:rounded-2xl">
+            <NavBar />
+            <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 lg:pb-72 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden sm:block absolute -bottom-72 -left-72 z-20">
                     <RedCircle />
                 </div>
@@ -26,16 +27,9 @@ const Service = () => {
                 <div className="absolute right-0 top-0 h-full">
                     <div className="relative h-full hidden sm:block sm:scale-100">
                         <div className="absolute w-40 bg-gradient-to-r from-[#1B1612] via-[#1B1612]/90 via-30% to-[#1B1612]/0 h-full z-10 drop-shadow-2xl"></div>
-                        <Image src={serviceBg} className="" />
+                        <Image src={serviceBg} alt="servicebg" className="" />
                     </div>
                 </div>
-                {/* <div className="absolute -right-[420px] top-0 h-full">
-                    <div className="relative overflow-hidden h-full hidden sm:block sm:scale-100 lg:scale-100">
-                        <div className="absolute sm:w-[708px] lg:w-[708px] bg-gradient-to-r from-[#1B1612] via-[#1B1612]/90 via-30% to-[#1B1612]/0 h-full z-10 drop-shadow-2xl"></div>
-                        <Image src={homeBg} className="h-full xl:scale-105 xxl:scale-100" />
-                    </div>
-                </div> */}
-                <NavBar />
                 <div className="max-w-[1580px] mx-auto relative z-10 mt-20 lg:mt-48">
                     <div className="flex flex-col gap-10">
                         <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">
@@ -51,7 +45,7 @@ const Service = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 -mt-5 lg:mt-5 lg:mb-5 rounded-2xl z-30">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 -mt-5 lg:mt-5 lg:mb-5 lg:mx-10 rounded-2xl z-30">
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">01 / 02</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
@@ -71,7 +65,7 @@ const Service = () => {
                         </div>
                         <div className="flex flex-col gap-10 lg:flex-row justify-between mt-10">
                             <div className="lg:w-2/5">
-                                <Image src={design} className="w-full" />
+                                <Image src={design} alt="design" className="w-full" />
                             </div>
                             <div className="lg:w-2/5">
                                 <h3 data-aos="fade-up" className="font-Jakarta font-normal text-[#cccccc] text-xl">
@@ -107,7 +101,7 @@ const Service = () => {
                         </div>
                         <div className="flex flex-col gap-10 lg:flex-row justify-between mt-10">
                             <div className="lg:w-2/5">
-                                <Image src={design} className="w-full" />
+                                <Image src={design} alt="design" className="w-full" />
                             </div>
                             <div className="lg:w-2/5">
                                 <h3 data-aos="fade-up" className="font-Jakarta font-normal text-[#cccccc] text-xl">
@@ -143,7 +137,7 @@ const Service = () => {
                         </div>
                         <div className="flex flex-col gap-10 lg:flex-row justify-between mt-10">
                             <div className="lg:w-2/5">
-                                <Image src={design} className="w-full" />
+                                <Image src={design} alt="design" className="w-full" />
                             </div>
                             <div className="lg:w-2/5">
                                 <h3 data-aos="fade-up" className="font-Jakarta font-normal text-[#cccccc] text-xl">
@@ -179,7 +173,7 @@ const Service = () => {
                         </div>
                         <div className="flex flex-col gap-10 lg:flex-row justify-between mt-10">
                             <div className="lg:w-2/5">
-                                <Image src={design} className="w-full" />
+                                <Image src={design} alt="design" className="w-full" />
                             </div>
                             <div className="lg:w-2/5">
                                 <h3 data-aos="fade-up" className="font-Jakarta font-normal text-[#cccccc] text-xl">

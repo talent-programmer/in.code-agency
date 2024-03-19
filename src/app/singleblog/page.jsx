@@ -35,18 +35,18 @@ const SingleBlog = () => {
     };
 
     return (
-        <main className="bg-[#FFFAF6] w-full lg:px-10">
+        <main className="bg-[#FFFAF6] w-fulls">
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:rounded-2xl">
+            <NavBar />
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden absolute -right-[500px] right top-72 lg:block">
                     <RedCircle />
                 </div>
-                <NavBar />
                 <div className="mt-28 lg:mt-36 w-full lg:w-2/3 flex flex-col gap-8 lg:gap-10">
                     <Link href="/blog">
                         <div className="flex items-center gap-5">
@@ -63,13 +63,13 @@ const SingleBlog = () => {
                     </h3>
                 </div>
                 <div className="relative mt-8 lg:mt-20 mx-auto">
-                    <Image src={singleServiceVid} className="mx-auto relative z-10" />
+                    <Image src={singleServiceVid} alt="singleservicevid" className="mx-auto relative z-10" />
                     <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-0 scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
                         <RedCircle />
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden flex flex-col lg:flex-row justify-between px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:rounded-2xl">     
+            <section className="bg-[#1B1612] relative lg:overflow-hidden flex flex-col lg:flex-row justify-between px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:mx-10 lg:rounded-2xl">     
                 <div className="hidden absolute -right-72 bottom-0 z-0 lg:block">
                     <RedCircle />
                 </div>
@@ -137,7 +137,7 @@ const SingleBlog = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl">
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">02 / 04</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
@@ -156,7 +156,7 @@ const SingleBlog = () => {
                 </div>
                 <div className="flex justify-between gap-10 mt-8 lg:mt-24">
                     <div className="flex flex-col gap-5">
-                        <Image src={singleblog1} className="" />
+                        <Image src={singleblog1} alt="singleserviceblog" className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
                             Storybook and it's amazing plugins for React Native
                         </h1>
@@ -170,7 +170,7 @@ const SingleBlog = () => {
                         </Link>
                     </div>
                     <div className="flex flex-col gap-5">
-                        <Image src={singleblog2} className="" />
+                        <Image src={singleblog2} alt="singleserviceblog" className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
                             Storybook and it's amazing plugins for React Native
                         </h1>
@@ -184,7 +184,7 @@ const SingleBlog = () => {
                         </Link>
                     </div>
                     <div className="sm:flex flex-col gap-5 hidden">
-                        <Image src={singleblog3} className="" />
+                        <Image src={singleblog3} alt="singleserviceblog" className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
                             Storybook and it's amazing plugins for React Native
                         </h1>
@@ -199,7 +199,7 @@ const SingleBlog = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] overflow-hidden lg:bg-white relative px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28">
+            <section className="bg-[#1B1612] overflow-hidden lg:bg-white relative px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28 lg:mx-10">
                 <div className="block absolute left-1/2 top-[250%] transform -translate-x-1/2 -translate-y-1/2 z-0 sm:hidden">
                     <RedCircle />
                 </div>

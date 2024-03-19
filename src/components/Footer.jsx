@@ -6,7 +6,7 @@ import "./Footer.scss"
 
 const Footer = () => {
     return (
-        <section className="bg-[#1B1612] px-6 sm:px-16 lg:px-24 pt-10 sm:pt-14 lg:pt-20 lg:pb-10 -mt-4 sm:mt-0 rounded-2xl sm:rounded-none lg:rounded-2xl relative overflow-hidden">
+        <section className="bg-[#1B1612] px-6 sm:px-16 lg:px-24 pt-10 sm:pt-14 lg:pt-20 lg:pb-10 -mt-4 sm:mt-0 lg:mx-10 rounded-2xl sm:rounded-none lg:rounded-2xl relative overflow-hidden">
             <div className="absolute -right-72 -bottom-48">
                 <RedCircle />
             </div>

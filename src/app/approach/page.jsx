@@ -32,18 +32,18 @@ const Approach = () => {
     }
 
     return (
-        <main className="bg-[#FFFAF6] w-full lg:px-10">
+        <main className="bg-[#FFFAF6] w-full">
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:rounded-2xl">
+            <NavBar />
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:rounded-2xl">
                 <div className="absolute -right-[500px] hidden lg:block">
                     <RedCircle />
                 </div>
-                <NavBar />
                 <div className="max-w-[1580px] mx-auto relative flex flex-col gap-8 z-10 mt-44 sm:mt-28 lg:mt-36">
                     <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Process Approach</h1>
                     <h3 className="font-Jakarta font-normal text-white text-base sm:text-lg lg:text-xl sm:w-2/3 lg:w-2/5">
@@ -54,13 +54,13 @@ const Approach = () => {
                     </button>
                 </div>
                 <div className="relative mt-16 sm:mt-24 lg:mt-36 mx-auto">
-                    <Image src={approach} className="w-full relative z-10" />
+                    <Image src={approach} alt="approach" className="w-full relative z-10" />
                     <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-0 scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
                         <RedCircle />
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-10 lg:pb-20 lg:mt-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mx-10 lg:rounded-2xl">
                 <div className="absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
@@ -82,8 +82,8 @@ const Approach = () => {
                                     <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Discovery Session</h1>
                                 </div>
                                 {visible1 ?
-                                    <Image src={minus} /> :
-                                    <Image src={plus} />
+                                    <Image src={minus} alt="minus" /> :
+                                    <Image src={plus} alt="plus" />
                                 }
                             </div>
                             {visible1 &&
@@ -102,8 +102,8 @@ const Approach = () => {
                                     <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Discovery Session</h1>
                                 </div>
                                 {visible2 ?
-                                    <Image src={minus} /> :
-                                    <Image src={plus} />
+                                    <Image src={minus} alt="minus" /> :
+                                    <Image src={plus} alt="plus" />
                                 }
                             </div>
                             {visible2 &&
@@ -122,8 +122,8 @@ const Approach = () => {
                                     <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Discovery Session</h1>
                                 </div>
                                 {visible3 ?
-                                    <Image src={minus} /> :
-                                    <Image src={plus} />
+                                    <Image src={minus} alt="minus" /> :
+                                    <Image src={plus} alt="plus" />
                                 }
                             </div>
                             {visible3 &&
@@ -142,8 +142,8 @@ const Approach = () => {
                                     <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Discovery Session</h1>
                                 </div>
                                 {visible4 ?
-                                    <Image src={minus} /> :
-                                    <Image src={plus} />
+                                    <Image src={minus} alt="minus" /> :
+                                    <Image src={plus} alt="plus" />
                                 }
                             </div>
                             {visible4 &&
@@ -162,8 +162,8 @@ const Approach = () => {
                                     <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Discovery Session</h1>
                                 </div>
                                 {visible5 ?
-                                    <Image src={minus} /> :
-                                    <Image src={plus} />
+                                    <Image src={minus} alt="minus" /> :
+                                    <Image src={plus} alt="plus" />
                                 }
                             </div>
                             {visible5 &&
@@ -182,8 +182,8 @@ const Approach = () => {
                                     <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Discovery Session</h1>
                                 </div>
                                 {visible6 ?
-                                    <Image src={minus} /> :
-                                    <Image src={plus} />
+                                    <Image src={minus} alt="minus" /> :
+                                    <Image src={plus} alt="plus" />
                                 }
                             </div>
                             {visible6 &&
@@ -195,7 +195,7 @@ const Approach = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl">
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">03 / 04</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 mx-auto gap-5">
                     <h1 data-aos="fade-up" className="lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">

@@ -56,15 +56,15 @@ const Home = () => {
     }, []);
     
     return (
-        <main className="bg-[#FFFAF6] w-full lg:px-10">
+        <main className="bg-[#FFFAF6]">
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-                <NavBar />
-            <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 xl:pb-72 lg:rounded-2xl">
+            <NavBar />
+            <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 xl:pb-72 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden sm:block absolute bottom-0 -left-[500px] z-20">
                     <RedCircle />
                 </div>
@@ -74,7 +74,7 @@ const Home = () => {
                 <div className="absolute -right-[420px] top-0 h-full">
                     <div className="relative overflow-hidden h-full hidden sm:block sm:scale-100">
                         <div className="absolute left-0 sm:w-[708px] lg:w-[708px] bg-gradient-to-r from-[#1B1612] via-[#1B1612]/90 via-30% to-[#1B1612]/0 h-full z-10 drop-shadow-2xl"></div>
-                        <Image src={homeBg} className="h-full xl:scale-y-110 xxl:scale-100" />
+                        <Image src={homeBg} alt="homebg" className="h-full xl:scale-y-110 xxl:scale-100" />
                     </div>
                 </div>
                 <div className="max-w-[1580px] mx-auto relative z-10 mt-20 sm:mt-14 lg:mt-48">
@@ -93,7 +93,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 -mt-5 lg:mt-5 rounded-t-2xl lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 -mt-5 lg:mt-5 lg:mx-10 rounded-t-2xl lg:rounded-2xl">
                 <div className="hidden lg:block absolute -right-72 -bottom-72">
                     <RedCircle />
                 </div>
@@ -114,11 +114,11 @@ const Home = () => {
                 <div className="flex justify-center mt-52 mt-50">
                     <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
-                        <Image />
+                        <Image alt="hand" />
                     </button>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden lg:blockabsolute -right-72 -top-72">
                     <RedCircle />
                 </div>
@@ -141,12 +141,12 @@ const Home = () => {
                                 <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">UX / UI Design</h1>
                             </div>
                             { !visible1 &&
-                                <Image src={plus} />
+                                <Image src={plus} alt="plus" />
                             }
                             { visible1 &&
                                 <div className="xl:w-1/3 flex items-center justify-between">
                                     <h1 className="font-Grotesk font-medium text-white text-2xl hidden xl:block">Tools & technologies</h1>
-                                    <Image src={minus} />
+                                    <Image src={minus} alt="minus" />
                                 </div>
                             }
                         </div>
@@ -188,12 +188,12 @@ const Home = () => {
                                 <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Front-end Development</h1>
                             </div>
                             { !visible2 &&
-                                <Image src={plus} />
+                                <Image src={plus} alt="plus" />
                             }
                             { visible2 &&
                                 <div className="xl:w-1/3 flex items-center justify-between">
                                     <h1 className="font-Grotesk font-medium text-white text-2xl hidden xl:block">Tools & technologies</h1>
-                                    <Image src={minus} />
+                                    <Image src={minus} alt="minus" />
                                 </div>
                             }
                         </div>
@@ -235,12 +235,12 @@ const Home = () => {
                                 <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Back-end Development</h1>
                             </div>
                             { !visible3 &&
-                                <Image src={plus} />
+                                <Image src={plus} alt="plus" />
                             }
                             { visible3 &&
                                 <div className="xl:w-1/3 flex items-center justify-between">
                                     <h1 className="font-Grotesk font-medium text-white text-2xl hidden xl:block">Tools & technologies</h1>
-                                    <Image src={minus} />
+                                    <Image src={minus} alt="minus" />
                                 </div>
                             }
                         </div>
@@ -282,12 +282,12 @@ const Home = () => {
                                 <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Hybrid Mobile Development</h1>
                             </div>
                             { !visible4 &&
-                                <Image src={plus} />
+                                <Image src={plus} alt="plus" />
                             }
                             { visible4 &&
                                 <div className="xl:w-1/3 flex items-center justify-between">
                                     <h1 className="font-Grotesk font-medium text-white text-2xl hidden xl:block">Tools & technologies</h1>
-                                    <Image src={minus} />
+                                    <Image src={minus} alt="minus" />
                                 </div>
                             }
                         </div>
@@ -324,7 +324,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden lg:block absolute -left-72 bottom-[800px] z-0">
                     <RedCircle />
                 </div>
@@ -378,7 +378,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-2 lg:gap-4 mt-20 lg:mt-36">
-                    <Image src={coWorkersMovement} />
+                    <Image src={coWorkersMovement} alt="coworker" />
                     <div className="flex flex-col gap-5">
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-base lg:text-lg">Case study</h3>
                         <h1 className="font-Grotesk font-medium text-white text-xl lg:text-3xl">ID Data Consulting Agency</h1>
@@ -386,7 +386,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden lg:block absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
@@ -411,7 +411,7 @@ const Home = () => {
                                     Pagination,
                                     EffectCards
                                 ]}
-                                loop={true}s
+                                loop={true}
                                 effect={'cards'}
                                 grabCursor={true}
                                 navigation={{
@@ -424,19 +424,19 @@ const Home = () => {
                                 }}
                             >
                                 <SwiperSlide className="rounded-[30px]">
-                                    <Image src={man} className="mx-auto" />
+                                    <Image src={man} alt="man" className="mx-auto" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <Image src={man} className="mx-auto" />
+                                    <Image src={man} alt="man" className="mx-auto" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <Image src={man} className="mx-auto" />
+                                    <Image src={man} alt="man" className="mx-auto" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <Image src={man} className="mx-auto" />
+                                    <Image src={man} alt="man" className="mx-auto" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <Image src={man} className="mx-auto" />
+                                    <Image src={man} alt="man" className="mx-auto" />
                                 </SwiperSlide>
                             </Swiper>
                             <button ref={prevBtnRef} className="swipe-button-prev">
@@ -447,14 +447,14 @@ const Home = () => {
                             </button>
                         </div>
                     </div>
-                    <Image src={line} className="hidden lg:block" />
+                    <Image src={line} alt="line" className="hidden lg:block" />
                     <div className="flex flex-col gap-10 sm:w-2/5 pt-10 sm:pt-20">
                         <h1 className="font-Grotesk font-medium text-white text-xl lg:text-4xl">Just amazing!</h1>
                         <h3 className="font-Jakarta italic text-white text-base lg:text-3xl">
                             “ Incode Agency has helped my team and I stay on the same page. Previously, we were all over the board. Using Incode Agency has definitely saved us time and money. “
                         </h3>
                         <div className="flex items-center gap-5">
-                            <Image src={Dali} />
+                            <Image src={Dali} alt="dali" />
                             <div className="flex flex-col  gap-3">
                                 <h1 className="font-Grotesk font-medium text-white text-base lg:text-xl">Dali Bataneat</h1>
                                 <h3 className="font-Jakarta font-normal text-[#ccc] text-base lg:text-xl">CEO of DaITech Computers</h3>
@@ -465,7 +465,7 @@ const Home = () => {
                 <div className="flex justify-center sm:mt-12 lg:mt-20">
                     <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
-                        <Image />
+                        <Image alt="hand" />
                     </button>
                 </div>
             </section>
