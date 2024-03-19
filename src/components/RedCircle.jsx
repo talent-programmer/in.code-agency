@@ -1,7 +1,7 @@
 const RedCircle = () => {
     return (
         <div 
-            className="bg-red-500 w-96 h-96 rounded-full blur-[150px]"
+            className="bg-[#C30416] w-[486px] h-[486px] h- rounded-full blur-[156px]"
         >
         </div>
     )

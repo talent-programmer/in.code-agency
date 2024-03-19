@@ -1,16 +1,9 @@
-import { useEffect } from "react";
-
 import Image from "next/image";
-import Aos from "aos";
 import "./EachWork.scss"
 
 const EachWork = (props) => {
 
     const {src, title, description} = props;
-
-    useEffect(() => {
-        Aos.init(); // Initialize AOS
-    }, []);
 
     return (
         <div className="flex flex-col gap-5">

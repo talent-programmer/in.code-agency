@@ -2,7 +2,8 @@
     position: relative;
 }
 
-.swipe-button-prev, .swipe-button-next {
+.swipe-button-prev,
+.swipe-button-next {
     position: absolute;
     bottom: 80px;
     z-index: 10;
@@ -17,7 +18,7 @@
         left: calc(50% - 100px);
         bottom: 30px;
     }
-  }
+}
 
 .swipe-button-next {
     right: calc(50% - 200px);
@@ -28,4 +29,8 @@
         right: calc(50% - 100px);
         bottom: 30px;
     }
-  }
+}
+
+.custom-cursor {
+    cursor: url('../../../public/assetes/img/cursor.cur'), pointer;
+}

@@ -22,6 +22,19 @@ const Contact = () => {
     const [visible4, setVisible4] = useState(false)
     const [visible5, setVisible5] = useState(false)
     const [visible6, setVisible6] = useState(false)
+
+    const functionsArray = [setVisible1, setVisible2, setVisible3, setVisible4, setVisible5,setVisible6];
+    const visibleArray = [visible1, visible2, visible3, visible4, visible5, visible6] 
+
+    const callFunctionByIndex = (index) => {
+        for (let i = 0; i < 6; i++) {
+            if (i == index) {
+                functionsArray[i](!visibleArray[i]);
+            } else {
+                functionsArray[i](false);
+            }
+        }
+    }
     
     return (
         <main className="bg-[#FFFAF6] w-full lg:px-10">
@@ -31,22 +44,22 @@ const Contact = () => {
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 lg:rounded-2xl">
-                <div className="absolute -left-72 -bottom-72">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:rounded-2xl">
+                <div className="hidden lg:block absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
                 <NavBar />
-                <div className="max-w-[1580px] mx-auto flex justify-between">
-                    <div className="flex flex-col gap-10 z-10 mt-52 w-2/5">
-                        <h1 className="font-Grotesk font-medium text-white text-6xl">Hello there!</h1>
-                        <h3 className="font-Jakarta font-normal text-white text-xl">
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between">
+                    <div className="flex flex-col gap-10 z-10 mt-24 lg:mt-36">
+                        <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Hello there!</h1>
+                        <h3 className="font-Jakarta font-normal text-[#ccc] text-base sm:text-lg lg:text-xl sm:w-2/3 lg:w-2/5">
                             We'd love to learn more about you and what we can design and build together.
                         </h3>
-                        <h3 className="font-Jakarta font-normal text-white text-xl">
+                        <h3 className="font-Jakarta font-normal text-[#ccc] text-base sm:text-lg lg:text-xl">
                             Become a client: <br/>
                             <a href="mailto:hello@incodeagency.com" className="font-bold">hello@incodeagency.com</a>
                         </h3>
-                        <h3 className="font-Jakarta font-normal text-white text-xl mt-20">
+                        <h3 className="font-Jakarta font-normal text-[#ccc] text-base sm:text-lg lg:text-xl mt-20">
                             Or just skip formality and find us on:
                         </h3>
                         <div className="flex gap-7 items-center">
@@ -56,155 +69,186 @@ const Contact = () => {
                             <Facebook className="hover:fill-white" />
                         </div>
                     </div>
-                    <div className="w-1/2 flex flex-row-reverse">
-                        <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{width: "100%", height: 900}} />
+                    <div className="lg:w-1/2 relative flex flex-row-reverse mt-8 lg:mt-10">
+                        <div className="relative z-10 w-full">
+                            <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{width: "100%", height: 900}} />
+                        </div>
+                        <div className="block absolute left-1/2 sm:top-1/4 transform -translate-x-1/2 -translate-y-1/2 z-0 scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
+                            <RedCircle />
+                        </div>
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
-                <div className="absolute -left-72 -top-72">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+                <div className="hidden lg:block absolute -left-72 -top-72">
                     <RedCircle />
                 </div>
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">03 / 09</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5">
-                    <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
+                    <h1 data-aos="fade-up" className="sm:w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We got asked these questions often...
                     </h1>
-                    <h3 data-aos="fade-up" className="w-6/7 lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-xl">
+                    <h3 data-aos="fade-up" className="lg:w-2/5 font-Jakarta font-normal text-[#cccccc] text-base lg:text-xl">
                         But if you don’t find your answer here, feel free to contact us via email or social media platforms.
                     </h3>
                 </div>
                 <div>
-                    <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible1(!visible1)}>
-                        <div className="flex flex-col gap-6">
-                            <div className="flex justify-between">
-                                <div className="flex items-center gap-4">
-                                    <h3 className="font-Grotesk font-medium text-white text-xl">01</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">What separates in.code from other digital web design agencies?</h1>
+                    <div className="hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(0)}>
+                        <div className="flex flex-col gap-10 w-full">
+                            <div className="flex justify-between w-full">
+                                <div className="w-[90%] flex gap-2 lg:gap-4 text-white hover:text-white">
+                                    <div className="mt-1 lg:mt-2">
+                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke="currentcolor" strokeWidth="2"/>
+                                            <path d="M10 16.5C10.2761 16.5 10.5 16.2761 10.5 16C10.5 15.7239 10.2761 15.5 10 15.5C9.72386 15.5 9.5 15.7239 9.5 16C9.5 16.2761 9.72386 16.5 10 16.5Z" fill="white" stroke="currentcolor"/>
+                                            <path d="M10 14V12.581C10 11.637 10.604 10.799 11.5 10.5C11.9367 10.3544 12.3166 10.075 12.5858 9.70156C12.855 9.32809 12.9999 8.87939 13 8.419V7.906C13 6.3 11.7 5 10.094 5H10C9.20435 5 8.44129 5.31607 7.87868 5.87868C7.31607 6.44129 7 7.20435 7 8" stroke="currentcolor" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h1 className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</h1>
+                                    </div>
                                 </div>
-                                { visible1 &&
-                                    <Image src={minus} />
+                                {visible1 ?
+                                    <div><Image src={minus} className="mt-1" /></div> :
+                                    <div><Image src={plus} className="mt-1" /></div>
                                 }
                             </div>
-                            { visible1 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
+                            {visible1 &&
+                                <h3 className="lg:w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
                         </div>
-                        { !visible1 &&
-                            <Image src={plus} />
-                        }
                     </div>
                     <hr className="border-[#ccc] opacity-10" />
-                    <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible2(!visible2)}>
-                        <div className="flex flex-col gap-6">
-                            <div className="flex justify-between">
-                                <div className="flex items-center gap-4">
-                                    <h3 className="font-Grotesk font-medium text-white text-xl">02</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Do you work with clients in different timezones?</h1>
+                    <div className="hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(1)}>
+                        <div className="flex flex-col gap-10 w-full">
+                            <div className="flex justify-between w-full">
+                                <div className="w-[90%] flex gap-2 lg:gap-4 text-white hover:text-white">
+                                    <div className="mt-1">
+                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke="currentcolor" strokeWidth="2"/>
+                                            <path d="M10 16.5C10.2761 16.5 10.5 16.2761 10.5 16C10.5 15.7239 10.2761 15.5 10 15.5C9.72386 15.5 9.5 15.7239 9.5 16C9.5 16.2761 9.72386 16.5 10 16.5Z" fill="white" stroke="currentcolor"/>
+                                            <path d="M10 14V12.581C10 11.637 10.604 10.799 11.5 10.5C11.9367 10.3544 12.3166 10.075 12.5858 9.70156C12.855 9.32809 12.9999 8.87939 13 8.419V7.906C13 6.3 11.7 5 10.094 5H10C9.20435 5 8.44129 5.31607 7.87868 5.87868C7.31607 6.44129 7 7.20435 7 8" stroke="currentcolor" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                    <h1 className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</h1>
                                 </div>
-                                { visible2 &&
-                                    <Image src={minus} />
+                                {visible2 ?
+                                    <div><Image src={minus} className="mt-1" /></div> :
+                                    <div><Image src={plus} className="mt-1" /></div>
                                 }
                             </div>
-                            { visible2 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
+                            {visible2 &&
+                                <h3 className="lg:w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
                         </div>
-                        { !visible2 &&
-                            <Image src={plus} />
-                        }
                     </div>
                     <hr className="border-[#ccc] opacity-10" />
-                    <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible3(!visible3)}>
-                        <div className="flex flex-col gap-6">
-                            <div className="flex justify-between">
-                                <div className="flex items-center gap-4">
-                                    <h3 className="font-Grotesk font-medium text-white text-xl">03</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Do you work with startups?</h1>
+                    <div className="hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(2)}>
+                        <div className="flex flex-col gap-10 w-full">
+                            <div className="flex justify-between w-full">
+                                <div className="w-[90%] flex gap-2 lg:gap-4 text-white hover:text-white">
+                                    <div className="mt-1">
+                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke="currentcolor" strokeWidth="2"/>
+                                            <path d="M10 16.5C10.2761 16.5 10.5 16.2761 10.5 16C10.5 15.7239 10.2761 15.5 10 15.5C9.72386 15.5 9.5 15.7239 9.5 16C9.5 16.2761 9.72386 16.5 10 16.5Z" fill="white" stroke="currentcolor"/>
+                                            <path d="M10 14V12.581C10 11.637 10.604 10.799 11.5 10.5C11.9367 10.3544 12.3166 10.075 12.5858 9.70156C12.855 9.32809 12.9999 8.87939 13 8.419V7.906C13 6.3 11.7 5 10.094 5H10C9.20435 5 8.44129 5.31607 7.87868 5.87868C7.31607 6.44129 7 7.20435 7 8" stroke="currentcolor" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                    <div className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</div>
                                 </div>
-                                { visible3 &&
-                                    <Image src={minus} />
+                                {visible3 ?
+                                    <div><Image src={minus} className="mt-1" /></div> :
+                                    <div><Image src={plus} className="mt-1" /></div>
                                 }
                             </div>
-                            { visible3 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
+                            {visible3 &&
+                                <h3 className="lg:w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
                         </div>
-                        { !visible3 &&
-                            <Image src={plus} />
-                        }
                     </div>
                     <hr className="border-[#ccc] opacity-10" />
-                    <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible4(!visible4)}>
-                        <div className="flex flex-col gap-6">
-                            <div className="flex justify-between">
-                                <div className="flex items-center gap-4">
-                                    <h3 className="font-Grotesk font-medium text-white text-xl">04</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Can you help us remote our B2B/enterprise software?</h1>
+                    <div className="hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(3)}>
+                        <div className="flex flex-col gap-10 w-full">
+                            <div className="flex justify-between w-full">
+                                <div className="w-[90%] flex gap-2 lg:gap-4 text-white hover:text-white">
+                                    <div className="mt-1">
+                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke="currentcolor" strokeWidth="2"/>
+                                            <path d="M10 16.5C10.2761 16.5 10.5 16.2761 10.5 16C10.5 15.7239 10.2761 15.5 10 15.5C9.72386 15.5 9.5 15.7239 9.5 16C9.5 16.2761 9.72386 16.5 10 16.5Z" fill="white" stroke="currentcolor"/>
+                                            <path d="M10 14V12.581C10 11.637 10.604 10.799 11.5 10.5C11.9367 10.3544 12.3166 10.075 12.5858 9.70156C12.855 9.32809 12.9999 8.87939 13 8.419V7.906C13 6.3 11.7 5 10.094 5H10C9.20435 5 8.44129 5.31607 7.87868 5.87868C7.31607 6.44129 7 7.20435 7 8" stroke="currentcolor" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                    <div className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</div>
                                 </div>
-                                { visible4 &&
-                                    <Image src={minus} />
+                                {visible4 ?
+                                    <div><Image src={minus} className="mt-1" /></div> :
+                                    <div><Image src={plus} className="mt-1" /></div>
                                 }
                             </div>
-                            { visible4 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
+                            {visible4 &&
+                                <h3 className="lg:w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
                         </div>
-                        { !visible4 &&
-                            <Image src={plus} />
-                        }
                     </div>
                     <hr className="border-[#ccc] opacity-10" />
-                    <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible5(!visible5)}>
-                        <div className="flex flex-col gap-6">
-                            <div className="flex justify-between">
-                                <div className="flex items-center gap-4">
-                                    <h3 className="font-Grotesk font-medium text-white text-xl">05</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">Do you support outsource business model?</h1>
+                    <div className="hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(4)}>
+                        <div className="flex flex-col gap-10 w-full">
+                            <div className="flex justify-between w-full">
+                                <div className="w-[90%] flex gap-2 lg:gap-4 text-white">
+                                    <div className="mt-1">
+                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke="currentcolor" strokeWidth="2"/>
+                                            <path d="M10 16.5C10.2761 16.5 10.5 16.2761 10.5 16C10.5 15.7239 10.2761 15.5 10 15.5C9.72386 15.5 9.5 15.7239 9.5 16C9.5 16.2761 9.72386 16.5 10 16.5Z" fill="white" stroke="currentcolor"/>
+                                            <path d="M10 14V12.581C10 11.637 10.604 10.799 11.5 10.5C11.9367 10.3544 12.3166 10.075 12.5858 9.70156C12.855 9.32809 12.9999 8.87939 13 8.419V7.906C13 6.3 11.7 5 10.094 5H10C9.20435 5 8.44129 5.31607 7.87868 5.87868C7.31607 6.44129 7 7.20435 7 8" stroke="currentcolor" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                    <div className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</div>
                                 </div>
-                                { visible5 &&
-                                    <Image src={minus} />
+                                {visible5 ?
+                                    <div><Image src={minus} className="mt-1" /></div> :
+                                    <div><Image src={plus} className="mt-1" /></div>
                                 }
                             </div>
-                            { visible5 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
+                            {visible5 &&
+                                <h3 className="lg:w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
                         </div>
-                        { !visible5 &&
-                            <Image src={plus} />
-                        }
                     </div>
-                    <hr className="border-[#ccc] opacity-10" />
-                    <div className="flex justify-between hover:bg-[#232120] hover:cursor-pointer px-10 py-5" onClick={() => setVisible6(!visible6)}>
-                        <div className="flex flex-col gap-6">
-                            <div className="flex justify-between">
-                                <div className="flex items-center gap-4">
-                                    <h3 className="font-Grotesk font-medium text-white text-xl">06</h3>
-                                    <h1 className="font-Grotesk font-medium text-white text-[32px]">How do I schedule a online meet with you to discuss new idea?</h1>
+                    <hr className="border-[#686767] opacity-10" />
+                    <div className="hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(5)}>
+                        <div className="flex flex-col gap-10 w-full">
+                            <div className="flex justify-between w-full">
+                                <div className="w-[90%] flex gap-2 lg:gap-4 text-white">
+                                    <div className="mt-1">
+                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke="currentcolor" strokeWidth="2"/>
+                                            <path d="M10 16.5C10.2761 16.5 10.5 16.2761 10.5 16C10.5 15.7239 10.2761 15.5 10 15.5C9.72386 15.5 9.5 15.7239 9.5 16C9.5 16.2761 9.72386 16.5 10 16.5Z" fill="white" stroke="currentcolor"/>
+                                            <path d="M10 14V12.581C10 11.637 10.604 10.799 11.5 10.5C11.9367 10.3544 12.3166 10.075 12.5858 9.70156C12.855 9.32809 12.9999 8.87939 13 8.419V7.906C13 6.3 11.7 5 10.094 5H10C9.20435 5 8.44129 5.31607 7.87868 5.87868C7.31607 6.44129 7 7.20435 7 8" stroke="currentcolor" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                    <div className="font-Grotesk font-medium text-base sm:text-xl lg:text-3xl">What separates in.code from other digital web design agencies?</div>
                                 </div>
-                                { visible6 &&
-                                    <Image src={minus} />
+                                {visible6 ?
+                                    <div><Image src={minus} className="mt-1" /></div> :
+                                    <div><Image src={plus} className="mt-1" /></div>
                                 }
                             </div>
-                            { visible6 &&
-                                <h3 className="w-2/5 font-Jakarta font-normal text-[#ccc] text-base pl-9">
+                            {visible6 &&
+                                <h3 className="lg:w-2/5 font-Jakarta font-normal text-[#ccc] text-base {}">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                             }
                         </div>
-                        { !visible6 &&
-                            <Image src={plus} />
-                        }
                     </div>
                 </div>
             </section>

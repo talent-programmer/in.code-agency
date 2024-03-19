@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import Aos from "aos";
 import Image from "next/image";
 import NavBar from "@/components/NavBar";
 import SocialMarque from "@/components/work/SocialMarque";
@@ -10,7 +11,6 @@ import EachWork from "@/components/work/EachWork";
 import {
     Navigation,
     Pagination,
-    EffectCards
   } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -24,6 +24,7 @@ import Footer from "@/components/Footer";
 import { approach, mount, fortion, daitech, ghana } from "../../../public/assetes/img";
 
 import "./blog.scss"
+import 'aos/dist/aos.css';
 
 const Blog = () => {
     
@@ -46,6 +47,10 @@ const Blog = () => {
     const prevBtnRef = useRef(null);
     const nextBtnRef = useRef(null);
 
+    useEffect(() => {
+        Aos.init(); // Initialize AOS
+    }, []);
+
     return (
         <main className="bg-[#FFFAF6] w-full lg:px-10">
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
@@ -54,18 +59,40 @@ const Blog = () => {
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 lg:rounded-2xl">
-                <div className="absolute -right-72">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:rounded-2xl">
+                <div className="hidden lg:block absolute -right-[500px]">
                     <RedCircle />
                 </div>
                 <NavBar />
-                <div className="max-w-[1580px] mx-auto relative flex flex-col gap-8 z-10 mt-52">
-                    <h1 className="font-Grotesk font-medium text-white text-6xl">Blog and News</h1>
-                    <h3 className="font-Jakarta font-normal text-white text-xl w-2/5">
+                <div className="max-w-[1580px] mx-auto relative flex flex-col gap-8 z-10 mt-40 sm:mt-28 lg:mt-36">
+                    <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Blog and News</h1>
+                    <h3 className="font-Jakarta font-normal text-white text-base sm:text-lg lg:text-xl sm:w-1/2 lg:w-2/5">
                         Learn web design and development tips & tricks, get started with Webflow, and read the latest news about Flow Ninja.
                     </h3>
                 </div>
-                <Image src={approach} className="mt-36 mx-auto" />
+                <div className="relative mt-16 sm:mt-20 lg:mt-36 mx-auto">
+                    <div className="flex justify-center items-center w-full">
+                        <Swiper
+                            slidesPerView={1}
+                            ref={slideRef}
+                            loop={true}
+                            spaceBetween={30}
+                        >
+                            <SwiperSlide className="rounded-[30px]">
+                                <Image src={approach} className="mx-auto relative z-10 custom-cursor" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Image src={approach} className="mx-auto relative z-10 custom-cursor" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Image src={approach} className="mx-auto relative z-10 custom-cursor" />
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>
+                    <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-0 scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
+                        <RedCircle />
+                    </div>
+                </div>
             </section>
             <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-32 sm:pb-40 lg:pb-60 lg:mt-5 lg:mb-5 lg:rounded-2xl">
                 <div className="absolute top-1/2 -left-72 hidden lg:block">
@@ -76,20 +103,20 @@ const Blog = () => {
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Categories
                     </h1>
-                    <div className="flex justify-between items-center lg:w-2/5">
-                        <h3 data-aos="fade-up" className={getClass("All")} onClick={() => handleClick("All")}>
+                    <div data-aos="fade-up" className="flex flex-wrap justify-between items-center lg:w-2/3">
+                        <h3 className={getClass("All")} onClick={() => handleClick("All")}>
                             All
                         </h3>
-                        <h3 data-aos="fade-up" className={getClass("Design")} onClick={() => handleClick("Design")}>
+                        <h3 className={getClass("Design")} onClick={() => handleClick("Design")}>
                             Design
                         </h3>
-                        <h3 data-aos="fade-up" className={getClass("Business")} onClick={() => handleClick("Business")}>
+                        <h3 className={getClass("Business")} onClick={() => handleClick("Business")}>
                             Business
                         </h3>
-                        <h3 data-aos="fade-up" className={getClass("Dev stuff")} onClick={() => handleClick("Dev stuff")}>
+                        <h3 className={getClass("Dev stuff")} onClick={() => handleClick("Dev stuff")}>
                             Dev stuff
                         </h3>
-                        <h3 data-aos="fade-up" className={getClass("Culture")} onClick={() => handleClick("Culture")}>
+                        <h3 className={getClass("Culture")} onClick={() => handleClick("Culture")}>
                             Culture
                         </h3>
                     </div>

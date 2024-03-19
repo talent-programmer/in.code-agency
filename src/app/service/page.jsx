@@ -16,33 +16,42 @@ const Service = () => {
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="relative bg-[#1B1612] lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-40 md:pb-48 lg:pb-56 xl:pb-64 xxl:pb-72 lg:rounded-2xl">
-                <div className="absolute -bottom-48 -left-48">
+            <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 lg:pb-72 lg:rounded-2xl">
+                <div className="hidden sm:block absolute -bottom-72 -left-72 z-20">
                     <RedCircle />
                 </div>
-                <div className="absolute right-0 top-0 h-1/2">
-                    <div className="relative">
-                        <div className="absolute w-1/4 bg-gradient-to-r from-[#1B1612] to-[#1B1612]/0 h-full z-10"></div>
+                <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[400px] sm:hidden">
+                    <RedCircle />
+                </div>
+                <div className="absolute right-0 top-0 h-full">
+                    <div className="relative h-full hidden sm:block sm:scale-100">
+                        <div className="absolute w-40 bg-gradient-to-r from-[#1B1612] via-[#1B1612]/90 via-30% to-[#1B1612]/0 h-full z-10 drop-shadow-2xl"></div>
                         <Image src={serviceBg} className="" />
                     </div>
                 </div>
+                {/* <div className="absolute -right-[420px] top-0 h-full">
+                    <div className="relative overflow-hidden h-full hidden sm:block sm:scale-100 lg:scale-100">
+                        <div className="absolute sm:w-[708px] lg:w-[708px] bg-gradient-to-r from-[#1B1612] via-[#1B1612]/90 via-30% to-[#1B1612]/0 h-full z-10 drop-shadow-2xl"></div>
+                        <Image src={homeBg} className="h-full xl:scale-105 xxl:scale-100" />
+                    </div>
+                </div> */}
                 <NavBar />
-                <div className="max-w-[1580px] mx-auto relative z-10 mt-52">
-                    <div className="w-2/3 flex flex-col gap-10">
-                        <h1 className="font-Grotesk font-medium text-white text-4xl lg:text-6xl">
+                <div className="max-w-[1580px] mx-auto relative z-10 mt-20 lg:mt-48">
+                    <div className="flex flex-col gap-10">
+                        <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">
                             <span className="font-Petit mr-5">A full service</span>
-                            digital innovaion partner
+                            digital <br /> innovaion partner
                         </h1>
-                        <h3 className="font-Jakarta font-normal text-white text-xl w-2/3">
+                        <h3 className="font-Jakarta font-normal text-white text-xl sm:w-2/3">
                             We have established expertise in everything that makes brand work, and keep working for our clients. Here’s a brief overview of what we get up to, please do get in touch if you’d like to learn more.
                         </h3>
-                        <button className="px-8 py-3 bg-red-600 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
+                        <button className="px-8 py-3 bg-red-600 rounded-full w-fit flex justify-center items-center gap-3 -mt-5 sm:-mt-2 hover:bg-red-700">
                             <h5 className="text-white font-medium font-Grotesk text-base">Let's talk!</h5>
                         </button>
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 -mt-5 lg:mt-5 lg:mb-5 rounded-2xl z-30">
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">01 / 02</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
@@ -54,17 +63,17 @@ const Service = () => {
                         So... to make it easier, think of us as your special ops digital product development team - tackling with your challenges and needs. Whether you are adding a new feature, a new product, or redesigning an existing product, we will help set you up for success.
                     </h3>
                 </div>
-                <div className="mt-40 flex flex-col gap-36">
+                <div className="mt-12 sm:mt-20 lg:mt-40 flex flex-col gap-20 lg:gap-36">
                     <div className="">
                         <div className="flex items-center gap-4">
                             <h3 className="font-Grotesk font-medium text-white text-xl">01</h3>
                             <h1 className="font-Grotesk font-medium text-white text-[32px]">UX / UI Design</h1>
                         </div>
-                        <div className="flex justify-between mt-10">
-                            <div className="w-2/5">
-                                <Image src={design} />
+                        <div className="flex flex-col gap-10 lg:flex-row justify-between mt-10">
+                            <div className="lg:w-2/5">
+                                <Image src={design} className="w-full" />
                             </div>
-                            <div className="w-2/5">
+                            <div className="lg:w-2/5">
                                 <h3 data-aos="fade-up" className="font-Jakarta font-normal text-[#cccccc] text-xl">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
@@ -72,16 +81,14 @@ const Service = () => {
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                                 <h1 className="font-Grotesk font-medium text-white text-2xl mt-12">Tools & technologies</h1>
-                                <div className="mt-9 flex flex-col gap-2 mt-8">
-                                    <div className="flex items-center gap-4">
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Figma</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Sketch</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Adobe Photoshop</h3>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Adobe Illustrator</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Miro</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Zeplin</h3>
+                                <div className="flex flex-col gap-2 mt-8">
+                                    <div className="flex flex-wrap items-center gap-4">
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Figma</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Sketch</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Photoshop</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Illustrator</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Miro</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Zeplin</h3>
                                     </div>
                                 </div>
                                 <button className="hidden lg:flex items-center text-[#ccc] gap-2 mt-12 hover:text-white">
@@ -98,11 +105,11 @@ const Service = () => {
                             <h3 className="font-Grotesk font-medium text-white text-xl">02</h3>
                             <h1 className="font-Grotesk font-medium text-white text-[32px]">Front-end Development</h1>
                         </div>
-                        <div className="flex justify-between mt-10">
-                            <div className="w-2/5">
-                                <Image src={design} />
+                        <div className="flex flex-col gap-10 lg:flex-row justify-between mt-10">
+                            <div className="lg:w-2/5">
+                                <Image src={design} className="w-full" />
                             </div>
-                            <div className="w-2/5">
+                            <div className="lg:w-2/5">
                                 <h3 data-aos="fade-up" className="font-Jakarta font-normal text-[#cccccc] text-xl">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
@@ -111,15 +118,13 @@ const Service = () => {
                                 </h3>
                                 <h1 className="font-Grotesk font-medium text-white text-2xl mt-12">Tools & technologies</h1>
                                 <div className="flex flex-col gap-2 mt-8">
-                                    <div className="flex items-center gap-4">
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Figma</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Sketch</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Adobe Photoshop</h3>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Adobe Illustrator</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Miro</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Zeplin</h3>
+                                    <div className="flex flex-wrap items-center gap-4">
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Figma</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Sketch</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Photoshop</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Illustrator</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Miro</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Zeplin</h3>
                                     </div>
                                 </div>
                                 <button className="hidden lg:flex items-center text-[#ccc] gap-2 mt-12 hover:text-white">
@@ -136,11 +141,11 @@ const Service = () => {
                             <h3 className="font-Grotesk font-medium text-white text-xl">03</h3>
                             <h1 className="font-Grotesk font-medium text-white text-[32px]">Back-end Development</h1>
                         </div>
-                        <div className="flex justify-between mt-10">
-                            <div className="w-2/5">
-                                <Image src={design} />
+                        <div className="flex flex-col gap-10 lg:flex-row justify-between mt-10">
+                            <div className="lg:w-2/5">
+                                <Image src={design} className="w-full" />
                             </div>
-                            <div className="w-2/5">
+                            <div className="lg:w-2/5">
                                 <h3 data-aos="fade-up" className="font-Jakarta font-normal text-[#cccccc] text-xl">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
@@ -148,16 +153,14 @@ const Service = () => {
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                                 <h1 className="font-Grotesk font-medium text-white text-2xl mt-12">Tools & technologies</h1>
-                                <div className="mt-9 flex flex-col gap-2 mt-8">
-                                    <div className="flex items-center gap-4">
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Figma</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Sketch</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Adobe Photoshop</h3>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Adobe Illustrator</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Miro</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Zeplin</h3>
+                                <div className="flex flex-col gap-2 mt-8">
+                                    <div className="flex flex-wrap items-center gap-4">
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Figma</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Sketch</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Photoshop</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Illustrator</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Miro</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Zeplin</h3>
                                     </div>
                                 </div>
                                 <button className="hidden lg:flex items-center text-[#ccc] gap-2 mt-12 hover:text-white">
@@ -174,11 +177,11 @@ const Service = () => {
                             <h3 className="font-Grotesk font-medium text-white text-xl">04</h3>
                             <h1 className="font-Grotesk font-medium text-white text-[32px]">Hybrid mobile Development</h1>
                         </div>
-                        <div className="flex justify-between mt-10">
-                            <div className="w-2/5">
-                                <Image src={design} />
+                        <div className="flex flex-col gap-10 lg:flex-row justify-between mt-10">
+                            <div className="lg:w-2/5">
+                                <Image src={design} className="w-full" />
                             </div>
-                            <div className="w-2/5">
+                            <div className="lg:w-2/5">
                                 <h3 data-aos="fade-up" className="font-Jakarta font-normal text-[#cccccc] text-xl">
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
@@ -186,16 +189,14 @@ const Service = () => {
                                     Design thinking is at the core of what we do. All decisions are made with the end-user in mind, beginning with requirements gathering and user research, through idea generation, creating information architecture, wireframing and prototyping, all the way to user testing and development.
                                 </h3>
                                 <h1 className="font-Grotesk font-medium text-white text-2xl mt-12">Tools & technologies</h1>
-                                <div className="mt-9 flex flex-col gap-2 mt-8">
-                                    <div className="flex items-center gap-4">
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Figma</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Sketch</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Adobe Photoshop</h3>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Adobe Illustrator</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Miro</h3>
-                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl">Zeplin</h3>
+                                <div className="flex flex-col gap-2 mt-8">
+                                    <div className="flex flex-wrap items-center gap-4">
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Figma</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Sketch</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Photoshop</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Illustrator</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Miro</h3>
+                                        <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Zeplin</h3>
                                     </div>
                                 </div>
                                 <button className="hidden lg:flex items-center text-[#ccc] gap-2 mt-12 hover:text-white">

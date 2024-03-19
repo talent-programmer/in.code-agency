@@ -8,11 +8,55 @@
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px; /* Height of the border line */
-    background-color: white; /* Color of the border line */
-    transition: width 0.3s ease-in-out; /* Transition for the width */
+    height: 2px;
+    /* Height of the border line */
+    background-color: white;
+    /* Color of the border line */
+    transition: width 0.3s ease-in-out;
+    /* Transition for the width */
 }
 
 .link:hover::after {
-    width: 100%; /* Full width of the link */
+    width: 100%;
+    /* Full width of the link */
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.swipe-button-prev,
+.swipe-button-next {
+    position: absolute;
+    bottom: 50%;
+    z-index: 10;
+}
+
+.swipe-button-prev {
+    left: calc(50% - 200px);
+}
+
+@media (max-width: 760px) {
+    .swipe-button-prev {
+        left: calc(50% - 160px);
+        // bottom: 30px;
+    }
+}
+
+.swipe-button-next {
+    right: calc(50% - 200px);
+}
+
+@media (max-width: 760px) {
+    .swipe-button-next {
+        right: calc(50% - 160px);
+        // bottom: 30px;
+    }
 }

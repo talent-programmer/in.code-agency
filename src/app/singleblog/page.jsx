@@ -42,12 +42,12 @@ const SingleBlog = () => {
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 lg:rounded-2xl">
-                <div className="hidden absolute -right-96 right top-72 lg:block">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:rounded-2xl">
+                <div className="hidden absolute -right-[500px] right top-72 lg:block">
                     <RedCircle />
                 </div>
                 <NavBar />
-                <div className="mt-32 w-full lg:w-2/3 flex flex-col gap-8 lg:gap-10">
+                <div className="mt-28 lg:mt-36 w-full lg:w-2/3 flex flex-col gap-8 lg:gap-10">
                     <Link href="/blog">
                         <div className="flex items-center gap-5">
                             <Image src={arrowLeft} alt="left-arrow" />
@@ -55,20 +55,25 @@ const SingleBlog = () => {
                             <h3 className="hidden font-Jakarata italic text-[#ccc] text-xl lg:block">An all-in-one E-commerce:shopping plat...</h3>
                         </div>
                     </Link>
-                    <h1 className="font-Grotesk font-medium text-white text-3xl lg:text-6xl">
+                    <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">
                         An all-in-one E-commerce: shopping platform gains 25M monthly visits
                     </h1>
                     <h3 className="font-Jakarta font-normal text-white text-base lg:text-xl">
                         25.09.2023. — News · Events — 7min read
                     </h3>
                 </div>
-                <Image src={singleServiceVid} className="mt-24 w-full" />
+                <div className="relative mt-8 lg:mt-20 mx-auto">
+                    <Image src={singleServiceVid} className="mx-auto relative z-10" />
+                    <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-0 scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
+                        <RedCircle />
+                    </div>
+                </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden flex justify-between px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:rounded-2xl">     
+            <section className="bg-[#1B1612] relative lg:overflow-hidden flex flex-col lg:flex-row justify-between px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:rounded-2xl">     
                 <div className="hidden absolute -right-72 bottom-0 z-0 lg:block">
                     <RedCircle />
                 </div>
-                <div className="flex flex-col gap-20 lg:w-2/3 pr-40 border-r-2 border-white border-opacity-10">
+                <div className="flex flex-col gap-20 lg:w-2/3 pr-40 lg:border-r-2 border-white border-opacity-10">
                     <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
                         Every challenge is different, and so every solution evolves in its own bespoke way, shaped by what we discover and the response this demands. Yet here’s a broad outline of how that response might evolve, some tried and tested means to help your brand rise to any challenge and define your new reality.
                     </h3>
@@ -110,7 +115,7 @@ const SingleBlog = () => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-12 lg:w-1/3">
-                    <div className="flex flex-col gap-8 pl-10 border-b-2 border-white border-opacity-10 pb-12">
+                    <div className="hidden lg:flex flex-col gap-8 pl-10">
                         <h1 className="font-Grotesk font-medium text-white text-[32px]">Table of content</h1>
                         <div className="flex flex-col gap-3">
                             <h3 className={getClass("first")} onClick={() => handleClick("first")}>
@@ -121,7 +126,7 @@ const SingleBlog = () => {
                             </h3>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-8 pl-10">
+                    <div className="flex flex-col gap-8 mt-10 lg:mt-0 lg:pl-10 pt-12 border-t-2 border-white border-opacity-10 ">
                         <h1 className="font-Grotesk font-medium text-white text-[32px]">Share this article</h1>
                         <div className="flex gap-7 items-center">
                             <Instagram className="hover:fill-white" />
@@ -132,7 +137,7 @@ const SingleBlog = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mb-5 lg:rounded-2xl">
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">02 / 04</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
@@ -140,7 +145,7 @@ const SingleBlog = () => {
                     </h1>
                     <div className="lg:w-2/5 flex flex-row-reverse">
                         <Link href={"./blog"}>
-                            <button className="hidden lg:flex items-center text-[#ccc] gap-2 mt-10 hover:text-white">
+                            <button className="hidden lg:flex items-center text-[#ccc] gap-2 hover:text-white">
                                 <h3 className="link font-Jakarta font-normal text-lg">All blogs and news</h3>
                                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth={1.5} />
@@ -149,14 +154,14 @@ const SingleBlog = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="flex justify-between gap-10 mt-24">
+                <div className="flex justify-between gap-10 mt-8 lg:mt-24">
                     <div className="flex flex-col gap-5">
                         <Image src={singleblog1} className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
                             Storybook and it's amazing plugins for React Native
                         </h1>
                         <Link href={"./#"}>
-                            <button className="hidden lg:flex items-center text-[#ccc] gap-2 hover:text-white">
+                            <button className="flex items-center text-[#ccc] gap-2 hover:text-white">
                                 <h3 className="link font-Jakarta font-normal text-lg">Read more</h3>
                                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth={1.5} />
@@ -170,7 +175,7 @@ const SingleBlog = () => {
                             Storybook and it's amazing plugins for React Native
                         </h1>
                         <Link href={"./#"}>
-                            <button className="hidden lg:flex items-center text-[#ccc] gap-2 hover:text-white">
+                            <button className="flex items-center text-[#ccc] gap-2 hover:text-white">
                                 <h3 className="link font-Jakarta font-normal text-lg">Read more</h3>
                                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth={1.5} />
@@ -178,13 +183,13 @@ const SingleBlog = () => {
                             </button>
                         </Link>
                     </div>
-                    <div className="flex flex-col gap-5">
+                    <div className="sm:flex flex-col gap-5 hidden">
                         <Image src={singleblog3} className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
                             Storybook and it's amazing plugins for React Native
                         </h1>
                         <Link href={"./#"}>
-                            <button className="hidden lg:flex items-center text-[#ccc] gap-2 hover:text-white">
+                            <button className="flex items-center text-[#ccc] gap-2 hover:text-white">
                                 <h3 className="link font-Jakarta font-normal text-lg">Read more</h3>
                                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth={1.5} />
@@ -194,11 +199,11 @@ const SingleBlog = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] lg:bg-white relative px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28">
+            <section className="bg-[#1B1612] overflow-hidden lg:bg-white relative px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28">
                 <div className="block absolute left-1/2 top-[250%] transform -translate-x-1/2 -translate-y-1/2 z-0 sm:hidden">
                     <RedCircle />
                 </div>
-                <div className="bg-white relative z-10 flex justify-center items-cente py-7 lg:py-0 gap-5 rounded-2xl">
+                <div className="bg-white relative z-10 flex justify-center items-center my-auto py-7 lg:py-0 gap-5 rounded-2xl">
                     <Image src={arrowLeftMobile} alt="left-arrow" className="lg:hidden" />
                     <Image src={arrowBlack} alt="left-arrow" className="hidden lg:block" />
                     <h1 className="font-Grotesk font-medium text-base lg:text-4xl">Back to blog and news</h1>
