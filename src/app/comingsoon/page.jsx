@@ -29,12 +29,12 @@ const ComingSoon = () => {
                 <p className="text-[#cccccc] font-normal font-Jakarta text-center text-base mt-8 sm:text-xl sm:mt-10 lg:mt-5">
                     Until then, check out on what we've been working on in the past.
                 </p>
-                <button className="px-8 py-3 bg-red-600 rounded-full flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-8 hover:bg-red-700">
+                <button className="px-8 py-3 bg-red-500 rounded-full flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-8 hover:bg-red-700">
                     <h5 className="text-white font-medium font-Grotesk text-base">Past Projects</h5>
                     <Image src={arrow} alt="arrow" />
                 </button>
             </div>
-            <div className="mt-72 flex flex-col gap-8 justify-center items-center">
+            <div className="mt-72 flex flex-col gap-8 justify-center items-center relative z-10">
                 <div className="flex gap-7 justify-center items-center">
                     <Instagram className="hover:fill-white" />
                     <Threads className="hover:fill-white" />

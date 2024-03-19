@@ -141,11 +141,11 @@ const Blog = () => {
                     >
                         <SwiperSlide className="rounded-[30px]">
                             <div className="justify-between flex-col sm:flex-row mt-10 hidden lg:flex">
-                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20">
+                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-40">
                                     <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
                                     <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
                                 </div>
-                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20 lg:mt-40">
+                                <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-40 lg:mt-40">
                                     <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
                                     <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
                                 </div>

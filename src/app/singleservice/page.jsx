@@ -54,7 +54,7 @@ const SingleService = () => {
                     <h3 className="font-Jakarta font-normal text-white text-base lg:text-xl sm:w-2/3 lg:w-1/2">
                         The enterprise UX is all about the wants, needs, drivers, and pain points of employees, thereby creating an effective, efficient, and pleasant experience.
                     </h3>
-                    <button className="px-8 py-3 bg-red-600 rounded-full w-fit flex justify-center items-center gap-3 hover:bg-red-700">
+                    <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">Let's talk!</h5>
                     </button>
                 </div>

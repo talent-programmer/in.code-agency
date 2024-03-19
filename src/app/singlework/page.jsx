@@ -82,7 +82,7 @@ const SingleWork = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 relative lg:mt-5">
-                <Image src={bg1} alt="bg1" className="relative z-10 rounded-2xl hidden sm:block" />
+                <Image src={bg1} alt="bg1" className="relative w-full z-10 rounded-2xl hidden sm:block" />
                 <Image src={bg1Mobile} alt="bg1" className="w-full relative z-10 rounded-2xl sm:hidden" />
                 <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-0 lg:hidden">
                     <RedCircle />
@@ -100,7 +100,7 @@ const SingleWork = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg2} alt="bg2" className="rounded-2xl hidden sm:block" />
+                <Image src={bg2} alt="bg2" className="w-full rounded-2xl hidden sm:block" />
                 <Image src={bg2Mobile} alt="bg2" className="w-full relative z-10 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-12 pb-12 lg:pt-20 lg:pb-20 lg:rounded-2xl lg:mt-5">
@@ -123,15 +123,15 @@ const SingleWork = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 py-1 lg:py-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg3} alt="bg3" className="rounded-2xl hidden sm:block" />
+                <Image src={bg3} alt="bg3" className="w-full rounded-2xl hidden sm:block" />
                 <Image src={bg3Mobile} alt="bg3" className="w-full relative z-10 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 py-1 lg:py-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg4} alt="bg4" className="rounded-2xl] hidden sm:block" />
+                <Image src={bg4} alt="bg4" className="w-full rounded-2xl] hidden sm:block" />
                 <Image src={bg4Mobile} alt="bg4" className="w-full  z-10 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 py-1 lg:py-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg5} alt="bg5" className="rounded-2xl hidden sm:block" />
+                <Image src={bg5} alt="bg5" className="w-full rounded-2xl hidden sm:block" />
                 <Image src={bg5Mobile} alt="bg5" className="w-full relative z-10 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] lg:bg-white relative px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28">

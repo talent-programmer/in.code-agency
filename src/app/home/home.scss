@@ -9,7 +9,8 @@
     overflow: hidden;
 }
 
-.swipe-button-prev, .swipe-button-next {
+.swipe-button-prev,
+.swipe-button-next {
     position: absolute;
     bottom: 50%;
     z-index: 10;
@@ -19,20 +20,31 @@
     left: calc(50% - 200px);
 }
 
+@media (max-width: 1024px) {
+    .swipe-button-prev {
+        left: calc(50% - 150px);
+    }
+}
+
 @media (max-width: 760px) {
     .swipe-button-prev {
-        left: calc(50% - 160px);
+        left: calc(50% - 160px)
         // bottom: 30px;
     }
-  }
+}
 
 .swipe-button-next {
     right: calc(50% - 200px);
 }
 
+@media (max-width: 1024px) {
+    .swipe-button-next {
+        right: calc(50% - 150px);
+    }
+}
+
 @media (max-width: 760px) {
     .swipe-button-next {
         right: calc(50% - 160px);
-        // bottom: 30px;
     }
-  }
+}

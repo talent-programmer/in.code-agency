@@ -87,7 +87,7 @@ const Home = () => {
                         <h3 className="font-Jakarta font-normal text-white text-base sm:text-lg lg:text-xl w-full sm:w-2/3 lg:w-1/3">
                             We build engaging user experience for early-stage startups by connecting the dots between users’ needs and the client’s business model.
                         </h3>
-                        <button className="px-8 py-3 bg-red-600 rounded-full w-fit flex justify-center items-center gap-3 hover:bg-red-700">
+                        <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 hover:bg-red-700">
                             <h5 className="text-white font-medium font-Grotesk text-base">Let's talk!</h5>
                         </button>
                     </div>
@@ -112,7 +112,7 @@ const Home = () => {
                     <WorkBrandMarque />
                 </div>
                 <div className="flex justify-center mt-52 mt-50">
-                    <button className="px-8 py-3 bg-red-600 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
+                    <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
                         <Image />
                     </button>
@@ -349,11 +349,11 @@ const Home = () => {
                 </div>
                 <div>
                     <div className="justify-between flex-col sm:flex-row mt-10 hidden lg:flex relative z-10">
-                        <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20">
+                        <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-40">
                             <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
                             <EachWork src={daitech} title="DaITech Computers" description="Read how we turned small side business into full-time Ontario’s one stop IT shop." />
                         </div>
-                        <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-20 lg:mt-40">
+                        <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-40 lg:mt-40">
                             <EachWork src={fortion} title="Fortino Dental" description="Stunning revamp of one of the most technologically advanced dental clinic in Toronto, Ontario in Canada." />
                             <EachWork src={ghana} title="Ghana Life Insurance Ltd." description="Together with these people we created most simple online insurance app that brought smile like this to many Ghana families." />
                         </div>
@@ -411,7 +411,7 @@ const Home = () => {
                                     Pagination,
                                     EffectCards
                                 ]}
-                                loop={true}
+                                loop={true}s
                                 effect={'cards'}
                                 grabCursor={true}
                                 navigation={{
@@ -439,10 +439,10 @@ const Home = () => {
                                     <Image src={man} className="mx-auto" />
                                 </SwiperSlide>
                             </Swiper>
-                            <button ref={prevBtnRef} className="swipe-button-prev hidden sm:block">
+                            <button ref={prevBtnRef} className="swipe-button-prev">
                                 <LeftArrow className="hover:stroke-white" />
                             </button>
-                            <button ref={nextBtnRef} className="swipe-button-next hidden sm:block">
+                            <button ref={nextBtnRef} className="swipe-button-next">
                                 <RightArrow className="hover:stroke-white" />
                             </button>
                         </div>
@@ -463,7 +463,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="flex justify-center sm:mt-12 lg:mt-20">
-                    <button className="px-8 py-3 bg-red-600 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
+                    <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
                         <Image />
                     </button>

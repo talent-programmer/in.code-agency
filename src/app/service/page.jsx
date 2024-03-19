@@ -45,7 +45,7 @@ const Service = () => {
                         <h3 className="font-Jakarta font-normal text-white text-xl sm:w-2/3">
                             We have established expertise in everything that makes brand work, and keep working for our clients. Here’s a brief overview of what we get up to, please do get in touch if you’d like to learn more.
                         </h3>
-                        <button className="px-8 py-3 bg-red-600 rounded-full w-fit flex justify-center items-center gap-3 -mt-5 sm:-mt-2 hover:bg-red-700">
+                        <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 -mt-5 sm:-mt-2 hover:bg-red-700">
                             <h5 className="text-white font-medium font-Grotesk text-base">Let's talk!</h5>
                         </button>
                     </div>

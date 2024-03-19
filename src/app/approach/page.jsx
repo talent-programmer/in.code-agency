@@ -49,7 +49,7 @@ const Approach = () => {
                     <h3 className="font-Jakarta font-normal text-white text-base sm:text-lg lg:text-xl sm:w-2/3 lg:w-2/5">
                         Leveraging a human-centered design methodology, we create solutions tailored to the needs of your target audience and aimed at growing your business.
                     </h3>
-                    <button className="lg:hidden px-8 py-3 bg-red-600 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
+                    <button className="lg:hidden px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">Become a client</h5>
                     </button>
                 </div>
@@ -205,7 +205,7 @@ const Approach = () => {
                         Quality assurance begins at the start of the project and continues throughout its entirety. It's a necessary part of the.
                     </h3>
                 </div>
-                <button className="px-8 py-3 bg-red-600 rounded-full flex justify-center items-center gap-3 mt-6 sm:mt-8 hover:bg-red-700">
+                <button className="px-8 py-3 bg-red-500 rounded-full flex justify-center items-center gap-3 mt-6 sm:mt-8 hover:bg-red-700">
                     <h5 className="text-white font-medium font-Grotesk text-base">Become a client</h5>
                 </button>
             </section>

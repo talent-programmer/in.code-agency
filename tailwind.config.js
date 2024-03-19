@@ -14,7 +14,7 @@ module.exports = {
       },
       fontFamily: {
         'syne': ['Syne', 'Inter'],
-        'Grotesk': ['SharpGroteskMedium25-Regular', 'SharpGroteskBook25-Regular'],
+        'Grotesk': ['SharpGroteskBook25-Regular', 'SharpGroteskMedium25-Regular'],
         'Jakarta': ['Plus Jakarta Sans', 'sans-serif'],
         'Petit' : ['Petit Formal Script', 'sans-serif']
       },
