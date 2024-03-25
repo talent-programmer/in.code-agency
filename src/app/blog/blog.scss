@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.swiper-wrapper {
+    align-items: center;
+}
+
 .swipe-button-prev,
 .swipe-button-next {
     position: absolute;

@@ -3,6 +3,14 @@
 import { useState } from "react";
 
 import Image from "next/image";
+import {
+    Navigation,
+    Pagination,
+    EffectCards
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/scrollbar";
 import RedCircle from "@/components/RedCircle";
 import SocialMarque from "@/components/work/SocialMarque";
 import BrandMarque from "@/components/work/BrandMaque";
@@ -11,11 +19,11 @@ import Threads from "@/components/comingsoon/Threads";
 import Facebook from "@/components/comingsoon/Facebook";
 import LinkedIn from "@/components/comingsoon/LinkedIn";
 import Footer from "@/components/Footer";
-import { arrowLeft, singleServiceVid, singleblog1, singleblog2, singleblog3, arrowLeftMobile, arrowBlack } from "../../../public/assetes/img";
+import { arrowLeft, singleServiceVid, singleblog1, singleblog2, singleblog3, arrowLeftMobile, arrowBlack, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile } from "../../../public/assetes/img";
 import Link from "next/link";
 
 import "./singleblog.scss"
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navbar/NavBar";
 
 const SingleBlog = () => {
 
@@ -28,14 +36,44 @@ const SingleBlog = () => {
     const getClass = (contentOrder) => {
         let baseClasses = "font-Jakarta font-normal text-[#cccccc] text-xl cursor-pointer";
         if (contentOrder === activeContent) {
-          // Add extra classes for the active menu
-          return `${baseClasses} text-red-700`;
+            // Add extra classes for the active menu
+            return `${baseClasses} text-red-700`;
         }
         return baseClasses;
     };
 
+    // const contentLeftRef = useRef(null);
+    // const [activeTitleIndex, setActiveTitleIndex] = useState(null);
+
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (contentLeftRef.current) {
+    //             const containerHeight = contentLeftRef.current.clientHeight;
+    //             const scrollTop = contentLeftRef.current.scrollTop;
+    //             const parts = contentLeftRef.current.querySelectorAll(`.${styles.part}`);
+
+    //             for (let i = 0; i < parts.length; i++) {
+    //                 const part = parts[i];
+    //                 const topPosition = part.offsetTop;
+
+    //                 if (topPosition > containerHeight / 2) {
+    //                     setActiveTitleIndex(i);
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     };
+
+    //     contentLeftRef.current.addEventListener('scroll', handleScroll);
+    //     return () => contentLeftRef.current.removeEventListener('scroll', handleScroll);
+    // }, []);
+
+
     return (
-        <main className="bg-[#FFFAF6] w-fulls">
+        <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
+            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
+            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -47,7 +85,7 @@ const SingleBlog = () => {
                 <div className="hidden absolute -right-[500px] right top-72 lg:block">
                     <RedCircle />
                 </div>
-                <div className="mt-28 lg:mt-36 w-full lg:w-2/3 flex flex-col gap-8 lg:gap-10">
+                <div className="mt-28 lg:mt-36 w-full xl:w-2/3 flex flex-col gap-8 lg:gap-10 relative z-10">
                     <Link href="/blog">
                         <div className="flex items-center gap-5">
                             <Image src={arrowLeft} alt="left-arrow" />
@@ -63,17 +101,17 @@ const SingleBlog = () => {
                     </h3>
                 </div>
                 <div className="relative mt-8 lg:mt-20 mx-auto">
-                    <Image src={singleServiceVid} alt="singleservicevid" className="mx-auto relative z-10" />
-                    <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-0 scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
+                    <Image src={singleServiceVid} alt="singleservicevid" className="w-full relative z-10" />
+                    <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-[5] scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
                         <RedCircle />
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden flex flex-col lg:flex-row justify-between px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:mx-10 lg:rounded-2xl">     
+            <section className="bg-[#1B1612] relative lg:overflow-hidden flex flex-col lg:flex-row justify-between px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden absolute -right-72 bottom-0 z-0 lg:block">
                     <RedCircle />
                 </div>
-                <div className="flex flex-col gap-20 lg:w-2/3 pr-40 lg:border-r-2 border-white border-opacity-10">
+                <div id="ppp" className="flex flex-col gap-20 lg:w-2/3 pr-40 lg:border-r-2 border-white border-opacity-10 lg:h-[700px] overflow-auto element-with-scrollbar">
                     <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
                         Every challenge is different, and so every solution evolves in its own bespoke way, shaped by what we discover and the response this demands. Yet here’s a broad outline of how that response might evolve, some tried and tested means to help your brand rise to any challenge and define your new reality.
                     </h3>
@@ -93,7 +131,7 @@ const SingleBlog = () => {
                         </h3>
                     </div>
                     <div className="flex flex-col gap-8">
-                        <h1 className="font-Grotesk font-medium text-white text-[32px]">Lazarev. cue to enter the scene</h1>
+                        <h1 className="font-Grotesk font-normal text-white text-[28px]">Lazarev. cue to enter the scene</h1>
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
                             We set out to revamp the product with the redesign and build an interface to help RedBrain reach new heights.
                         </h3>
@@ -101,8 +139,20 @@ const SingleBlog = () => {
                             Our team rethought the platform, leveraging up-to-date design solutions to give RedBrain a modern look. We also built a new homepage, search functionality, user shopping journey, product pages, payment flow, etc., to effortlessly lead customers to checkout.
                         </h3>
                     </div>
-                    <div className="flex flex-col gap-8">
+                    <div className="flex flex-col gap-8" id="ttt">
                         <h1 className="font-Grotesk font-medium text-white text-[32px]">What's up with RedBrain now?</h1>
+                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                            The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
+                        </h3>
+                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                            The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
+                        </h3>
+                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                            The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
+                        </h3>
+                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                            The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
+                        </h3>
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
                             The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
                         </h3>
@@ -154,8 +204,8 @@ const SingleBlog = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="flex justify-between gap-10 mt-8 lg:mt-24">
-                    <div className="flex flex-col gap-5">
+                <div className="sm:flex justify-between gap-10 mt-8 lg:mt-24 hidden">
+                    <div className="flex flex-col gap-5 hover:cursor-pointer">
                         <Image src={singleblog1} alt="singleserviceblog" className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
                             Storybook and it's amazing plugins for React Native
@@ -169,7 +219,7 @@ const SingleBlog = () => {
                             </button>
                         </Link>
                     </div>
-                    <div className="flex flex-col gap-5">
+                    <div className="flex flex-col gap-5 hover:cursor-pointer">
                         <Image src={singleblog2} alt="singleserviceblog" className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
                             Storybook and it's amazing plugins for React Native
@@ -183,7 +233,7 @@ const SingleBlog = () => {
                             </button>
                         </Link>
                     </div>
-                    <div className="sm:flex flex-col gap-5 hidden">
+                    <div className="sm:flex flex-col gap-5 hidden hover:cursor-pointer">
                         <Image src={singleblog3} alt="singleserviceblog" className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
                             Storybook and it's amazing plugins for React Native
@@ -197,6 +247,61 @@ const SingleBlog = () => {
                             </button>
                         </Link>
                     </div>
+                </div>
+                <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center items-center w-full sm:hidden">
+                    <Swiper
+                        slidesPerView={1.5}
+                        spaceBetween={30}
+                    >
+                        <SwiperSlide className="rounded-[30px]">
+                            <div className="flex flex-col gap-5 hover:cursor-pointer">
+                                <Image src={singleblog1} alt="singleserviceblog" className="" />
+                                <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
+                                    Storybook and it's amazing plugins for React Native
+                                </h1>
+                                <Link href={"./#"}>
+                                    <button className="flex items-center text-[#ccc] gap-2 hover:text-white">
+                                        <h3 className="link font-Jakarta font-normal text-lg">Read more</h3>
+                                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth={1.5} />
+                                        </svg>
+                                    </button>
+                                </Link>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex flex-col gap-5 hover:cursor-pointer">
+                                <Image src={singleblog2} alt="singleserviceblog" className="" />
+                                <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
+                                    Storybook and it's amazing plugins for React Native
+                                </h1>
+                                <Link href={"./#"}>
+                                    <button className="flex items-center text-[#ccc] gap-2 hover:text-white">
+                                        <h3 className="link font-Jakarta font-normal text-lg">Read more</h3>
+                                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth={1.5} />
+                                        </svg>
+                                    </button>
+                                </Link>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="sm:flex flex-col gap-5 hover:cursor-pointer">
+                                <Image src={singleblog3} alt="singleserviceblog" className="" />
+                                <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
+                                    Storybook and it's amazing plugins for React Native
+                                </h1>
+                                <Link href={"./#"}>
+                                    <button className="flex items-center text-[#ccc] gap-2 hover:text-white">
+                                        <h3 className="link font-Jakarta font-normal text-lg">Read more</h3>
+                                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth={1.5} />
+                                        </svg>
+                                    </button>
+                                </Link>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </section>
             <section className="bg-[#1B1612] overflow-hidden lg:bg-white relative px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28 lg:mx-10">

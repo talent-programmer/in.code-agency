@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Aos from "aos";
 import Image from "next/image";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navbar/NavBar";
 import SocialMarque from "@/components/work/SocialMarque";
 import BrandMarque from "@/components/work/BrandMaque";
 import RedCircle from "@/components/RedCircle";
@@ -13,7 +13,7 @@ import {
     Navigation,
     Pagination,
     EffectCards
-  } from "swiper/modules";
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -23,24 +23,25 @@ import 'swiper/css/effect-cards';
 import LeftArrow from "@/components/work/LeftArrow";
 import RightArrow from "@/components/work/RightArrow";
 import Footer from "@/components/Footer";
-import { homeBg, minus, plus, mount, fortion, daitech, ghana, coWorkersMovement, line, Dali, man } from "../../../public/assetes/img";
+import { homeBg, mount, fortion, daitech, ghana, coWorkersMovement, line, Dali, man, arrowLeft, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile } from "../../../public/assetes/img";
 
 import "./home.scss"
 import 'aos/dist/aos.css';
 
 const Home = () => {
-    
+
     const [visible1, setVisible1] = useState(true)
     const [visible2, setVisible2] = useState(false)
     const [visible3, setVisible3] = useState(false)
     const [visible4, setVisible4] = useState(false)
+    const visibleArray = [visible1, visible2, visible3, visible4]
 
     const functionsArray = [setVisible1, setVisible2, setVisible3, setVisible4];
 
     const callFunctionByIndex = (index) => {
         for (let i = 0; i < 4; i++) {
             if (i == index) {
-                functionsArray[i](true);
+                functionsArray[i](!visibleArray[i]);
             } else {
                 functionsArray[i](false);
             }
@@ -51,12 +52,46 @@ const Home = () => {
     const prevBtnRef = useRef(null);
     const nextBtnRef = useRef(null);
 
+    const [isHovered, setIsHovered] = useState(false);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    // const element = document.getElementById('home');
+    // const offset = element.offsetLeft
+
+    useEffect(() => {
+        // const rect = element.getBoundingClientRect();
+
+    // Calculate the position of the mouse cursor relative to the element
+    // const mouseX = event.clientX - rect.left;
+    // const mouseY = event.clientY - rect.top;
+        const handleMouseMove = (event) => {
+            setPosition({ x: event.pageX, y: event.pageY });
+        };
+
+        document.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
     useEffect(() => {
         Aos.init(); // Initialize AOS
     }, []);
-    
+
     return (
-        <main className="bg-[#FFFAF6]">
+        <main className="bg-[#FFFAF6] relative overflow-hidden" id="home1">
+            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
+            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -77,7 +112,7 @@ const Home = () => {
                         <Image src={homeBg} alt="homebg" className="h-full xl:scale-y-110 xxl:scale-100" />
                     </div>
                 </div>
-                <div className="max-w-[1580px] mx-auto relative z-10 mt-20 sm:mt-14 lg:mt-48">
+                <div className="mx-auto relative z-10 mt-28 sm:mt-24 lg:mt-56">
                     <div className="w-full flex flex-col gap-5 sm:gap-8 lg:gap-10">
                         <h1 className="w-3/4 font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">
                             Next-gen <br className="block xxl:hidden" />
@@ -87,7 +122,7 @@ const Home = () => {
                         <h3 className="font-Jakarta font-normal text-white text-base sm:text-lg lg:text-xl w-full sm:w-2/3 lg:w-1/3">
                             We build engaging user experience for early-stage startups by connecting the dots between users’ needs and the client’s business model.
                         </h3>
-                        <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 hover:bg-red-700">
+                        <button className="px-8 py-3 bg-[#DA3224] rounded-full w-fit flex justify-center items-center gap-3 hover:bg-red-700">
                             <h5 className="text-white font-medium font-Grotesk text-base">Let's talk!</h5>
                         </button>
                     </div>
@@ -112,7 +147,7 @@ const Home = () => {
                     <WorkBrandMarque />
                 </div>
                 <div className="flex justify-center mt-52 mt-50">
-                    <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
+                    <button className="px-8 py-3 bg-[#DA3224] rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
                         <Image alt="hand" />
                     </button>
@@ -134,23 +169,30 @@ const Home = () => {
                     </h3>
                 </div>
                 <div>
-                    <div className="flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(0)}>
-                        <div className="flex justify-between w-full">
-                            <div className="xl:w-1/2 flex items-center gap-4">
-                                <h3 className="font-Grotesk font-medium text-white text-sm lg:text-xl">01</h3>
-                                <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">UX / UI Design</h1>
+                    <div id="home" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="relative flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(0)}>
+                        {/* {isHovered && */}
+                            <Image src={arrowLeft} className="absolute z-50" style={{left: position.x, top: position.y}} />
+                        {/* } */}
+                        <div className={`flex justify-between w-full ${visible1 ? "text-white" : "text-[#555]"} hover:text-white`}>
+                            <div className="flex items-center gap-4">
+                                <h3 className="font-Grotesk font-medium text-sm lg:text-xl">01</h3>
+                                <h1 className="font-Grotesk font-medium text-xl lg:text-[32px]">UX / UI Design</h1>
                             </div>
-                            { !visible1 &&
-                                <Image src={plus} alt="plus" />
+                            {!visible1 &&
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.83301 10.1668H0.833008V7.8335H7.83301V0.833496H10.1663V7.8335H17.1663V10.1668H10.1663V17.1668H7.83301V10.1668Z" fill="" />
+                                </svg>
                             }
-                            { visible1 &&
+                            {visible1 &&
                                 <div className="xl:w-1/3 flex items-center justify-between">
                                     <h1 className="font-Grotesk font-medium text-white text-2xl hidden xl:block">Tools & technologies</h1>
-                                    <Image src={minus} alt="minus" />
+                                    <svg width="18" height="4" viewBox="0 0 18 4" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.833008 3.16634V0.833008H17.1663V3.16634H0.833008Z" fill="" />
+                                    </svg>
                                 </div>
                             }
                         </div>
-                        { visible1 &&
+                        {visible1 &&
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-col gap-5 xl:flex-row xl:justify-between">
                                     <h3 className="xl:w-1/2 font-Jakarta font-normal text-[#ccc] text-base {}">
@@ -160,12 +202,30 @@ const Home = () => {
                                         <h1 className="font-Grotesk font-medium text-white text-base sm:text-xl xl:text-2xl block xl:hidden">Tools & technologies</h1>
                                         <div className="flex flex-row xl:flex-col gap-2">
                                             <div className="flex flex-wrap items-center gap-4">
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Figma</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Sketch</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Photoshop</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Illustrator</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Miro</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Zeplin</h3>
+                                                <div className="tooltip relative">
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Figma</h3>
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Sketch</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Adobe Photoshop</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Adobe Illustrator</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Miro</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Zeplin</h3>
+                                                </div>
                                             </div>
                                             <div className="flex items-center gap-4">
                                             </div>
@@ -182,22 +242,26 @@ const Home = () => {
                         }
                     </div>
                     <div className="flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(1)}>
-                        <div className="flex justify-between w-full">
-                            <div className="xl:w-1/2 flex items-center gap-4">
-                                <h3 className="font-Grotesk font-medium text-white text-sm lg:text-xl">02</h3>
-                                <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Front-end Development</h1>
+                        <div className={`flex justify-between w-full ${visible2 ? "text-white" : "text-[#555]"} hover:text-white`}>
+                            <div className="flex items-center gap-4">
+                                <h3 className="font-Grotesk font-medium text-sm lg:text-xl">02</h3>
+                                <h1 className="font-Grotesk font-medium text-xl lg:text-[32px]">Front-end Development</h1>
                             </div>
-                            { !visible2 &&
-                                <Image src={plus} alt="plus" />
+                            {!visible2 &&
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.83301 10.1668H0.833008V7.8335H7.83301V0.833496H10.1663V7.8335H17.1663V10.1668H10.1663V17.1668H7.83301V10.1668Z" fill="" />
+                                </svg>
                             }
-                            { visible2 &&
+                            {visible2 &&
                                 <div className="xl:w-1/3 flex items-center justify-between">
                                     <h1 className="font-Grotesk font-medium text-white text-2xl hidden xl:block">Tools & technologies</h1>
-                                    <Image src={minus} alt="minus" />
+                                    <svg width="18" height="4" viewBox="0 0 18 4" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.833008 3.16634V0.833008H17.1663V3.16634H0.833008Z" fill="" />
+                                    </svg>
                                 </div>
                             }
                         </div>
-                        { visible2 &&
+                        {visible2 &&
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-col gap-5 xl:flex-row xl:justify-between">
                                     <h3 className="xl:w-1/2 font-Jakarta font-normal text-[#ccc] text-base {}">
@@ -207,12 +271,30 @@ const Home = () => {
                                         <h1 className="font-Grotesk font-medium text-white text-base sm:text-xl xl:text-2xl block xl:hidden">Tools & technologies</h1>
                                         <div className="flex flex-row xl:flex-col gap-2">
                                             <div className="flex flex-wrap items-center gap-4">
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Figma</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Sketch</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Photoshop</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Illustrator</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Miro</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Zeplin</h3>
+                                                <div className="tooltip relative">
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Figma</h3>
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Sketch</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Adobe Photoshop</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Adobe Illustrator</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Miro</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Zeplin</h3>
+                                                </div>
                                             </div>
                                             <div className="flex items-center gap-4">
                                             </div>
@@ -229,22 +311,26 @@ const Home = () => {
                         }
                     </div>
                     <div className="flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(2)}>
-                        <div className="flex justify-between w-full">
-                            <div className="xl:w-1/2 flex items-center gap-4">
-                                <h3 className="font-Grotesk font-medium text-white text-sm lg:text-xl">03</h3>
-                                <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Back-end Development</h1>
+                        <div className={`flex justify-between w-full ${visible3 ? "text-white" : "text-[#555]"} hover:text-white`}>
+                            <div className="flex items-center gap-4">
+                                <h3 className="font-Grotesk font-medium text-sm lg:text-xl">03</h3>
+                                <h1 className="font-Grotesk font-medium text-xl lg:text-[32px]">Back-end Development</h1>
                             </div>
-                            { !visible3 &&
-                                <Image src={plus} alt="plus" />
+                            {!visible3 &&
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.83301 10.1668H0.833008V7.8335H7.83301V0.833496H10.1663V7.8335H17.1663V10.1668H10.1663V17.1668H7.83301V10.1668Z" fill="" />
+                                </svg>
                             }
-                            { visible3 &&
+                            {visible3 &&
                                 <div className="xl:w-1/3 flex items-center justify-between">
                                     <h1 className="font-Grotesk font-medium text-white text-2xl hidden xl:block">Tools & technologies</h1>
-                                    <Image src={minus} alt="minus" />
+                                    <svg width="18" height="4" viewBox="0 0 18 4" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.833008 3.16634V0.833008H17.1663V3.16634H0.833008Z" fill="" />
+                                    </svg>
                                 </div>
                             }
                         </div>
-                        { visible3 &&
+                        {visible3 &&
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-col gap-5 xl:flex-row xl:justify-between">
                                     <h3 className="xl:w-1/2 font-Jakarta font-normal text-[#ccc] text-base {}">
@@ -254,12 +340,30 @@ const Home = () => {
                                         <h1 className="font-Grotesk font-medium text-white text-base sm:text-xl xl:text-2xl block xl:hidden">Tools & technologies</h1>
                                         <div className="flex flex-row xl:flex-col gap-2">
                                             <div className="flex flex-wrap items-center gap-4">
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Figma</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Sketch</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Photoshop</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Illustrator</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Miro</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Zeplin</h3>
+                                                <div className="tooltip relative">
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Figma</h3>
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Sketch</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Adobe Photoshop</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Adobe Illustrator</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Miro</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Zeplin</h3>
+                                                </div>
                                             </div>
                                             <div className="flex items-center gap-4">
                                             </div>
@@ -276,22 +380,26 @@ const Home = () => {
                         }
                     </div>
                     <div className="flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(3)}>
-                        <div className="flex justify-between w-full">
-                            <div className="xl:w-1/2 flex items-center gap-4">
-                                <h3 className="font-Grotesk font-medium text-white text-sm lg:text-xl">04</h3>
-                                <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Hybrid Mobile Development</h1>
+                        <div className={`flex justify-between w-full ${visible4 ? "text-white" : "text-[#555]"} hover:text-white`}>
+                            <div className="flex items-center gap-4">
+                                <h3 className="font-Grotesk font-medium text-sm lg:text-xl">04</h3>
+                                <h1 className="font-Grotesk font-medium text-xl lg:text-[32px]">Hybrid Mobile Development</h1>
                             </div>
-                            { !visible4 &&
-                                <Image src={plus} alt="plus" />
+                            {!visible4 &&
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.83301 10.1668H0.833008V7.8335H7.83301V0.833496H10.1663V7.8335H17.1663V10.1668H10.1663V17.1668H7.83301V10.1668Z" fill="" />
+                                </svg>
                             }
-                            { visible4 &&
+                            {visible4 &&
                                 <div className="xl:w-1/3 flex items-center justify-between">
                                     <h1 className="font-Grotesk font-medium text-white text-2xl hidden xl:block">Tools & technologies</h1>
-                                    <Image src={minus} alt="minus" />
+                                    <svg width="18" height="4" viewBox="0 0 18 4" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.833008 3.16634V0.833008H17.1663V3.16634H0.833008Z" fill="" />
+                                    </svg>
                                 </div>
                             }
                         </div>
-                        { visible4 &&
+                        {visible4 &&
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-col gap-5 xl:flex-row xl:justify-between">
                                     <h3 className="xl:w-1/2 font-Jakarta font-normal text-[#ccc] text-base {}">
@@ -301,12 +409,30 @@ const Home = () => {
                                         <h1 className="font-Grotesk font-medium text-white text-base sm:text-xl xl:text-2xl block xl:hidden">Tools & technologies</h1>
                                         <div className="flex flex-row xl:flex-col gap-2">
                                             <div className="flex flex-wrap items-center gap-4">
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Figma</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Sketch</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Photoshop</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Adobe Illustrator</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Miro</h3>
-                                                <h3 className="bg-[#333] font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-white hover:text-black">Zeplin</h3>
+                                                <div className="tooltip relative">
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Figma</h3>
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Sketch</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Adobe Photoshop</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Adobe Illustrator</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Miro</h3>
+                                                </div>
+                                                <div className="tooltip relative">
+                                                    <h3 className="absolute z-10 px-8 py-2 bg-[#555] rounded-2xl top-[100%] left-1/2 tooltip-text">This is tooltip.</h3>
+                                                    <h3 className="bg-[#333] border-2 border-white/20 font-Jakarta font-medium text-white text-sm px-8 py-2 rounded-3xl hover:bg-[#555] hover:text-black">Zeplin</h3>
+                                                </div>
                                             </div>
                                             <div className="flex items-center gap-4">
                                             </div>
@@ -405,13 +531,13 @@ const Home = () => {
                         <div className="relative mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
                             <Swiper
                                 slidesPerView={1}
+                                spaceBetween={30}
                                 ref={slideRef}
                                 modules={[
                                     Navigation,
                                     Pagination,
                                     EffectCards
                                 ]}
-                                loop={true}
                                 effect={'cards'}
                                 grabCursor={true}
                                 navigation={{
@@ -423,7 +549,7 @@ const Home = () => {
                                     clickable: true,
                                 }}
                             >
-                                <SwiperSlide className="rounded-[30px]">
+                                <SwiperSlide className="rounded-[30px] bg-red-700">
                                     <Image src={man} alt="man" className="mx-auto" />
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -463,7 +589,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="flex justify-center sm:mt-12 lg:mt-20">
-                    <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
+                    <button className="px-8 py-3 bg-[#DA3224] rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
                         <Image alt="hand" />
                     </button>

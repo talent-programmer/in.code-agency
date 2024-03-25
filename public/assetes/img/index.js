@@ -48,6 +48,9 @@ import approach from "./approach.svg"
 import singleblog1 from "./singleblog1.svg"
 import singleblog2 from "./singleblog2.svg"
 import singleblog3 from "./singleblog3.svg"
+import noiseOverlay from "./noise-overlay.svg"
+import noiseOverlayTablet from "./noise-overlay-tablet.svg"
+import noiseOverlayMobile from "./noise-overlay-mobile.svg"
 
 export {
     logoDesktop,
@@ -100,4 +103,7 @@ export {
     singleblog1,
     singleblog2,
     singleblog3,
+    noiseOverlay,
+    noiseOverlayTablet,
+    noiseOverlayMobile,
 }

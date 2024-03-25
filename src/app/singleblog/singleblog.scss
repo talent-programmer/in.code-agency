@@ -16,3 +16,17 @@
 .link:hover::after {
     width: 100%; /* Full width of the link */
 }
+
+/* Hide the scrollbar but allow scrolling when necessary */
+.element-with-scrollbar {
+    /* Hide the scrollbar */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    overflow-y: scroll; /* Show scrollbar when content overflows */
+}
+
+/* For WebKit-based browsers (Chrome, Safari) */
+.element-with-scrollbar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+

@@ -21,7 +21,7 @@ import BrandMarque from "@/components/work/BrandMaque";
 import LeftArrow from "@/components/work/LeftArrow";
 import RightArrow from "@/components/work/RightArrow";
 import Footer from "@/components/Footer";
-import { logoDesktop, logoMobile, mount, daitech, fortion, ghana, } from "../../../public/assetes/img";
+import { logoDesktop, logoMobile, mount, daitech, fortion, ghana, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile } from "../../../public/assetes/img";
 
 import "./work.scss"
 
@@ -31,8 +31,8 @@ const Work = () => {
     const prevBtnRef = useRef(null);
     const nextBtnRef = useRef(null);
 
-    const [totalSlides, setTotalSlides] = useState(0);
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [totalSlides, setTotalSlides] = useState();
+    const [currentSlide, setCurrentSlide] = useState(1);
 
     const handleSwiper = (swiper) => {
         setTotalSlides(swiper.slides.length);
@@ -44,7 +44,10 @@ const Work = () => {
     }, []);
 
     return (
-        <main className="bg-[#FFFAF6] w-full lg:px-10">
+        <main className="bg-[#FFFAF6] w-full lg:px-10 relative overflow-hidden">
+            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
+            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -78,7 +81,7 @@ const Work = () => {
                     <h3 className="font-Jakarta font-normal text-white text-xl mt-10 sm:w-2/3 lg:w-[40%]">
                         We build engaging user experience forearly-stage startups by connecting thedots between users’ needs and theclient’s business model.
                     </h3>
-                    <button className="px-8 py-3 bg-red-500 rounded-full flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
+                    <button className="px-8 py-3 bg-[#DA3224] rounded-full flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">Become a client</h5>
                     </button>
                 </div>
@@ -105,7 +108,6 @@ const Work = () => {
                             Navigation,
                             Pagination
                         ]}
-                        loop={true}
                         navigation={{
                             prevEl: prevBtnRef.current,
                             nextEl: nextBtnRef.current,

@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Aos from "aos";
 import Image from "next/image";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navbar/NavBar";
 import SocialMarque from "@/components/work/SocialMarque";
 import BrandMarque from "@/components/work/BrandMaque";
 import RedCircle from "@/components/RedCircle";
@@ -21,7 +21,7 @@ import 'swiper/css/effect-cards';
 import LeftArrow from "@/components/work/LeftArrow";
 import RightArrow from "@/components/work/RightArrow";
 import Footer from "@/components/Footer";
-import { approach, mount, fortion, daitech, ghana } from "../../../public/assetes/img";
+import { approach, mount, fortion, daitech, ghana, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile } from "../../../public/assetes/img";
 
 import "./blog.scss"
 import 'aos/dist/aos.css';
@@ -43,8 +43,23 @@ const Blog = () => {
         return baseClasses;
     };
 
-    const [totalSlides, setTotalSlides] = useState(0);
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const swiperSpaceBetweenBreakpoints = {
+        // When window width is >= 320px
+        320: {
+            spaceBetween: 10,
+        },
+        // When window width is >= 648px
+        648: {
+            spaceBetween: 20,
+        },
+        // When window width is >= 1024px
+        1024: {
+            spaceBetween: 30,
+        },
+      };
+
+    const [totalSlides, setTotalSlides] = useState();
+    const [currentSlide, setCurrentSlide] = useState(1);
 
     const handleSwiper = (swiper) => {
         setTotalSlides(swiper.slides.length);
@@ -60,7 +75,10 @@ const Blog = () => {
     }, []);
 
     return (
-        <main className="bg-[#FFFAF6] w-full">
+        <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
+            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
+            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -72,7 +90,7 @@ const Blog = () => {
                 <div className="hidden lg:block absolute -right-[500px]">
                     <RedCircle />
                 </div>
-                <div className="max-w-[1580px] mx-auto relative flex flex-col gap-8 z-10 mt-40 sm:mt-28 lg:mt-36">
+                <div className="mx-auto relative flex flex-col gap-8 z-10 mt-40 sm:mt-28 lg:mt-36">
                     <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Blog and News</h1>
                     <h3 className="font-Jakarta font-normal text-white text-base sm:text-lg lg:text-xl sm:w-1/2 lg:w-2/5">
                         Learn web design and development tips & tricks, get started with Webflow, and read the latest news about Flow Ninja.
@@ -81,10 +99,9 @@ const Blog = () => {
                 <div className="relative mt-16 sm:mt-20 lg:mt-36 mx-auto">
                     <div className="flex justify-center items-center w-full">
                         <Swiper
-                            slidesPerView={1}
+                            slidesPerView={1.2}
                             ref={slideRef}
-                            loop={true}
-                            spaceBetween={30}
+                            breakpoints={swiperSpaceBetweenBreakpoints}
                         >
                             <SwiperSlide className="rounded-[30px]">
                                 <Image src={approach} alt="approach" className="mx-auto relative z-10 custom-cursor" />
@@ -107,11 +124,11 @@ const Blog = () => {
                     <RedCircle />
                 </div>
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">04 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5">
-                    <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
+                <div className="flex flex-col xl:flex-row justify-between mt-10 mb-20 mx-auto gap-5">
+                    <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Categories
                     </h1>
-                    <div data-aos="fade-up" className="flex flex-wrap justify-between items-center lg:w-2/3">
+                    <div data-aos="fade-up" className="hidden md:flex justify-between items-center gap-20">
                         <h3 className={getClass("All")} onClick={() => handleClick("All")}>
                             All
                         </h3>
@@ -128,6 +145,40 @@ const Blog = () => {
                             Culture
                         </h3>
                     </div>
+                    <div className="md:hidden flex justify-center items-center w-full">
+                        <Swiper
+                            slidesPerView={4}
+                            ref={slideRef}
+                            // breakpoints={swiperSpaceBetweenBreakpoints}
+                            spaceBetween={82}
+                        >
+                            <SwiperSlide className="rounded-[30px]">
+                                <h3 className={getClass("All")} onClick={() => handleClick("All")}>
+                                    All
+                                </h3>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <h3 className={getClass("Design")} onClick={() => handleClick("Design")}>
+                                    Design
+                                </h3>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <h3 className={getClass("Business")} onClick={() => handleClick("Business")}>
+                                    Business
+                                </h3>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <h3 className={getClass("Dev stuff")} onClick={() => handleClick("Dev stuff")}>
+                                    Dev stuff
+                                </h3>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <h3 className={getClass("Culture")} onClick={() => handleClick("Culture")}>
+                                    Culture
+                                </h3>
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>
                 </div>
                 <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
                     <Swiper
@@ -138,7 +189,6 @@ const Blog = () => {
                             Navigation,
                             Pagination
                         ]}
-                        loop={true}
                         navigation={{
                             prevEl: prevBtnRef.current,
                             nextEl: nextBtnRef.current,
@@ -147,6 +197,7 @@ const Blog = () => {
                             el: ".swiper-pagination",
                             clickable: true,
                         }}
+                        breakpoints={swiperSpaceBetweenBreakpoints}
                     >
                         <SwiperSlide className="rounded-[30px]">
                             <div className="justify-between flex-col sm:flex-row mt-10 hidden lg:flex">

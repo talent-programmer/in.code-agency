@@ -1,15 +1,18 @@
 import Image from "next/image";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navbar/NavBar";
 import SocialMarque from "@/components/work/SocialMarque";
 import BrandMarque from "@/components/work/BrandMaque";
 import RedCircle from "@/components/RedCircle";
 import Footer from "@/components/Footer";
-import { serviceBg, design } from "../../../public/assetes/img";
+import { serviceBg, design, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile } from "../../../public/assetes/img";
 
 const Service = () => {
     
     return (
-        <main className="bg-[#FFFAF6] w-full">
+        <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
+            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
+            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -24,13 +27,19 @@ const Service = () => {
                 <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[400px] sm:hidden">
                     <RedCircle />
                 </div>
+                {/* <div className="absolute -right-[420px] top-0 h-full">
+                    <div className="relative overflow-hidden h-full hidden sm:block sm:scale-100">
+                        <div className="absolute left-0 sm:w-[708px] lg:w-[708px] bg-gradient-to-r from-[#1B1612] via-[#1B1612]/90 via-30% to-[#1B1612]/0 h-full z-10 drop-shadow-2xl"></div>
+                        <Image src={homeBg} alt="homebg" className="h-full xl:scale-y-110 xxl:scale-100" />
+                    </div>
+                </div> */}
                 <div className="absolute right-0 top-0 h-full">
-                    <div className="relative h-full hidden sm:block sm:scale-100">
+                    <div className="relative overflow-hidden h-full hidden sm:block sm:scale-100">
                         <div className="absolute w-40 bg-gradient-to-r from-[#1B1612] via-[#1B1612]/90 via-30% to-[#1B1612]/0 h-full z-10 drop-shadow-2xl"></div>
-                        <Image src={serviceBg} alt="servicebg" className="" />
+                        <Image src={serviceBg} alt="servicebg" className="h-full xl:scale-y-110 xxl:scale-100" />
                     </div>
                 </div>
-                <div className="max-w-[1580px] mx-auto relative z-10 mt-20 lg:mt-48">
+                <div className="mx-auto relative z-10 mt-20 lg:mt-48">
                     <div className="flex flex-col gap-10">
                         <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">
                             <span className="font-Petit mr-5">A full service</span>
@@ -39,13 +48,13 @@ const Service = () => {
                         <h3 className="font-Jakarta font-normal text-white text-xl sm:w-2/3">
                             We have established expertise in everything that makes brand work, and keep working for our clients. Here’s a brief overview of what we get up to, please do get in touch if you’d like to learn more.
                         </h3>
-                        <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 -mt-5 sm:-mt-2 hover:bg-red-700">
+                        <button className="px-8 py-3 bg-[#DA3224] rounded-full w-fit flex justify-center items-center gap-3 -mt-5 sm:-mt-2 hover:bg-red-700">
                             <h5 className="text-white font-medium font-Grotesk text-base">Let's talk!</h5>
                         </button>
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 -mt-5 lg:mt-5 lg:mb-5 lg:mx-10 rounded-2xl z-30">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 -mt-5 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl z-30">
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">01 / 02</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">

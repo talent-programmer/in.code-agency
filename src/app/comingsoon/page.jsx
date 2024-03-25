@@ -5,11 +5,14 @@ import Instagram from "@/components/comingsoon/Instagram";
 import Threads from "@/components/comingsoon/Threads";
 import Facebook from "@/components/comingsoon/Facebook";
 
-import { logoDesktop, logoMobile, arrow } from "../../../public/assetes/img";
+import { logoDesktop, logoMobile, arrow, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile } from "../../../public/assetes/img";
 
 const ComingSoon = () => {
     return (
         <main className="bg-[#1B1612] relative pt-12 pb-8 overflow-hidden sm:pt-8 lg:pt-24">
+            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
+            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
             <div className="hidden absolute -right-48 -top-48 lg:block">
                 <RedCircle />
             </div>
@@ -29,7 +32,7 @@ const ComingSoon = () => {
                 <p className="text-[#cccccc] font-normal font-Jakarta text-center text-base mt-8 sm:text-xl sm:mt-10 lg:mt-5">
                     Until then, check out on what we've been working on in the past.
                 </p>
-                <button className="px-8 py-3 bg-red-500 rounded-full flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-8 hover:bg-red-700">
+                <button className="px-8 py-3 bg-[#DA3224] rounded-full flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-8 hover:bg-red-700">
                     <h5 className="text-white font-medium font-Grotesk text-base">Past Projects</h5>
                     <Image src={arrow} alt="arrow" />
                 </button>

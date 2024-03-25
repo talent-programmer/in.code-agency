@@ -14,18 +14,21 @@ import RedCircle from "@/components/RedCircle";
 import SocialMarque from "@/components/work/SocialMarque";
 import BrandMarque from "@/components/work/BrandMaque";
 import Footer from "@/components/Footer";
-import { arrowLeft, singleServiceVid, line1, singleServiceSample1, singleServiceSample2, singleServiceSample3 } from "../../../public/assetes/img";
+import { arrowLeft, singleServiceVid, singleServiceSample1, singleServiceSample2, singleServiceSample3, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile } from "../../../public/assetes/img";
 import Link from "next/link";
 
 import "./singleservice.scss"
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navbar/NavBar";
 
 const SingleService = () => {
 
     const slideRef = useRef(null)
 
     return (
-        <main className="bg-[#FFFAF6] w-full">
+        <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
+            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
+            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -33,12 +36,12 @@ const SingleService = () => {
                 <BrandMarque />
             </div>
             <NavBar />
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden absolute -right-96 top-72 lg:block">
                     <RedCircle />
                 </div>
-                <div className="mt-32 w-full relative overflow-hidden flex flex-col gap-8 lg:gap-10 pb-20">
-                    <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[500px] lg:hidden">
+                <div className="mt-32 w-full relative overflow-y-hidden flex flex-col gap-8 lg:gap-10 pb-20">
+                    <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[600px] lg:hidden">
                         <RedCircle />
                     </div>
                     <Link href="/service">
@@ -54,7 +57,7 @@ const SingleService = () => {
                     <h3 className="font-Jakarta font-normal text-white text-base lg:text-xl sm:w-2/3 lg:w-1/2">
                         The enterprise UX is all about the wants, needs, drivers, and pain points of employees, thereby creating an effective, efficient, and pleasant experience.
                     </h3>
-                    <button className="px-8 py-3 bg-red-500 rounded-full w-fit flex justify-center items-center gap-3 hover:bg-red-700">
+                    <button className="px-8 py-3 bg-[#DA3224] rounded-full w-fit flex justify-center items-center gap-3 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">Let's talk!</h5>
                     </button>
                 </div>
@@ -88,7 +91,7 @@ const SingleService = () => {
                 </div>
                 <div className="py-10 relative flex flex-col gap-12 lg:gap-[150px] mt-8 sm:mt-12 lg:mt-20">
                     <div className="w-1 h-full absolute left-1/2 border-l-2 border-[#333] hidden lg:block"></div>
-                    <div className="flex flex-col gap-8 lg:w-2/5">
+                    <div className="flex flex-col gap-8 lg:w-2/5 lg:mt-20">
                         <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Reduced Training Costs</h1>
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-base">
                             We create a positive onboarding experience, teaching users how to complete certain actions they have in mind and learn the interface without much effort.
@@ -142,25 +145,36 @@ const SingleService = () => {
                     </div>
                 </div>
                 <div className="hidden sm:flex justify-between mt-8 sm:mt-12 lg:mt-36 relative z-10">
-                    <Image src={singleServiceSample1} alt="singleservicesample" className="w-[30%] hover:scale-105" />
-                    <Image src={singleServiceSample2} alt="singleservicesample" className="w-[30%] hover:scale-105" />
-                    <Image src={singleServiceSample3} alt="singleservicesample" className="w-[30%] hover:scale-105" />
+                    <div className="w-[30%] overflow-hidden">
+                        <Image src={singleServiceSample1} alt="singleservicesample" className="hover:scale-105 transition-all" />
+                    </div>
+                    <div className="w-[30%] overflow-hidden">
+                        <Image src={singleServiceSample2} alt="singleservicesample" className="hover:scale-105 transition-all" />
+                    </div>
+                    <div className="w-[30%] overflow-hidden">
+                        <Image src={singleServiceSample3} alt="singleservicesample" className="hover:scale-105 transition-all" />
+                    </div>
                 </div>
                 <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center items-center w-full sm:hidden">
                     <Swiper
-                        slidesPerView={1}
+                        slidesPerView={1.5}
                         ref={slideRef}
-                        loop={true}
                         spaceBetween={30}
                     >
                         <SwiperSlide className="rounded-[30px]">
-                            <Image src={singleServiceSample1} alt="singleservicesample" className="hover:scale-105" />
+                            <div className="overflow-hidden">
+                                <Image src={singleServiceSample1} alt="singleservicesample" className="hover:scale-105 transition-all" />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image src={singleServiceSample2} alt="singleservicesample" className="hover:scale-105" />
+                            <div className="overflow-hidden">
+                                <Image src={singleServiceSample2} alt="singleservicesample" className="hover:scale-105 transition-all" />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image src={singleServiceSample3} alt="singleservicesample" className="hover:scale-105" />
+                            <div className="overflow-hidden">
+                                <Image src={singleServiceSample3} alt="singleservicesample" className="hover:scale-105 transition-all" />
+                            </div>
                         </SwiperSlide>
                     </Swiper>
                 </div>

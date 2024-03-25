@@ -3,7 +3,7 @@ import RedCircle from "@/components/RedCircle";
 import SocialMarque from "@/components/work/SocialMarque";
 import BrandMarque from "@/components/work/BrandMaque";
 import Footer from "@/components/Footer";
-import { logoDesktop, logoMobile, bg1, bg2, bg3, bg4, bg5, arrowBlack, arrowLeft, menu, arrowLeftMobile, bg1Mobile, bg2Mobile, bg3Mobile, bg4Mobile, bg5Mobile } from "../../../public/assetes/img";
+import { logoDesktop, logoMobile, bg1, bg2, bg3, bg4, bg5, arrowBlack, arrowLeft, menu, arrowLeftMobile, bg1Mobile, bg2Mobile, bg3Mobile, bg4Mobile, bg5Mobile, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile } from "../../../public/assetes/img";
 import Link from "next/link";
 
 import "./singlework.scss"
@@ -11,7 +11,10 @@ import "./singlework.scss"
 const SingleWork = () => {
 
     return (
-        <main className="bg-[#FFFAF6] w-full lg:px-10">
+        <main className="bg-[#FFFAF6] w-full lg:px-10 relative overflow-hidden">
+            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
+            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
