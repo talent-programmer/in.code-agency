@@ -33,9 +33,9 @@ const Approach = () => {
 
     return (
         <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
-            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
-            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
-            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+            <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -56,7 +56,7 @@ const Approach = () => {
                         <h5 className="text-white font-medium font-Grotesk text-base">Become a client</h5>
                     </button>
                 </div>
-                <div className="relative mt-16 sm:mt-24 lg:mt-36 mx-auto">
+                <div className="relative mt-16 sm:mt-24 lg:mt-36 mx-auto z-10">
                     <Image src={approach} alt="approach" className="w-full relative z-10" />
                     <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-[5] scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
                         <RedCircle />
@@ -67,8 +67,8 @@ const Approach = () => {
                 <div className="hidden lg:block absolute -left-72 -bottom-72 z-0">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">03 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5">
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">03 / 09</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         The way we do it.
                     </h1>
@@ -235,8 +235,8 @@ const Approach = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl">
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">03 / 04</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mx-auto gap-5">
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">03 / 04</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 mx-auto gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         How does this works for you?
                     </h1>
@@ -244,7 +244,7 @@ const Approach = () => {
                         Quality assurance begins at the start of the project and continues throughout its entirety. It's a necessary part of the.
                     </h3>
                 </div>
-                <button className="px-8 py-3 bg-[#DA3224] rounded-full flex justify-center items-center gap-3 mt-6 sm:mt-8 hover:bg-red-700">
+                <button className="px-8 py-3 bg-[#DA3224] rounded-full flex justify-center items-center gap-3 mt-6 sm:mt-8 hover:bg-red-700 relative z-10">
                     <h5 className="text-white font-medium font-Grotesk text-base">Become a client</h5>
                 </button>
             </section>

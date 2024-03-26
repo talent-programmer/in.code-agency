@@ -574,14 +574,14 @@ const Home = () => {
                                     <Image src={man} alt="man" className="mx-auto" />
                                 </SwiperSlide>
                             </Swiper>
-                            <button ref={prevBtnRef} className="swipe-button-prev" >
+                            <button ref={prevBtnRef} className="swipe-button-prev relative z-10" >
                                 {currentSlide === 1 ?
                                     <LeftArrow />
                                     :
                                     <LeftArrow className="stroke-white hover:stroke-black hover:fill-white" />
                                 }
                             </button>
-                            <button ref={nextBtnRef} className="swipe-button-next">
+                            <button ref={nextBtnRef} className="swipe-button-next relative z-10">
                                 {currentSlide === totalSlides ?
                                     <RightArrow />
                                     :

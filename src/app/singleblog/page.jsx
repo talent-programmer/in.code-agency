@@ -71,9 +71,9 @@ const SingleBlog = () => {
 
     return (
         <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
-            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
-            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
-            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+            <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -100,7 +100,7 @@ const SingleBlog = () => {
                         25.09.2023. — News · Events — 7min read
                     </h3>
                 </div>
-                <div className="relative mt-8 lg:mt-20 mx-auto">
+                <div className="relative mt-8 lg:mt-20 mx-auto z-10">
                     <Image src={singleServiceVid} alt="singleservicevid" className="w-full relative z-10" />
                     <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-[5] scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
                         <RedCircle />
@@ -111,7 +111,7 @@ const SingleBlog = () => {
                 <div className="hidden absolute -right-72 bottom-0 z-0 lg:block">
                     <RedCircle />
                 </div>
-                <div id="ppp" className="flex flex-col gap-20 lg:w-2/3 pr-40 lg:border-r-2 border-white border-opacity-10 lg:h-[700px] overflow-auto element-with-scrollbar">
+                <div id="ppp" className="relative z-10 flex flex-col gap-20 lg:w-2/3 pr-40 lg:border-r-2 border-white border-opacity-10 lg:h-[700px] overflow-auto element-with-scrollbar">
                     <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
                         Every challenge is different, and so every solution evolves in its own bespoke way, shaped by what we discover and the response this demands. Yet here’s a broad outline of how that response might evolve, some tried and tested means to help your brand rise to any challenge and define your new reality.
                     </h3>
@@ -164,7 +164,7 @@ const SingleBlog = () => {
                         </h3>
                     </div>
                 </div>
-                <div className="flex flex-col gap-12 lg:w-1/3">
+                <div className="flex flex-col gap-12 lg:w-1/3 relative z-10">
                     <div className="hidden lg:flex flex-col gap-8 pl-10">
                         <h1 className="font-Grotesk font-medium text-white text-[32px]">Table of content</h1>
                         <div className="flex flex-col gap-3">
@@ -179,17 +179,17 @@ const SingleBlog = () => {
                     <div className="flex flex-col gap-8 mt-10 lg:mt-0 lg:pl-10 pt-12 border-t-2 border-white border-opacity-10 ">
                         <h1 className="font-Grotesk font-medium text-white text-[32px]">Share this article</h1>
                         <div className="flex gap-7 items-center">
-                            <Instagram className="hover:fill-white" />
-                            <Threads className="hover:fill-white" />
-                            <LinkedIn className="hover:fill-white" />
-                            <Facebook className="hover:fill-white" />
+                            <Instagram className="hover:fill-white hover:cursor-pointer" />
+                            <Threads className="hover:fill-white hover:cursor-pointer" />
+                            <LinkedIn className="hover:fill-white hover:cursor-pointer" />
+                            <Facebook className="hover:fill-white hover:cursor-pointer" />
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl">
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">02 / 04</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mx-10 lg:rounded-2xl">
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 04</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Related articles
                     </h1>
@@ -204,7 +204,7 @@ const SingleBlog = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="sm:flex justify-between gap-10 mt-8 lg:mt-24 hidden">
+                <div className="sm:flex justify-between gap-10 mt-8 lg:mt-24 hidden relative z-10">
                     <div className="flex flex-col gap-5 hover:cursor-pointer">
                         <Image src={singleblog1} alt="singleserviceblog" className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
@@ -248,7 +248,7 @@ const SingleBlog = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center items-center w-full sm:hidden">
+                <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center items-center w-full sm:hidden  relative z-10">
                     <Swiper
                         slidesPerView={1.5}
                         spaceBetween={30}
@@ -304,11 +304,11 @@ const SingleBlog = () => {
                     </Swiper>
                 </div>
             </section>
-            <section className="bg-[#1B1612] overflow-hidden lg:bg-white relative px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28 lg:mx-10">
+            <section className="bg-[#1B1612] overflow-hidden lg:bg-[#FFFAF6] relative z-10 px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28 lg:mx-10">
                 <div className="block absolute left-1/2 top-[250%] transform -translate-x-1/2 -translate-y-1/2 z-0 sm:hidden">
                     <RedCircle />
                 </div>
-                <div className="bg-white relative z-10 flex justify-center items-center my-auto py-7 lg:py-0 gap-5 rounded-2xl">
+                <div className="bg-[#FFFAF6] relative z-10 flex justify-center items-center my-auto py-7 lg:py-0 gap-5 rounded-2xl">
                     <Image src={arrowLeftMobile} alt="left-arrow" className="lg:hidden" />
                     <Image src={arrowBlack} alt="left-arrow" className="hidden lg:block" />
                     <h1 className="font-Grotesk font-medium text-base lg:text-4xl">Back to blog and news</h1>

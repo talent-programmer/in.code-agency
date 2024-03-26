@@ -90,8 +90,8 @@ const Work = () => {
                 <div className="absolute bottom-[700px] -left-72 hidden lg:block">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">04 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">04 / 09</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Features - we want to share these stories with you.
                     </h1>
@@ -208,24 +208,24 @@ const Work = () => {
                             </div>
                         </SwiperSlide>
                     </Swiper>
-                    <button ref={prevBtnRef} className="swipe-button-prev" >
+                    <button ref={prevBtnRef} className="swipe-button-prev relative z-10" >
                         {currentSlide === 1 ?
                             <LeftArrow />
                             :
                             <LeftArrow className="stroke-white hover:stroke-black hover:fill-white" />
                         }
                     </button>
-                    <button ref={nextBtnRef} className="swipe-button-next">
+                    <button ref={nextBtnRef} className="swipe-button-next relative z-10">
                         {currentSlide === totalSlides ?
                             <RightArrow />
                             :
                             <RightArrow className="stroke-white hover:stroke-black hover:fill-white" />
                         }
                     </button>
-                    <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white">{currentSlide}  of  {totalSlides}</pre>
+                    <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white relative z-10">{currentSlide}  of  {totalSlides}</pre>
                 </div>
             </section>
-            <section id="booking" className="bg-[#1B1612] lg:bg-white flex flex-col justify-center items-center p-8">
+            <section id="booking" className="bg-[#1B1612] lg:bg-white flex flex-col justify-center items-center p-8 relative z-10">
                 <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{ width: "100%", height: 720 }} />
             </section>
             <Footer />

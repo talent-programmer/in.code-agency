@@ -92,8 +92,8 @@ const SingleWork = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] px-6 sm:px-16 lg:px-24 pt-12 lg:pt-20 pb-12 lg:pb-20 lg:rounded-2xl lg:mt-5">
-                <h3 className="font-Petit font-normal text-lg lg:text-2xl text-[#cccccc]">03 / 04</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10">
+                <h3 className="font-Petit font-normal text-lg lg:text-2xl text-[#cccccc] relative z-10">03 / 04</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 relative z-10">
                     <h1 className="w-full lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         About the client
                     </h1>
@@ -103,14 +103,14 @@ const SingleWork = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg2} alt="bg2" className="w-full rounded-2xl hidden sm:block" />
+                <Image src={bg2} alt="bg2" className="w-full rounded-2xl hidden sm:block relative z-10" />
                 <Image src={bg2Mobile} alt="bg2" className="w-full relative z-10 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-12 pb-12 lg:pt-20 lg:pb-20 lg:rounded-2xl lg:mt-5">
                 <div className="hidden lg:block absolute left-0 -bottom-[450px]">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-lg lg:text-2xl text-[#cccccc]">03 / 04</h3>
+                <h3 className="font-Petit font-normal text-lg lg:text-2xl text-[#cccccc] relative z-10">03 / 04</h3>
                 <div className="flex flex-col lg:flex-row justify-between mt-10 relative z-10">
                     <h1 className="w-full lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         What we've done
@@ -132,22 +132,22 @@ const SingleWork = () => {
                 <div className="block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 sm:hidden">
                     <RedCircle />
                 </div>
-                <Image src={bg3} alt="bg3" className="w-full rounded-2xl hidden sm:block" />
+                <Image src={bg3} alt="bg3" className="w-full relative z-10 rounded-2xl hidden sm:block" />
                 <Image src={bg3Mobile} alt="bg3" className="w-full relative z-10 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 py-1 lg:py-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg4} alt="bg4" className="w-full rounded-2xl hidden sm:block" />
+                <Image src={bg4} alt="bg4" className="w-full relative z-10 rounded-2xl hidden sm:block" />
                 <Image src={bg4Mobile} alt="bg4" className="w-full relative z-20 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 py-1 lg:py-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg5} alt="bg5" className="w-full rounded-2xl hidden sm:block" />
+                <Image src={bg5} alt="bg5" className="w-full relative z-10 rounded-2xl hidden sm:block" />
                 <Image src={bg5Mobile} alt="bg5" className="w-full relative z-10 rounded-2xl sm:hidden" />
             </section>
-            <section className="bg-[#1B1612] lg:bg-white relative px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28">
+            <section className="bg-[#1B1612] lg:bg-[#FFFAF6] px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28  relative z-10">
                 <div className="block absolute left-1/2 top-[250%] transform -translate-x-1/2 -translate-y-1/2 z-0 sm:hidden">
                     <RedCircle />
                 </div>
-                <div className="bg-white relative z-10 flex justify-center items-cente py-7 lg:py-0 gap-5 rounded-2xl">
+                <div className="bg-[#FFFAF6] relative z-10 flex justify-center items-cente py-7 lg:py-0 gap-5 rounded-2xl">
                     <Image src={arrowLeftMobile} alt="left-arrow" className="lg:hidden" />
                     <Image src={arrowBlack} alt="left-arrow" className="hidden lg:block" />
                     <h1 className="font-Grotesk font-medium text-base lg:text-4xl">Back to projects</h1>

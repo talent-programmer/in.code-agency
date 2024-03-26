@@ -38,9 +38,9 @@ const Contact = () => {
 
     return (
         <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
-            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
-            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
-            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+            <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -52,7 +52,7 @@ const Contact = () => {
                 <div className="hidden lg:block absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
-                <div className="mx-auto flex flex-col lg:flex-row justify-between">
+                <div className="mx-auto flex flex-col lg:flex-row justify-between relative z-10">
                     <div className="flex flex-col gap-10 z-10 mt-24 lg:mt-36">
                         <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Hello there!</h1>
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-base sm:text-lg lg:text-xl sm:w-2/3 lg:w-2/5">
@@ -66,10 +66,10 @@ const Contact = () => {
                             Or just skip formality and find us on:
                         </h3>
                         <div className="flex gap-7 items-center">
-                            <Instagram className="hover:fill-white" />
-                            <Threads className="hover:fill-white" />
-                            <LinkedIn className="hover:fill-white" />
-                            <Facebook className="hover:fill-white" />
+                            <Instagram className="hover:fill-white hover:cursor-pointer" />
+                            <Threads className="hover:fill-white hover:cursor-pointer" />
+                            <LinkedIn className="hover:fill-white hover:cursor-pointer" />
+                            <Facebook className="hover:fill-white hover:cursor-pointer" />
                         </div>
                     </div>
                     <div className="lg:w-1/2 relative flex flex-row-reverse mt-8 lg:mt-10">
@@ -86,8 +86,8 @@ const Contact = () => {
                 <div className="hidden lg:block absolute -left-72 -top-72">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">03 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5">
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">03 / 09</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="sm:w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We got asked these questions often...
                     </h1>
@@ -95,7 +95,7 @@ const Contact = () => {
                         But if you don’t find your answer here, feel free to contact us via email or social media platforms.
                     </h3>
                 </div>
-                <div>
+                <div className="relative z-10">
                     <div className={`hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5 ${visible1 ? "text-white" : "text-[#555]"} hover:text-white`} onClick={() => callFunctionByIndex(0)}>
                         <div className="flex flex-col gap-10 w-full">
                             <div className="flex justify-between items-center w-full">

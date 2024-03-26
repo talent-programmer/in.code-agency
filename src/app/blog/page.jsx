@@ -56,7 +56,7 @@ const Blog = () => {
         1024: {
             spaceBetween: 30,
         },
-      };
+    };
 
     const [totalSlides, setTotalSlides] = useState();
     const [currentSlide, setCurrentSlide] = useState(1);
@@ -76,9 +76,9 @@ const Blog = () => {
 
     return (
         <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
-            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
-            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
-            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+            <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
@@ -97,7 +97,7 @@ const Blog = () => {
                     </h3>
                 </div>
                 <div className="relative mt-16 sm:mt-20 lg:mt-36 mx-auto">
-                    <div className="flex justify-center items-center w-full">
+                    <div className="flex justify-center items-center w-full relative z-10">
                         <Swiper
                             slidesPerView={1.2}
                             ref={slideRef}
@@ -123,8 +123,8 @@ const Blog = () => {
                 <div className="absolute top-1/2 -left-72 hidden lg:block">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">04 / 09</h3>
-                <div className="flex flex-col xl:flex-row justify-between mt-10 mb-20 mx-auto gap-5">
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">04 / 09</h3>
+                <div className="flex flex-col xl:flex-row justify-between mt-10 mb-20 mx-auto gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Categories
                     </h1>
@@ -290,13 +290,21 @@ const Blog = () => {
                             </div>
                         </SwiperSlide>
                     </Swiper>
-                    <button ref={prevBtnRef} className="swipe-button-prev">
-                        <LeftArrow className="hover:stroke-white" />
+                    <button ref={prevBtnRef} className="swipe-button-prev relative z-10" >
+                        {currentSlide === 1 ?
+                            <LeftArrow />
+                            :
+                            <LeftArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                        }
                     </button>
-                    <button ref={nextBtnRef} className="swipe-button-next">
-                        <RightArrow className="hover:stroke-white" />
+                    <button ref={nextBtnRef} className="swipe-button-next relative z-10">
+                        {currentSlide === totalSlides ?
+                            <RightArrow />
+                            :
+                            <RightArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                        }
                     </button>
-                    <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white">{currentSlide}  of  {totalSlides}</pre>
+                    <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white relative z-10">{currentSlide}  of  {totalSlides}</pre>
                 </div>
             </section>
             <Footer className="lg:mx-10" />
