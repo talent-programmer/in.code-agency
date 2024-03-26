@@ -20,7 +20,7 @@ const Service = () => {
                 <BrandMarque />
             </div>
             <NavBar />
-            <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 lg:pb-72 lg:mx-10 lg:rounded-2xl">
+            <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 lg:pb-72 lg:mx-10 lg:mt-5 lg:rounded-2xl">
                 <div className="hidden sm:block absolute -bottom-72 -left-72 z-20">
                     <RedCircle />
                 </div>
@@ -213,7 +213,7 @@ const Service = () => {
                     </div>
                 </div>
             </section>
-            <Footer />
+            <Footer className="lg:mx-10" />
         </main>
     )
 }

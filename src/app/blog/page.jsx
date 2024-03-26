@@ -86,7 +86,7 @@ const Blog = () => {
                 <BrandMarque />
             </div>
             <NavBar />
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:mx-10 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:mx-10 lg:mt-5 lg:rounded-2xl">
                 <div className="hidden lg:block absolute -right-[500px]">
                     <RedCircle />
                 </div>
@@ -299,7 +299,7 @@ const Blog = () => {
                     <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white">{currentSlide}  of  {totalSlides}</pre>
                 </div>
             </section>
-            <Footer />
+            <Footer className="lg:mx-10" />
         </main>
     )
 }

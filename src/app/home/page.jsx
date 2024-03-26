@@ -23,7 +23,7 @@ import 'swiper/css/effect-cards';
 import LeftArrow from "@/components/work/LeftArrow";
 import RightArrow from "@/components/work/RightArrow";
 import Footer from "@/components/Footer";
-import { homeBg, mount, fortion, daitech, ghana, coWorkersMovement, line, Dali, man, arrowLeft, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile } from "../../../public/assetes/img";
+import { homeBg, mount, fortion, daitech, ghana, coWorkersMovement, line, Dali, man, arrowLeft, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile, arrow } from "../../../public/assetes/img";
 
 import "./home.scss"
 import 'aos/dist/aos.css';
@@ -52,6 +52,14 @@ const Home = () => {
     const prevBtnRef = useRef(null);
     const nextBtnRef = useRef(null);
 
+    const [totalSlides, setTotalSlides] = useState();
+    const [currentSlide, setCurrentSlide] = useState(1);
+
+    const handleSwiper = (swiper) => {
+        setTotalSlides(swiper.slides.length);
+        swiper.on('slideChange', () => setCurrentSlide(swiper.realIndex + 1));
+    };
+
     const [isHovered, setIsHovered] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -69,9 +77,9 @@ const Home = () => {
     useEffect(() => {
         // const rect = element.getBoundingClientRect();
 
-    // Calculate the position of the mouse cursor relative to the element
-    // const mouseX = event.clientX - rect.left;
-    // const mouseY = event.clientY - rect.top;
+        // Calculate the position of the mouse cursor relative to the element
+        // const mouseX = event.clientX - rect.left;
+        // const mouseY = event.clientY - rect.top;
         const handleMouseMove = (event) => {
             setPosition({ x: event.pageX, y: event.pageY });
         };
@@ -89,17 +97,17 @@ const Home = () => {
 
     return (
         <main className="bg-[#FFFAF6] relative overflow-hidden" id="home1">
-            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
-            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
-            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
-            <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+            <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
+            <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block z-10">
                 <SocialMarque />
             </div>
-            <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
+            <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block z-10">
                 <BrandMarque />
             </div>
             <NavBar />
-            <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 xl:pb-72 lg:mx-10 lg:rounded-2xl">
+            <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 xl:pb-72 lg:mt-5 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden sm:block absolute bottom-0 -left-[500px] z-20">
                     <RedCircle />
                 </div>
@@ -132,8 +140,8 @@ const Home = () => {
                 <div className="hidden lg:block absolute -right-72 -bottom-72">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">02 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5">
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 09</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="md:w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Maybe not famous brands but for us they
                         <span className="font-Petit ml-3">are enough</span>
@@ -143,13 +151,13 @@ const Home = () => {
                         Not clients, but friends and family. Since beginning of the journey we’ve designed, developed and optimized lots of websites and met some incredible people along the way.
                     </h3>
                 </div>
-                <div className="absolute left-0">
+                <div className="absolute left-0 z-10">
                     <WorkBrandMarque />
                 </div>
-                <div className="flex justify-center mt-52 mt-50">
+                <div className="flex justify-center mt-52 mt-50 relative z-10">
                     <button className="px-8 py-3 bg-[#DA3224] rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
-                        <Image alt="hand" />
+                        <Image src={arrow} alt="hand" />
                     </button>
                 </div>
             </section>
@@ -158,7 +166,7 @@ const Home = () => {
                     <RedCircle />
                 </div>
                 <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">03 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5">
+                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We combine
                         <span className="font-Petit ml-3">human empathy and intelligent data</span>
@@ -168,10 +176,10 @@ const Home = () => {
                         So... to make it easier, think of us as your special ops digital product development team - tackling with your challenges and needs. Whether you are adding a new feature, a new product, or redesigning an existing product, we will help set you up for success.
                     </h3>
                 </div>
-                <div>
+                <div className="relative z-10">
                     <div id="home" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="relative flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(0)}>
                         {/* {isHovered && */}
-                            <Image src={arrowLeft} className="absolute z-50" style={{left: position.x, top: position.y}} />
+                        <Image src={arrowLeft} className="absolute z-50" style={{ left: position.x, top: position.y }} />
                         {/* } */}
                         <div className={`flex justify-between w-full ${visible1 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
@@ -454,8 +462,8 @@ const Home = () => {
                 <div className="hidden lg:block absolute -left-72 bottom-[800px] z-0">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">04 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-5 lg:mb-0 gap-5">
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">04 / 09</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-5 lg:mb-0 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We see brands as they meant
                         <span className="font-Petit ml-3">to be seen</span>
@@ -473,7 +481,7 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
-                <div>
+                <div className="relative z-10">
                     <div className="justify-between flex-col sm:flex-row mt-10 hidden lg:flex relative z-10">
                         <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-40">
                             <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
@@ -503,7 +511,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 lg:gap-4 mt-20 lg:mt-36">
+                <div className="flex flex-col gap-2 lg:gap-4 mt-20 lg:mt-36 relative z-10">
                     <Image src={coWorkersMovement} alt="coworker" />
                     <div className="flex flex-col gap-5">
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-base lg:text-lg">Case study</h3>
@@ -516,8 +524,8 @@ const Home = () => {
                 <div className="hidden lg:block absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">05 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5">
+                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">05 / 09</h3>
+                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         <span className="font-Petit mr-2">Don't believe us?</span>
                         See what our clients say;
@@ -526,10 +534,11 @@ const Home = () => {
                         So... to make it easier, think of us as your special ops digital product development team - tackling with your challenges and needs. Whether you are adding a new feature, a new product, or redesigning an existing product, we will help set you up for success.
                     </h3>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center relative mt-12">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center relative z-10 mt-12">
                     <div className="w-full sm:w-2/5 mx-auto sm:mx-0 flex justify-center">
                         <div className="relative mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
                             <Swiper
+                                onSwiper={handleSwiper}
                                 slidesPerView={1}
                                 spaceBetween={30}
                                 ref={slideRef}
@@ -565,11 +574,19 @@ const Home = () => {
                                     <Image src={man} alt="man" className="mx-auto" />
                                 </SwiperSlide>
                             </Swiper>
-                            <button ref={prevBtnRef} className="swipe-button-prev">
-                                <LeftArrow className="hover:stroke-white" />
+                            <button ref={prevBtnRef} className="swipe-button-prev" >
+                                {currentSlide === 1 ?
+                                    <LeftArrow />
+                                    :
+                                    <LeftArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                                }
                             </button>
                             <button ref={nextBtnRef} className="swipe-button-next">
-                                <RightArrow className="hover:stroke-white" />
+                                {currentSlide === totalSlides ?
+                                    <RightArrow />
+                                    :
+                                    <RightArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                                }
                             </button>
                         </div>
                     </div>
@@ -588,14 +605,14 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center sm:mt-12 lg:mt-20">
+                <div className="flex justify-center sm:mt-12 lg:mt-20 relative z-10">
                     <button className="px-8 py-3 bg-[#DA3224] rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
-                        <Image alt="hand" />
+                        <Image src={arrow} alt="hand" />
                     </button>
                 </div>
             </section>
-            <Footer />
+            <Footer className="lg:mx-10" />
         </main>
     )
 }

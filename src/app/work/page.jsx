@@ -45,23 +45,23 @@ const Work = () => {
 
     return (
         <main className="bg-[#FFFAF6] w-full lg:px-10 relative overflow-hidden">
-            <Image src={noiseOverlay} className="absolute z-[1] opacity-20 hidden lg:block" />
-            <Image src={noiseOverlayTablet} className="absolute z-[1] opacity-20 hidden sm:block lg:hidden" />
-            <Image src={noiseOverlayMobile} className="absolute z-[1] opacity-20 block sm:hidden" />
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+            <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
+            <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
                 <SocialMarque />
             </div>
             <div className="w-[100vh] fixed right-0 transform translate-x-[47.5%] translate-y-[48vh] rotate-90 hidden lg:block">
                 <BrandMarque />
             </div>
-            <section className="bg-[#1B1612] relative overflow-hidden px-5 sm:px-16 lg:px-24 pt-8 pb-40 lg:pb-52 lg:rounded-2xl">
-                <div className="absolute -right-72 hidden lg:block">
+            <section className="bg-[#1B1612] relative overflow-hidden px-5 sm:px-16 lg:px-24 pt-8 pb-40 lg:pb-52 lg:rounded-2xl lg:mt-5">
+                <div className="absolute -right-[450px] bottom-10 hidden lg:block">
                     <RedCircle />
                 </div>
-                <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-48 sm:-bottom-96 lg:hidden">
+                <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-96 sm:-bottom-[500px] lg:hidden">
                     <RedCircle />
                 </div>
-                <nav className="flex items-center justify-between">
+                <nav className="flex items-center justify-between relative z-10">
                     <div className="flex items-center gap-3">
                         <Image src={logoDesktop} alt="logo" className="hidden lg:block" />
                         <Image src={logoMobile} alt="logo" className="block lg:hidden" />
@@ -209,10 +209,18 @@ const Work = () => {
                         </SwiperSlide>
                     </Swiper>
                     <button ref={prevBtnRef} className="swipe-button-prev" >
-                        <LeftArrow className="hover:stroke-white" />
+                        {currentSlide === 1 ?
+                            <LeftArrow />
+                            :
+                            <LeftArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                        }
                     </button>
                     <button ref={nextBtnRef} className="swipe-button-next">
-                        <RightArrow className="hover:stroke-white" />
+                        {currentSlide === totalSlides ?
+                            <RightArrow />
+                            :
+                            <RightArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                        }
                     </button>
                     <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white">{currentSlide}  of  {totalSlides}</pre>
                 </div>

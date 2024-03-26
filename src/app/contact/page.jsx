@@ -48,7 +48,7 @@ const Contact = () => {
                 <BrandMarque />
             </div>
             <NavBar />
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:mt-5 lg:rounded-2xl">
                 <div className="hidden lg:block absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
@@ -301,7 +301,7 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-            <Footer />
+            <Footer className="lg:mx-10" />
         </main>
     )
 }

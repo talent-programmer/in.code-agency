@@ -7,6 +7,8 @@ import { logoDesktop, logoMobile } from "../../../public/assetes/img";
 import { useRef, useEffect, useState } from "react";
 import Menu from "./Menu";
 
+import "./NavBar.scss"
+
 const NavBar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false)
@@ -19,7 +21,7 @@ const NavBar = () => {
             if (lastScrollY < window.scrollY) {
                 // Scrolling down
                 if (navBar.current.style) {
-                    navBar.current.style.top = '-100px'; // Adjust based on navbar's height
+                    navBar.current.style.top = '-150px'; // Adjust based on navbar's height
                 }
             } else {
                 // Scrolling up
@@ -39,9 +41,25 @@ const NavBar = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const onScroll = () => {
+          const navbar = document.getElementById("navBar");
+          if (window.pageYOffset > 0) {
+            navbar.classList.remove("mt-5")
+          }
+          if (window.pageYOffset == 0) {
+            navbar.classList.add("mt-5")
+          }
+        }
+        // clean up code
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+      }, []);
+
     return (
         <div className="fixed z-50 w-full top-8">
-            <nav ref={navBar} id="navBar" className="w-full px-6 sm:px-16 lg:px-[136px] flex items-center justify-between relative transition-all">
+            <nav ref={navBar} id="navBar" className="w-full px-6 sm:px-16 lg:px-[136px] mt-5 flex items-center justify-between relative transition-all">
                 <Link href="/home">
                     <div className="flex items-center gap-3">
                         <Image src={logoDesktop} alt="logo" className="hidden lg:block" />
@@ -51,26 +69,26 @@ const NavBar = () => {
                 </Link>
                 <div className="flex items-center sm:gap-5 lg:gap-16">
                     <Link href="/service">
-                        <h3 className="font-Grotesk font-medium text-white text-base hidden lg:block">Services</h3>
+                        <h3 className="link font-Grotesk font-medium text-white text-base hidden lg:block">Services</h3>
                     </Link>
                     <Link href="/work">
-                        <h3 className="font-Grotesk font-medium text-white text-base hidden lg:block">Work</h3>
+                        <h3 className="link font-Grotesk font-medium text-white text-base hidden lg:block">Work</h3>
                     </Link>
                     <Link href="/approach">
-                        <h3 className="font-Grotesk font-medium text-white text-base hidden lg:block">Process</h3>
+                        <h3 className="link font-Grotesk font-medium text-white text-base hidden lg:block">Process</h3>
                     </Link>
                     <Link href="/blog">
-                        <h3 className="font-Grotesk font-medium text-white text-base hidden lg:block">Blog</h3>
+                        <h3 className="link font-Grotesk font-medium text-white text-base hidden lg:block">Blog</h3>
                     </Link>
                     <Link href="contact" className="hidden sm:block">
-                        <button className="flex items-center gap-2 border-2 border-white rounded-full sm:px-4 sm:py-2 xl:px-6 xl:py-3 text-white hover:bg-white hover:text-black">
+                        <button className="flex items-center gap-2 border-2 border-white rounded-full sm:px-4 sm:py-2 xl:px-6 xl:py-3 text-white hover:bg-white hover:text-black transition-all">
                             <h3 className="font-Grotesk font-medium text-base">Contact us</h3>
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.73224 1.51824C7.16947 1.95547 8.25429 2.17644 9.23953 2.28722C10.5088 2.43218 11.7975 2.37738 13.0385 2.07804C13.9689 1.85353 15.0078 1.49232 15.5711 0.928989M15.5711 0.928989C15.0078 1.49232 14.6459 2.53176 14.422 3.46161C14.1233 4.70317 14.0685 5.99187 14.2123 7.25995C14.3236 8.24578 14.5458 9.33177 14.9818 9.76782M15.5711 0.928989L1.42894 15.0711" stroke="currentcolor" strokeWidth={1.5} />
                             </svg>
                         </button>
                     </Link>
-                    <div className="block lg:hidden" onClick={() => setMenuOpen(true)}>
+                    <div className="block lg:hidden hover:cursor-pointer" onClick={() => setMenuOpen(true)}>
                         <Menu />
                     </div>
                 </div>

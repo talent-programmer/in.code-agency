@@ -43,7 +43,7 @@ const Approach = () => {
                 <BrandMarque />
             </div>
             <NavBar />
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mt-5 lg:mx-10 lg:rounded-2xl">
                 <div className="absolute -right-[500px] hidden lg:block">
                     <RedCircle />
                 </div>
@@ -248,7 +248,7 @@ const Approach = () => {
                     <h5 className="text-white font-medium font-Grotesk text-base">Become a client</h5>
                 </button>
             </section>
-            <Footer />
+            <Footer className="lg:mx-10" />
         </main>
     )
 }

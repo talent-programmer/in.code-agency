@@ -81,7 +81,7 @@ const SingleBlog = () => {
                 <BrandMarque />
             </div>
             <NavBar />
-            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-10 lg:pb-20 lg:mx-10 lg:mt-5 lg:rounded-2xl">
                 <div className="hidden absolute -right-[500px] right top-72 lg:block">
                     <RedCircle />
                 </div>
@@ -314,7 +314,7 @@ const SingleBlog = () => {
                     <h1 className="font-Grotesk font-medium text-base lg:text-4xl">Back to blog and news</h1>
                 </div>
             </section>
-            <Footer />
+            <Footer className="lg:mx-10" />
         </main>
     )
 }

@@ -4,17 +4,17 @@ import { logoMobile } from "../../public/assetes/img";
 
 import "./Footer.scss"
 
-const Footer = () => {
+const Footer = ({className}) => {
     return (
-        <section className="bg-[#1B1612] px-6 sm:px-16 lg:px-24 pt-10 sm:pt-14 lg:pt-20 lg:pb-10 -mt-4 sm:mt-0 lg:mx-10 rounded-2xl sm:rounded-none lg:rounded-2xl relative overflow-hidden">
+        <section className={`bg-[#1B1612] px-6 sm:px-16 lg:px-24 pt-10 sm:pt-14 lg:pt-20 lg:pb-10 -mt-4 sm:mt-0 rounded-2xl sm:rounded-none lg:rounded-2xl relative overflow-hidden lg:mb-5 ${className}`}>
             <div className="absolute -right-72 -bottom-48">
                 <RedCircle />
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center relative z-10">
                 <Image src={logoMobile} alt="logo" />
                 <h3 className="font-syne font-semibold text-2xl text-white">in.code</h3>
             </div>
-            <div className="flex flex-col lg:flex-row mt-10 lg:justify-between">
+            <div className="flex flex-col lg:flex-row mt-10 lg:justify-between relative z-10">
                 <div className="lg:w-[45%]">
                     <h1 className="font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Starting a <span className="font-Petit mx-3">new project</span> or want to collaborate with us?
@@ -36,28 +36,28 @@ const Footer = () => {
                     <div className="w-1/2">
                         <h1 className="font-Grotesk font-medium text-white text-xl">Socials</h1>
                         <div className="flex flex-col gap-4 mt-8">
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Instagram</h3>
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Facebook</h3>
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">LinkedIn</h3>
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Threads</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Instagram</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Facebook</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">LinkedIn</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Threads</h3>
                         </div>
                     </div>
                     <div className="w-1/2">
                         <h1 className="font-Grotesk font-medium text-white text-xl">Quick Links</h1>
                         <div className="flex flex-col gap-4 mt-8">
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Home</h3>
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Services</h3>
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Case Study</h3>
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Process</h3>
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Blog</h3>
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Contact</h3>
-                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white">Sitemap</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Home</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Services</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Case Study</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Process</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Blog</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Contact</h3>
+                            <h3 className="link font-Jakarta text-[#ccc] text-base w-fit hover:text-white hover:cursor-pointer">Sitemap</h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <hr className="mt-16 lg:mt-20 border-[#ccc] opacity-10" />
-            <div className="mt-4 flex justify-center lg:justify-between">
+            <hr className="mt-16 lg:mt-20 border-[#ccc] opacity-10 relative z-10" />
+            <div className="mt-4 flex justify-center lg:justify-between relative z-10">
                 <h3 className="hidden lg:block font-Jakarta font-normal text-[#666666] text-base">@Incode 2023. Copyright & All rights reserved</h3>
                 <div className="flex items-center gap-10 lg:gap-4">
                     <h3 className="font-Jakarta font-normal text-[#ccc] text-base">Privacy</h3>
@@ -65,8 +65,8 @@ const Footer = () => {
                     <h3 className="font-Jakarta font-normal text-[#ccc] text-base">Cookies</h3>
                 </div>
             </div>
-            <hr className="mt-4 border-[#ccc] opacity-10 lg:hidden" />
-            <h3 className="font-Jakarta font-normal text-[#666666] text-xs text-center py-10 lg:hidden">@Incode 2023. Copyright & All rights reserved</h3>
+            <hr className="mt-4 border-[#ccc] opacity-10 lg:hidden relative z-10" />
+            <h3 className="font-Jakarta font-normal text-[#666666] text-xs text-center py-10 lg:hidden relative z-10">@Incode 2023. Copyright & All rights reserved</h3>
         </section>
     )
 }
