@@ -45,7 +45,7 @@ const Work = () => {
 
     return (
         <main className="bg-[#FFFAF6] w-full lg:px-10 relative overflow-hidden">
-            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block" />
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block w-full" />
             <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
             <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
