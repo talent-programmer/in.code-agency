@@ -175,10 +175,8 @@ const Blog = () => {
                     </div>
                     <div className="md:hidden flex justify-center items-center w-full">
                         <Swiper
-                            // slidesPerView={4}
                             ref={slideRef}
                             breakpoints={breakpoints}
-                            // spaceBetween={82}
                         >
                             <SwiperSlide className="rounded-[30px]">
                                 <h3 className={getClass("All")} onClick={() => handleClick("All")}>

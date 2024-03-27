@@ -60,9 +60,9 @@ const NavBar = () => {
     }, []);
 
     return (
-        <div>
+        <header>
             <div className="fixed z-50 w-full top-8">
-                <nav ref={navBar} id="navBar" className="w-full px-6 sm:px-16 lg:px-[136px] lg:mt-5 flex items-center justify-between relative transition-all">
+                <nav ref={navBar} id="navBar" className="w-full max-w-[1160px] mx-auto px-6 sm:px-16 lg:px-[136px] lg:mt-5 flex items-center justify-between relative transition-all">
                     <Link href="/home">
                         <div className="flex items-center gap-3">
                             <Image src={logoDesktop} alt="logo" className="hidden lg:block" />
@@ -140,7 +140,7 @@ const NavBar = () => {
                     </div>
                 </Dialog.Panel>
             </Dialog>
-        </div>
+        </header>
     )
 }
 

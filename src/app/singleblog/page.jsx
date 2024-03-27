@@ -42,7 +42,6 @@ const SingleBlog = () => {
         return baseClasses;
     };
 
-    const [activeIndex, setActiveIndex] = useState(1);
     const contentRef = useRef()
 
 
@@ -62,12 +61,6 @@ const SingleBlog = () => {
         } else {
             handleClick("first");
         }
-
-        // Calculate the active index based on scroll position
-        // const newIndex = Math.floor((scrollTop + totalHeight / 2) / (contentHeight / contents.length));
-
-        // Update active index
-        // setActiveIndex(newIndex);
     };
 
     useEffect(() => {
