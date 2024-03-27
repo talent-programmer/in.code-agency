@@ -35,7 +35,7 @@ const Service = () => {
                 <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[400px] sm:hidden">
                     <RedCircle />
                 </div>
-                <div className="mx-auto relative z-30 mt-20 lg:mt-48">
+                <div className="max-w-[1580px] mx-auto relative z-30 mt-20 lg:mt-48">
                     <div className="flex flex-col gap-10">
                         <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">
                             <span className="font-Petit mr-5">A full service</span>
@@ -51,8 +51,8 @@ const Service = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 -mt-5 lg:mt-5 lg:mb-5 lg:mx-10 rounded-2xl">
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">01 / 02</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">01 / 02</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We combine
                         <span className="font-Petit ml-3">human empathy and intelligent data</span>
@@ -62,7 +62,7 @@ const Service = () => {
                         So... to make it easier, think of us as your special ops digital product development team - tackling with your challenges and needs. Whether you are adding a new feature, a new product, or redesigning an existing product, we will help set you up for success.
                     </h3>
                 </div>
-                <div className="mt-12 sm:mt-20 lg:mt-40 flex flex-col gap-20 lg:gap-36 relative z-10">
+                <div className="max-w-[1580px] mx-auto mt-12 sm:mt-20 lg:mt-40 flex flex-col gap-20 lg:gap-36 relative z-10">
                     <div className="">
                         <div className="flex items-center gap-4">
                             <h3 className="font-Grotesk font-medium text-white text-xl">01</h3>

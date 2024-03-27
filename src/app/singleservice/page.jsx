@@ -40,7 +40,7 @@ const SingleService = () => {
                 <div className="hidden absolute -right-96 top-72 lg:block">
                     <RedCircle />
                 </div>
-                <div className="mt-32 w-full relative overflow-y-clip flex flex-col gap-8 lg:gap-10 pb-20 z-10">
+                <div className="max-w-[1580px] mx-auto mt-32 w-full relative overflow-y-clip flex flex-col gap-8 lg:gap-10 pb-20 z-10">
                     <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[600px] lg:hidden">
                         <RedCircle />
                     </div>
@@ -61,8 +61,8 @@ const SingleService = () => {
                         <h5 className="text-white font-medium font-Grotesk text-base">Let's talk!</h5>
                     </button>
                 </div>
-                <hr className="mt-36 text-[#333] opacity-10 hidden lg:block relative z-10" />
-                <div className="flex flex-col lg:flex-row justify-between mt-12 sm:mt-24 lg:mt-36 gap-5 rounded-2xl relative z-10">
+                <hr className="max-w-[1580px] mx-auto mt-36 text-[#333] opacity-10 hidden lg:block relative z-10" />
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-12 sm:mt-24 lg:mt-36 gap-5 rounded-2xl relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Create
                         <span className="font-Petit ml-3">perfect conditions for end-users</span>
@@ -72,14 +72,14 @@ const SingleService = () => {
                         The widespread adoption of web apps, which aid communication with customers, collaboration with employees, data storage, etc., is revamping how businesses are run and clients are served. The enterprise UX is all about the wants, needs, drivers, and pain points of employees, thereby creating an effective, efficient, and pleasant experience.
                     </h3>
                 </div>
-                <Image src={singleServiceVid} alt="singleservicevid" className="mt-8 sm:mt-12 lg:mt-28 w-full relative z-10" />
+                <Image src={singleServiceVid} alt="singleservicevid" className="max-w-[1580px] mx-auto mt-8 sm:mt-12 lg:mt-28 w-full relative z-10" />
             </section>
             <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-10 lg:pb-20 lg:pb-35 lg:mt-5 lg:mx-10 lg:rounded-2xl">     
                 <div className="hidden absolute left-1/2 -bottom-72 transform -translate-x-1/2 z-0 lg:block">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 09</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Create
                         <span className="font-Petit ml-3">perfect conditions for end-users</span>
@@ -89,7 +89,7 @@ const SingleService = () => {
                         The widespread adoption of web apps, which aid communication with customers, collaboration with employees, data storage, etc., is revamping how businesses are run and clients are served.
                     </h3>
                 </div>
-                <div className="py-10 relative flex flex-col gap-12 lg:gap-[150px] mt-8 sm:mt-12 lg:mt-20 z-10">
+                <div className="max-w-[1580px] mx-auto py-10 relative flex flex-col gap-12 lg:gap-[150px] mt-8 sm:mt-12 lg:mt-20 z-10">
                     <div className="w-1 h-full absolute left-1/2 border-l-2 border-[#333] hidden lg:block"></div>
                     <div className="flex flex-col gap-8 lg:w-2/5 lg:mt-20">
                         <h1 className="font-Grotesk font-medium text-white text-xl lg:text-[32px]">Reduced Training Costs</h1>
@@ -125,8 +125,8 @@ const SingleService = () => {
                 <div className="block absolute left-1/2 -bottom-[500px] transform -translate-x-1/2 z-0 sm:hidden">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 09</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Elevate the
                         <span className="font-Petit ml-3">user experience of your digital product</span>
@@ -144,7 +144,7 @@ const SingleService = () => {
                         </button>
                     </div>
                 </div>
-                <div className="hidden sm:flex justify-between mt-8 sm:mt-12 lg:mt-36 relative z-10">
+                <div className="max-w-[1580px] mx-auto hidden sm:flex justify-between mt-8 sm:mt-12 lg:mt-36 relative z-10">
                     <div className="w-[30%] overflow-hidden hover:cursor-pointer">
                         <Image src={singleServiceSample1} alt="singleservicesample" className="hover:scale-105 transition-all" />
                     </div>

@@ -142,7 +142,7 @@ const Home = () => {
                 <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[400px] sm:hidden">
                     <RedCircle />
                 </div>
-                <div className="mx-auto relative z-10 mt-28 sm:mt-24 lg:mt-56">
+                <div className="max-w-[1580px] mx-auto relative z-10 mt-28 sm:mt-24 lg:mt-56">
                     <div className="w-full flex flex-col gap-5 sm:gap-8 lg:gap-10">
                         <h1 className="w-3/4 font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">
                             Next-gen <br className="block xxl:hidden" />
@@ -162,8 +162,8 @@ const Home = () => {
                 <div className="hidden lg:block absolute -right-72 -bottom-72">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 09</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="md:w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Maybe not famous brands but for us they
                         <span className="font-Petit ml-3">are enough</span>
@@ -176,7 +176,7 @@ const Home = () => {
                 <div className="absolute left-0 z-10">
                     <WorkBrandMarque />
                 </div>
-                <div className="flex justify-center mt-52 mt-50 relative z-10">
+                <div className="max-w-[1580px] mx-auto flex justify-center mt-52 mt-50 relative z-10">
                     <button className="px-8 py-3 bg-[#DA3224] rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
                         <Image src={arrow} alt="hand" />
@@ -187,8 +187,8 @@ const Home = () => {
                 <div className="hidden lg:blockabsolute -right-72 -top-72">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc]">03 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc]">03 / 09</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 mb-20 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We combine
                         <span className="font-Petit ml-3">human empathy and intelligent data</span>
@@ -198,7 +198,7 @@ const Home = () => {
                         So... to make it easier, think of us as your special ops digital product development team - tackling with your challenges and needs. Whether you are adding a new feature, a new product, or redesigning an existing product, we will help set you up for success.
                     </h3>
                 </div>
-                <div className="sm_image-trail-section">
+                <div className="max-w-[1580px] mx-auto sm_image-trail-section">
                     <div className="sm_image-trail-container relative z-10 flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(0)}>
                         <div className={`flex justify-between w-full ${visible1 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
@@ -482,8 +482,8 @@ const Home = () => {
                 <div className="hidden lg:block absolute -left-72 bottom-[800px] z-0">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">04 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-5 lg:mb-0 gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">04 / 09</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 mb-5 lg:mb-0 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We see brands as they meant
                         <span className="font-Petit ml-3">to be seen</span>
@@ -501,7 +501,7 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
-                <div className="relative z-10">
+                <div className="max-w-[1580px] mx-auto relative z-10">
                     <div className="justify-between flex-col sm:flex-row mt-10 hidden lg:flex relative z-10">
                         <div className="w-full sm:w-[48%] lg:w-2/5 flex flex-col gap-40">
                             <EachWork src={mount} title="Mount Hamilton Youth Soccer Club" description="Biggest youth soccer club in Ontario region in Canada." />
@@ -531,7 +531,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 lg:gap-4 mt-20 lg:mt-36 relative z-10">
+                <div className="max-w-[1580px] mx-auto flex flex-col gap-2 lg:gap-4 mt-20 lg:mt-36 relative z-10">
                     <Image src={coWorkersMovement} alt="coworker" />
                     <div className="flex flex-col gap-5">
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-base lg:text-lg">Case study</h3>
@@ -544,8 +544,8 @@ const Home = () => {
                 <div className="hidden lg:block absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">05 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">05 / 09</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         <span className="font-Petit mr-2">Don't believe us?</span>
                         See what our clients say;
@@ -554,7 +554,7 @@ const Home = () => {
                         So... to make it easier, think of us as your special ops digital product development team - tackling with your challenges and needs. Whether you are adding a new feature, a new product, or redesigning an existing product, we will help set you up for success.
                     </h3>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center relative z-10 mt-12">
+                <div className="max-w-[1580px] mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center relative z-10 mt-12">
                     <div className="w-full sm:w-2/5 mx-auto sm:mx-0 flex justify-center">
                         <div className="relative mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
                             <Swiper
@@ -653,7 +653,7 @@ const Home = () => {
                         }
                     </div>
                 </div>
-                <div className="flex justify-center sm:mt-12 lg:mt-20 relative z-10">
+                <div className="max-w-[1580px] mx-auto flex justify-center sm:mt-12 lg:mt-20 relative z-10">
                     <button className="px-8 py-3 bg-[#DA3224] rounded-full w-fit flex justify-center items-center gap-3 mt-8 sm:mt-10 lg:mt-10 hover:bg-red-700">
                         <h5 className="text-white font-medium font-Grotesk text-base">BECOME A CLIENT</h5>
                         <Image src={arrow} alt="hand" />

@@ -90,109 +90,111 @@ const SingleBlog = () => {
                 <div className="hidden absolute -right-[500px] right top-72 lg:block">
                     <RedCircle />
                 </div>
-                <div className="mt-28 lg:mt-36 w-full xl:w-2/3 flex flex-col gap-8 lg:gap-10 relative z-10">
+                <div className="max-w-[1580px] mx-auto mt-28 lg:mt-36 w-full flex flex-col gap-8 lg:gap-10 relative z-10">
                     <Link href="/blog">
-                        <div className="flex items-center gap-5">
+                        <div className="xl:w-2/3 flex items-center gap-5">
                             <Image src={arrowLeft} alt="left-arrow" />
                             <h3 className="link font-Jakarata lg:italic text-[#ccc] text-xl hover:text-white">Blog and News</h3>
                             <h3 className="hidden font-Jakarata italic text-[#ccc] text-xl lg:block">An all-in-one E-commerce:shopping plat...</h3>
                         </div>
                     </Link>
-                    <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">
+                    <h1 className="xl:w-2/3 font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">
                         An all-in-one E-commerce: shopping platform gains 25M monthly visits
                     </h1>
-                    <h3 className="font-Jakarta font-normal text-white text-base lg:text-xl">
+                    <h3 className="xl:w-2/3 font-Jakarta font-normal text-white text-base lg:text-xl">
                         25.09.2023. — News · Events — 7min read
                     </h3>
                 </div>
-                <div className="relative mt-8 lg:mt-20 mx-auto z-10">
+                <div className="max-w-[1580px] relative mt-8 lg:mt-20 mx-auto z-10">
                     <Image src={singleServiceVid} alt="singleservicevid" className="w-full relative z-10" />
                     <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-[5] scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
                         <RedCircle />
                     </div>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative lg:overflow-hidden flex flex-col lg:flex-row justify-between px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:mx-10 lg:rounded-2xl">
+            <section className="bg-[#1B1612] relative lg:overflow-hidden justify-between px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden absolute -right-[500px] bottom-0 z-0 lg:block">
                     <RedCircle />
                 </div>
-                <div ref={contentRef} className="relative z-10 flex flex-col gap-20 lg:w-2/3 pr-40 lg:border-r-2 border-white border-opacity-10 lg:h-[700px] overflow-auto element-with-scrollbar">
-                    <div key={1} className="flex flex-col gap-8">
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            Every challenge is different, and so every solution evolves in its own bespoke way, shaped by what we discover and the response this demands. Yet here’s a broad outline of how that response might evolve, some tried and tested means to help your brand rise to any challenge and define your new reality.
-                        </h3>
-                        <h1 className="font-Grotesk font-medium text-white text-[32px]">What's the idea behind RedBrain?</h1>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            It’s a smart product discovery network that encompasses both shoppers and businesses. It matches buyers with the goods they’re looking for, offers the best prices, and helps boost brands' sales by promoting items to customers.
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            People find products they need, companies reach their target audience, and RedBrain serves as a platform for both sides. It’s a win-win-win situation for all three parties.
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            The RedBrain team didn’t stop there. The company aimed to build the largest audience of online shoppers by integrating with platforms that work best for them.
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            But here’s the trouble. Despite the scale and powerful functionality, RedBrain struggled with an inconsistent and outdated design. Both jeopardized the platform’s goal to enter the global landscape.
-                        </h3>
-                        <h1 className="font-Grotesk font-normal text-white text-[28px]">Lazarev. cue to enter the scene</h1>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            We set out to revamp the product with the redesign and build an interface to help RedBrain reach new heights.
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            Our team rethought the platform, leveraging up-to-date design solutions to give RedBrain a modern look. We also built a new homepage, search functionality, user shopping journey, product pages, payment flow, etc., to effortlessly lead customers to checkout.
-                        </h3>
-                    </div>
-                    <div key={2} className="flex flex-col gap-8">
-                        <h1 className="font-Grotesk font-medium text-white text-[32px]">What's up with RedBrain now?</h1>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            We think so too and are excited to watch RedBrain scale even more.
-                        </h3>
-                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                            If you look for a design team to make your product vision a reality, let’s see how we can help you. Contact us at <a href="mailto:hello@lazarev.agency"><span className="text-red-700">hello@lazarev.agency</span></a>.
-                        </h3>
-                    </div>
-                </div>
-                <div className="flex flex-col gap-12 lg:w-1/3 relative z-10">
-                    <div className="hidden lg:flex flex-col gap-8 pl-10">
-                        <h1 className="font-Grotesk font-medium text-white text-[32px]">Table of content</h1>
-                        <div className="flex flex-col gap-3">
-                            <h3 className={getClass("first")} onClick={() => handleClick("first")}>
-                                01. What’s the idea behind RedBrain?
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row">
+                    <div ref={contentRef} className="relative z-10 flex flex-col gap-20 lg:w-2/3 pr-40 lg:border-r-2 border-white border-opacity-10 lg:h-[700px] overflow-auto element-with-scrollbar">
+                        <div key={1} className="flex flex-col gap-8">
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                Every challenge is different, and so every solution evolves in its own bespoke way, shaped by what we discover and the response this demands. Yet here’s a broad outline of how that response might evolve, some tried and tested means to help your brand rise to any challenge and define your new reality.
                             </h3>
-                            <h3 className={getClass("second")} onClick={() => handleClick("second")}>
-                                02. What’s up with RedBrain now?
+                            <h1 className="font-Grotesk font-medium text-white text-[32px]">What's the idea behind RedBrain?</h1>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                It’s a smart product discovery network that encompasses both shoppers and businesses. It matches buyers with the goods they’re looking for, offers the best prices, and helps boost brands' sales by promoting items to customers.
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                People find products they need, companies reach their target audience, and RedBrain serves as a platform for both sides. It’s a win-win-win situation for all three parties.
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                The RedBrain team didn’t stop there. The company aimed to build the largest audience of online shoppers by integrating with platforms that work best for them.
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                But here’s the trouble. Despite the scale and powerful functionality, RedBrain struggled with an inconsistent and outdated design. Both jeopardized the platform’s goal to enter the global landscape.
+                            </h3>
+                            <h1 className="font-Grotesk font-normal text-white text-[28px]">Lazarev. cue to enter the scene</h1>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                We set out to revamp the product with the redesign and build an interface to help RedBrain reach new heights.
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                Our team rethought the platform, leveraging up-to-date design solutions to give RedBrain a modern look. We also built a new homepage, search functionality, user shopping journey, product pages, payment flow, etc., to effortlessly lead customers to checkout.
+                            </h3>
+                        </div>
+                        <div key={2} className="flex flex-col gap-8">
+                            <h1 className="font-Grotesk font-medium text-white text-[32px]">What's up with RedBrain now?</h1>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                We think so too and are excited to watch RedBrain scale even more.
+                            </h3>
+                            <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                                If you look for a design team to make your product vision a reality, let’s see how we can help you. Contact us at <a href="mailto:hello@lazarev.agency"><span className="text-red-700">hello@lazarev.agency</span></a>.
                             </h3>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-8 mt-10 lg:mt-0 lg:pl-10 pt-12 border-t-2 border-white border-opacity-10 ">
-                        <h1 className="font-Grotesk font-medium text-white text-[32px]">Share this article</h1>
-                        <div className="flex gap-7 items-center">
-                            <Instagram className="hover:fill-white hover:cursor-pointer" />
-                            <Threads className="hover:fill-white hover:cursor-pointer" />
-                            <LinkedIn className="hover:fill-white hover:cursor-pointer" />
-                            <Facebook className="hover:fill-white hover:cursor-pointer" />
+                    <div className="flex flex-col gap-12 lg:w-1/3 relative z-10">
+                        <div className="hidden lg:flex flex-col gap-8 pl-10">
+                            <h1 className="font-Grotesk font-medium text-white text-[32px]">Table of content</h1>
+                            <div className="flex flex-col gap-3">
+                                <h3 className={getClass("first")} onClick={() => handleClick("first")}>
+                                    01. What’s the idea behind RedBrain?
+                                </h3>
+                                <h3 className={getClass("second")} onClick={() => handleClick("second")}>
+                                    02. What’s up with RedBrain now?
+                                </h3>
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-8 mt-10 lg:mt-0 lg:pl-10 pt-12 border-t-2 border-white border-opacity-10 ">
+                            <h1 className="font-Grotesk font-medium text-white text-[32px]">Share this article</h1>
+                            <div className="flex gap-7 items-center">
+                                <Instagram className="hover:fill-white hover:cursor-pointer" />
+                                <Threads className="hover:fill-white hover:cursor-pointer" />
+                                <LinkedIn className="hover:fill-white hover:cursor-pointer" />
+                                <Facebook className="hover:fill-white hover:cursor-pointer" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mx-10 lg:rounded-2xl">
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 04</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">02 / 04</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Related articles
                     </h1>
@@ -207,7 +209,7 @@ const SingleBlog = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="sm:flex justify-between gap-10 mt-8 lg:mt-24 hidden relative z-10">
+                <div className="max-w-[1580px] mx-auto sm:flex justify-between gap-10 mt-8 lg:mt-24 hidden relative z-10">
                     <div className="flex flex-col gap-5 hover:cursor-pointer">
                         <Image src={singleblog1} alt="singleserviceblog" className="" />
                         <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-xl">
@@ -251,7 +253,7 @@ const SingleBlog = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center items-center w-full sm:hidden  relative z-10">
+                <div className="max-w-[1580px] mx-auto mt-12 sm:mt-20 lg:mt-28 flex justify-center items-center w-full sm:hidden  relative z-10">
                     <Swiper
                         slidesPerView={1.5}
                         spaceBetween={30}
@@ -311,7 +313,7 @@ const SingleBlog = () => {
                 <div className="block absolute left-1/2 top-[250%] transform -translate-x-1/2 -translate-y-1/2 z-0 sm:hidden">
                     <RedCircle />
                 </div>
-                <div className="bg-[#FFFAF6] relative z-10 flex justify-center items-center my-auto py-7 lg:py-0 gap-5 rounded-2xl">
+                <div className="max-w-[1580px] mx-auto bg-[#FFFAF6] relative z-10 flex justify-center items-center my-auto py-7 lg:py-0 gap-5 rounded-2xl">
                     <Image src={arrowLeftMobile} alt="left-arrow" className="lg:hidden" />
                     <Image src={arrowBlack} alt="left-arrow" className="hidden lg:block" />
                     <h1 className="font-Grotesk font-medium text-base lg:text-4xl">Back to blog and news</h1>

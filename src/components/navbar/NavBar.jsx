@@ -61,8 +61,8 @@ const NavBar = () => {
 
     return (
         <header>
-            <div className="fixed z-50 w-full top-8">
-                <nav ref={navBar} id="navBar" className="w-full max-w-[1160px] mx-auto px-6 sm:px-16 lg:px-[136px] lg:mt-5 flex items-center justify-between relative transition-all">
+            <div className="fixed z-50 w-full top-8 px-6 sm:px-16 lg:px-[136px]">
+                <nav ref={navBar} id="navBar" className="w-full max-w-[1580px] mx-auto lg:mt-5 flex items-center justify-between relative transition-all">
                     <Link href="/home">
                         <div className="flex items-center gap-3">
                             <Image src={logoDesktop} alt="logo" className="hidden lg:block" />

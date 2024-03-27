@@ -47,7 +47,7 @@ const Approach = () => {
                 <div className="absolute -right-[500px] hidden lg:block">
                     <RedCircle />
                 </div>
-                <div className="mx-auto relative flex flex-col gap-8 z-10 mt-44 sm:mt-28 lg:mt-36">
+                <div className="max-w-[1580px] mx-auto relative flex flex-col gap-8 z-10 mt-44 sm:mt-28 lg:mt-36">
                     <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Process Approach</h1>
                     <h3 className="font-Jakarta font-normal text-white text-base sm:text-lg lg:text-xl sm:w-2/3 lg:w-2/5">
                         Leveraging a human-centered design methodology, we create solutions tailored to the needs of your target audience and aimed at growing your business.
@@ -56,7 +56,7 @@ const Approach = () => {
                         <h5 className="text-white font-medium font-Grotesk text-base">Become a client</h5>
                     </button>
                 </div>
-                <div className="relative mt-16 sm:mt-24 lg:mt-36 mx-auto z-10">
+                <div className="max-w-[1580px] mx-auto relative mt-16 sm:mt-24 lg:mt-36 mx-auto z-10">
                     <Image src={approach} alt="approach" className="w-full relative z-10" />
                     <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-[5] scale-x-75 scale-y-50 sm:scale-y-75 sm:scale-x-100 lg:hidden">
                         <RedCircle />
@@ -67,8 +67,8 @@ const Approach = () => {
                 <div className="hidden lg:block absolute -left-72 -bottom-72 z-0">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">03 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">03 / 09</h3>
+                <div className="max-w-[1580px] flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         The way we do it.
                     </h1>
@@ -76,7 +76,7 @@ const Approach = () => {
                         Every challenge is different, and so every solution evolves in its own bespoke way, shaped by what we discover and the response this demands. Yet here’s a broad outline of how that response might evolve, some tried and tested means to help your brand rise to any challenge and define your new reality.
                     </h3>
                 </div>
-                <div className="relative z-10">
+                <div className="max-w-[1580px] mx-auto relative z-10">
                     <div className={`hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5 ${visible1 ? "text-white" : "text-[#555]"} hover:text-white`} onClick={() => callFunctionByIndex(0)}>
                         <div className="flex flex-col gap-10 w-full">
                             <div className="flex justify-between items-center w-full">
@@ -235,8 +235,8 @@ const Approach = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-10 lg:pt-20 pb-10 lg:pb-20 lg:mt-5 lg:mb-5 lg:mx-10 lg:rounded-2xl">
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">03 / 04</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mx-auto gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">03 / 04</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 mx-auto gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         How does this works for you?
                     </h1>
@@ -244,7 +244,7 @@ const Approach = () => {
                         Quality assurance begins at the start of the project and continues throughout its entirety. It's a necessary part of the.
                     </h3>
                 </div>
-                <button className="px-8 py-3 bg-[#DA3224] rounded-full flex justify-center items-center gap-3 mt-6 sm:mt-8 hover:bg-red-700 relative z-10">
+                <button className="max-w-[1580px] mx-auto px-8 py-3 bg-[#DA3224] rounded-full flex justify-center items-center gap-3 mt-6 sm:mt-8 hover:bg-red-700 relative z-10">
                     <h5 className="text-white font-medium font-Grotesk text-base">Become a client</h5>
                 </button>
             </section>

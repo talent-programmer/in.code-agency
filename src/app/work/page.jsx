@@ -61,7 +61,7 @@ const Work = () => {
                 <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-96 sm:-bottom-[500px] lg:hidden">
                     <RedCircle />
                 </div>
-                <nav className="flex items-center justify-between relative z-10">
+                <nav className="max-w-[1580px] mx-auto flex items-center justify-between relative z-10">
                     <div className="flex items-center gap-3">
                         <Image src={logoDesktop} alt="logo" className="hidden lg:block" />
                         <Image src={logoMobile} alt="logo" className="block lg:hidden" />
@@ -76,7 +76,7 @@ const Work = () => {
                         </button>
                     </a>
                 </nav>
-                <div className="mt-28 lg:mt-32 relative z-10">
+                <div className="max-w-[1580px] mx-auto mt-28 lg:mt-32 relative z-10">
                     <h1 className="font-Grotesk font-medium text-white text-4xl lg:text-6xl">Work Showcase</h1>
                     <h3 className="font-Jakarta font-normal text-white text-xl mt-10 sm:w-2/3 lg:w-[40%]">
                         We build engaging user experience forearly-stage startups by connecting thedots between users’ needs and theclient’s business model.
@@ -90,8 +90,8 @@ const Work = () => {
                 <div className="absolute bottom-[700px] -left-72 hidden lg:block">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">04 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">04 / 09</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="w-2/3 lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Features - we want to share these stories with you.
                     </h1>
@@ -99,7 +99,7 @@ const Work = () => {
                         Brand adds value to your organisation, provides guidance in times of growth or uncertainty, and gives your business a competitive edge.
                     </h3>
                 </div>
-                <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
+                <div className="max-w-[1580px] mx-auto mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
                     <Swiper
                         onSwiper={handleSwiper}
                         slidesPerView={1}

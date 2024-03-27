@@ -118,13 +118,13 @@ const Blog = () => {
                 <div className="hidden lg:block absolute -right-[500px]">
                     <RedCircle />
                 </div>
-                <div className="mx-auto relative flex flex-col gap-8 z-10 mt-40 sm:mt-28 lg:mt-36">
+                <div className="max-w-[1580px] mx-auto relative flex flex-col gap-8 z-10 mt-40 sm:mt-28 lg:mt-36">
                     <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Blog and News</h1>
                     <h3 className="font-Jakarta font-normal text-white text-base sm:text-lg lg:text-xl sm:w-1/2 lg:w-2/5">
                         Learn web design and development tips & tricks, get started with Webflow, and read the latest news about Flow Ninja.
                     </h3>
                 </div>
-                <div className="relative mt-16 sm:mt-20 lg:mt-36 mx-auto">
+                <div className="max-w-[1580px] relative mt-16 sm:mt-20 lg:mt-36 mx-auto">
                     <div className="flex justify-center items-center w-full relative z-10">
                         <Swiper
                             slidesPerView={1.2}
@@ -151,8 +151,8 @@ const Blog = () => {
                 <div className="absolute top-1/2 -left-72 hidden lg:block">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">04 / 09</h3>
-                <div className="flex flex-col xl:flex-row justify-between mt-10 mb-20 mx-auto gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">04 / 09</h3>
+                <div className="max-w-[1580px] flex flex-col xl:flex-row justify-between mt-10 mb-20 mx-auto gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         Categories
                     </h1>
@@ -206,7 +206,7 @@ const Blog = () => {
                         </Swiper>
                     </div>
                 </div>
-                <div className="mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
+                <div className="max-w-[1580px] mx-auto mt-12 sm:mt-20 lg:mt-28 flex justify-center w-full">
                     <Swiper
                         onSwiper={handleSwiper}
                         slidesPerView={1}

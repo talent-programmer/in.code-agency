@@ -33,7 +33,7 @@ const SingleWork = () => {
                 <div className="hidden absolute -right-[450px] bottom-32 lg:block">
                     <RedCircle />
                 </div>
-                <nav className="flex items-center justify-between relative z-10">
+                <nav className="max-w-[1580px] mx-auto flex items-center justify-between relative z-10">
                     <div className="flex items-center gap-3">
                         <Image src={logoDesktop} alt="logo" className="hidden lg:block" />
                         <Image src={logoMobile} alt="logo" className="lg:hidden" />
@@ -90,18 +90,18 @@ const SingleWork = () => {
                         </div>
                     </Dialog.Panel>
                 </Dialog>
-                <div className="mt-32 w-full lg:w-1/2 flex flex-col gap-8 lg:gap-10 relative z-10">
+                <div className="max-w-[1580px] mx-auto mt-32 w-full flex flex-col gap-8 lg:gap-10 relative z-10">
                     <Link href="/work">
-                        <div className="flex items-center gap-5">
+                        <div className="flex items-center gap-5 lg:w-1/2">
                             <Image src={arrowLeft} alt="left-arrow" />
                             <h3 className="link font-Jakarata lg:italic text-[#ccc] text-xl hover:text-white">Case Study</h3>
                             <h3 className="hidden font-Jakarata italic text-[#ccc] text-xl lg:block">Edumean - Online Courses</h3>
                         </div>
                     </Link>
-                    <h1 className="font-Grotesk font-medium text-white text-3xl lg:text-6xl">
+                    <h1 className="lg:w-1/2 font-Grotesk font-medium text-white text-3xl lg:text-6xl">
                         Online courses delivered by the industry's best.
                     </h1>
-                    <div>
+                    <div className="lg:w-1/2">
                         <h3 className="font-Jakarta font-normal text-white text-base lg:text-xl">
                             Client:
                         </h3>
@@ -109,7 +109,7 @@ const SingleWork = () => {
                             Edumena
                         </h3>
                     </div>
-                    <div>
+                    <div className="lg:w-1/2">
                         <h3 className="font-Jakarta font-normal text-white text-base lg:text-xl">
                             Year of production
                         </h3>
@@ -117,7 +117,7 @@ const SingleWork = () => {
                             2022
                         </h3>
                     </div>
-                    <div>
+                    <div className="lg:w-1/2">
                         <h3 className="font-Jakarta font-normal text-white text-base lg:text-xl">
                             Branding
                         </h3>
@@ -131,15 +131,15 @@ const SingleWork = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 relative lg:mt-5">
-                <Image src={bg1} alt="bg1" className="relative w-full z-10 rounded-2xl hidden sm:block" />
+                <Image src={bg1} alt="bg1" className="max-w-[1580px] mx-auto relative w-full z-10 rounded-2xl hidden sm:block" />
                 <Image src={bg1Mobile} alt="bg1" className="w-full relative z-10 rounded-2xl sm:hidden" />
                 <div className="block absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 z-0 lg:hidden">
                     <RedCircle />
                 </div>
             </section>
             <section className="bg-[#1B1612] px-6 sm:px-16 lg:px-24 pt-12 lg:pt-20 pb-12 lg:pb-20 lg:rounded-2xl lg:mt-5">
-                <h3 className="font-Petit font-normal text-lg lg:text-2xl text-[#cccccc] relative z-10">03 / 04</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-lg lg:text-2xl text-[#cccccc] relative z-10">03 / 04</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 relative z-10">
                     <h1 className="w-full lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         About the client
                     </h1>
@@ -149,15 +149,15 @@ const SingleWork = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg2} alt="bg2" className="w-full rounded-2xl hidden sm:block relative z-10" />
+                <Image src={bg2} alt="bg2" className="max-w-[1580px] mx-auto w-full rounded-2xl hidden sm:block relative z-10" />
                 <Image src={bg2Mobile} alt="bg2" className="w-full relative z-10 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-12 pb-12 lg:pt-20 lg:pb-20 lg:rounded-2xl lg:mt-5">
                 <div className="hidden lg:block absolute left-0 -bottom-[450px]">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-lg lg:text-2xl text-[#cccccc] relative z-10">03 / 04</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-lg lg:text-2xl text-[#cccccc] relative z-10">03 / 04</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 relative z-10">
                     <h1 className="w-full lg:w-1/2 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         What we've done
                     </h1>
@@ -178,22 +178,22 @@ const SingleWork = () => {
                 <div className="block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 sm:hidden">
                     <RedCircle />
                 </div>
-                <Image src={bg3} alt="bg3" className="w-full relative z-10 rounded-2xl hidden sm:block" />
+                <Image src={bg3} alt="bg3" className="max-w-[1580px] mx-auto w-full relative z-10 rounded-2xl hidden sm:block" />
                 <Image src={bg3Mobile} alt="bg3" className="w-full relative z-10 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 py-1 lg:py-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg4} alt="bg4" className="w-full relative z-10 rounded-2xl hidden sm:block" />
+                <Image src={bg4} alt="bg4" className="max-w-[1580px] mx-auto w-full relative z-10 rounded-2xl hidden sm:block" />
                 <Image src={bg4Mobile} alt="bg4" className="w-full relative z-20 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] w-full lg:rounded-2xl px-6 sm:px-16 lg:px-0 py-1 lg:py-0 relative overflow-hidden lg:mt-5">
-                <Image src={bg5} alt="bg5" className="w-full relative z-10 rounded-2xl hidden sm:block" />
+                <Image src={bg5} alt="bg5" className="max-w-[1580px] mx-auto w-full relative z-10 rounded-2xl hidden sm:block" />
                 <Image src={bg5Mobile} alt="bg5" className="w-full relative z-10 rounded-2xl sm:hidden" />
             </section>
             <section className="bg-[#1B1612] lg:bg-[#FFFAF6] px-6 sm:px-16 lg:px-0 pt-2 pb-16 sm:py-10 lg:py-28  relative z-10">
                 <div className="block absolute left-1/2 top-[250%] transform -translate-x-1/2 -translate-y-1/2 z-0 sm:hidden">
                     <RedCircle />
                 </div>
-                <div className="bg-[#FFFAF6] relative z-10 flex justify-center items-cente py-7 lg:py-0 gap-5 rounded-2xl">
+                <div className="max-w-[1580px] mx-auto bg-[#FFFAF6] relative z-10 flex justify-center items-cente py-7 lg:py-0 gap-5 rounded-2xl">
                     <Image src={arrowLeftMobile} alt="left-arrow" className="lg:hidden" />
                     <Image src={arrowBlack} alt="left-arrow" className="hidden lg:block" />
                     <h1 className="font-Grotesk font-medium text-base lg:text-4xl">Back to projects</h1>

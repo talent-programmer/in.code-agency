@@ -52,7 +52,7 @@ const Contact = () => {
                 <div className="hidden lg:block absolute -left-72 -bottom-72">
                     <RedCircle />
                 </div>
-                <div className="mx-auto flex flex-col lg:flex-row justify-between relative z-10">
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between relative z-10">
                     <div className="flex flex-col gap-10 z-10 mt-24 lg:mt-36">
                         <h1 className="font-Grotesk font-medium text-white text-3xl sm:text-4xl lg:text-6xl">Hello there!</h1>
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-base sm:text-lg lg:text-xl sm:w-2/3 lg:w-2/5">
@@ -86,8 +86,8 @@ const Contact = () => {
                 <div className="hidden lg:block absolute -left-72 -top-72">
                     <RedCircle />
                 </div>
-                <h3 className="font-Petit font-normal text-2xl text-[#cccccc] relative z-10">03 / 09</h3>
-                <div className="flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5 relative z-10">
+                <h3 className="max-w-[1580px] mx-auto font-Petit font-normal text-2xl text-[#cccccc] relative z-10">03 / 09</h3>
+                <div className="max-w-[1580px] mx-auto flex flex-col lg:flex-row justify-between mt-10 mb-20 mx-auto gap-5 relative z-10">
                     <h1 data-aos="fade-up" className="sm:w-2/3 lg:w-2/5 font-Grotesk font-medium text-white text-2xl lg:text-4xl">
                         We got asked these questions often...
                     </h1>
@@ -95,7 +95,7 @@ const Contact = () => {
                         But if you don’t find your answer here, feel free to contact us via email or social media platforms.
                     </h3>
                 </div>
-                <div className="relative z-10">
+                <div className="max-w-[1580px] mx-auto relative z-10">
                     <div className={`hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5 ${visible1 ? "text-white" : "text-[#555]"} hover:text-white`} onClick={() => callFunctionByIndex(0)}>
                         <div className="flex flex-col gap-10 w-full">
                             <div className="flex justify-between items-center w-full">
