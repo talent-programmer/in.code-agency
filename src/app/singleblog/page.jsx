@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import Image from "next/image";
 import {
@@ -42,31 +42,43 @@ const SingleBlog = () => {
         return baseClasses;
     };
 
-    // const contentLeftRef = useRef(null);
-    // const [activeTitleIndex, setActiveTitleIndex] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(1);
+    const contentRef = useRef()
 
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         if (contentLeftRef.current) {
-    //             const containerHeight = contentLeftRef.current.clientHeight;
-    //             const scrollTop = contentLeftRef.current.scrollTop;
-    //             const parts = contentLeftRef.current.querySelectorAll(`.${styles.part}`);
 
-    //             for (let i = 0; i < parts.length; i++) {
-    //                 const part = parts[i];
-    //                 const topPosition = part.offsetTop;
+    const handleScroll = () => {
+        const scrollTop = contentRef.current.scrollTop;
+        const contentHeight = contentRef.current.scrollHeight;
+        const totalHeight = contentRef.current.clientHeight;
+        const height1 = contentRef.current.children[0].offsetHeight;
+        const height2 = contentRef.current.children[1].offsetHeight;
 
-    //                 if (topPosition > containerHeight / 2) {
-    //                     setActiveTitleIndex(i);
-    //                     break;
-    //                 }
-    //             }
-    //         }
-    //     };
+        console.log(scrollTop, contentHeight, totalHeight, height1, height2)
 
-    //     contentLeftRef.current.addEventListener('scroll', handleScroll);
-    //     return () => contentLeftRef.current.removeEventListener('scroll', handleScroll);
-    // }, []);
+        const state = (height1 - scrollTop) <= totalHeight / 2
+
+        if (state) {
+            handleClick("second");
+        } else {
+            handleClick("first");
+        }
+
+        // Calculate the active index based on scroll position
+        // const newIndex = Math.floor((scrollTop + totalHeight / 2) / (contentHeight / contents.length));
+
+        // Update active index
+        // setActiveIndex(newIndex);
+    };
+
+    useEffect(() => {
+        handleScroll();
+        contentRef.current.addEventListener('scroll', handleScroll);
+
+        // Cleanup function to remove event listener when component unmounts
+        return () => {
+            contentRef.current.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
 
     return (
@@ -108,14 +120,14 @@ const SingleBlog = () => {
                 </div>
             </section>
             <section className="bg-[#1B1612] relative lg:overflow-hidden flex flex-col lg:flex-row justify-between px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:pb-35 lg:mt-5 lg:mx-10 lg:rounded-2xl">
-                <div className="hidden absolute -right-72 bottom-0 z-0 lg:block">
+                <div className="hidden absolute -right-[500px] bottom-0 z-0 lg:block">
                     <RedCircle />
                 </div>
-                <div id="ppp" className="relative z-10 flex flex-col gap-20 lg:w-2/3 pr-40 lg:border-r-2 border-white border-opacity-10 lg:h-[700px] overflow-auto element-with-scrollbar">
-                    <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
-                        Every challenge is different, and so every solution evolves in its own bespoke way, shaped by what we discover and the response this demands. Yet here’s a broad outline of how that response might evolve, some tried and tested means to help your brand rise to any challenge and define your new reality.
-                    </h3>
-                    <div className="flex flex-col gap-8">
+                <div ref={contentRef} className="relative z-10 flex flex-col gap-20 lg:w-2/3 pr-40 lg:border-r-2 border-white border-opacity-10 lg:h-[700px] overflow-auto element-with-scrollbar">
+                    <div key={1} className="flex flex-col gap-8">
+                        <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
+                            Every challenge is different, and so every solution evolves in its own bespoke way, shaped by what we discover and the response this demands. Yet here’s a broad outline of how that response might evolve, some tried and tested means to help your brand rise to any challenge and define your new reality.
+                        </h3>
                         <h1 className="font-Grotesk font-medium text-white text-[32px]">What's the idea behind RedBrain?</h1>
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
                             It’s a smart product discovery network that encompasses both shoppers and businesses. It matches buyers with the goods they’re looking for, offers the best prices, and helps boost brands' sales by promoting items to customers.
@@ -129,8 +141,6 @@ const SingleBlog = () => {
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
                             But here’s the trouble. Despite the scale and powerful functionality, RedBrain struggled with an inconsistent and outdated design. Both jeopardized the platform’s goal to enter the global landscape.
                         </h3>
-                    </div>
-                    <div className="flex flex-col gap-8">
                         <h1 className="font-Grotesk font-normal text-white text-[28px]">Lazarev. cue to enter the scene</h1>
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
                             We set out to revamp the product with the redesign and build an interface to help RedBrain reach new heights.
@@ -139,7 +149,7 @@ const SingleBlog = () => {
                             Our team rethought the platform, leveraging up-to-date design solutions to give RedBrain a modern look. We also built a new homepage, search functionality, user shopping journey, product pages, payment flow, etc., to effortlessly lead customers to checkout.
                         </h3>
                     </div>
-                    <div className="flex flex-col gap-8" id="ttt">
+                    <div key={2} className="flex flex-col gap-8">
                         <h1 className="font-Grotesk font-medium text-white text-[32px]">What's up with RedBrain now?</h1>
                         <h3 className="font-Jakarta font-normal text-[#ccc] text-xl">
                             The platform connects shoppers with the best offers and gets 25M visits per month. Not bad at all, right?

@@ -100,10 +100,10 @@ const Home = () => {
         // .container
         const items = document.querySelectorAll('.sm_image-trail-container')
         const imgArr = [
-            "/assetes/img/approach.svg",
-            "https://images.unsplash.com/photo-1643948962462-f1d6d486132f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-            "https://images.unsplash.com/photo-1643948684785-9ec1693fe1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-            "https://images.unsplash.com/photo-1643948962462-f1d6d486132f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+            "/assetes/img/mount.svg",
+            "/assetes/img/fortino.svg",
+            "/assetes/img/daitech.svg",
+            "/assetes/img/ghana.svg",
         ];
         items.forEach((el, i) => {
             el.addEventListener('mouseenter', (e) => {
@@ -183,7 +183,7 @@ const Home = () => {
                     </button>
                 </div>
             </section>
-            <section className="bg-[#1B1612] relative overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mx-10 lg:rounded-2xl">
+            <section className="bg-[#1B1612] px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mx-10 lg:rounded-2xl">
                 <div className="hidden lg:blockabsolute -right-72 -top-72">
                     <RedCircle />
                 </div>
@@ -198,8 +198,8 @@ const Home = () => {
                         So... to make it easier, think of us as your special ops digital product development team - tackling with your challenges and needs. Whether you are adding a new feature, a new product, or redesigning an existing product, we will help set you up for success.
                     </h3>
                 </div>
-                <div className="relative z-10 sm_image-trail-section">
-                    <div className="sm_image-trail-container relative flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(0)}>
+                <div className="sm_image-trail-section">
+                    <div className="sm_image-trail-container relative z-10 flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(0)}>
                         <div className={`flex justify-between w-full ${visible1 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
                                 <h3 className="font-Grotesk font-medium text-sm lg:text-xl">01</h3>
@@ -268,7 +268,7 @@ const Home = () => {
                             </div>
                         }
                     </div>
-                    <div className="sm_image-trail-container flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(1)}>
+                    <div className="sm_image-trail-container relative z-10 flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(1)}>
                         <div className={`flex justify-between w-full ${visible2 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
                                 <h3 className="font-Grotesk font-medium text-sm lg:text-xl">02</h3>
@@ -337,7 +337,7 @@ const Home = () => {
                             </div>
                         }
                     </div>
-                    <div className="sm_image-trail-container flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(2)}>
+                    <div className="sm_image-trail-container relative z-10 flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(2)}>
                         <div className={`flex justify-between w-full ${visible3 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
                                 <h3 className="font-Grotesk font-medium text-sm lg:text-xl">03</h3>
@@ -406,7 +406,7 @@ const Home = () => {
                             </div>
                         }
                     </div>
-                    <div className="sm_image-trail-container flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(3)}>
+                    <div className="sm_image-trail-container relative z-10 flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(3)}>
                         <div className={`flex justify-between w-full ${visible4 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
                                 <h3 className="font-Grotesk font-medium text-sm lg:text-xl">04</h3>
@@ -592,14 +592,14 @@ const Home = () => {
                                 {currentSlide === 1 ?
                                     <LeftArrow />
                                     :
-                                    <LeftArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                                    <LeftArrow circleStrokeColor="stroke-white" className="stroke-white hover:stroke-black hover:fill-white" />
                                 }
                             </button>
                             <button ref={nextBtnRef} className="swipe-button-next relative z-10">
                                 {currentSlide === totalSlides ?
                                     <RightArrow />
                                     :
-                                    <RightArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                                    <RightArrow circleStrokeColor="stroke-white" className="stroke-white hover:stroke-black hover:fill-white" />
                                 }
                             </button>
                         </div>

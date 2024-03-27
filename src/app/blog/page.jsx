@@ -322,14 +322,14 @@ const Blog = () => {
                         {currentSlide === 1 ?
                             <LeftArrow />
                             :
-                            <LeftArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                            <LeftArrow circleStrokeColor="stroke-white" className="stroke-white hover:stroke-black hover:fill-white" />
                         }
                     </button>
                     <button ref={nextBtnRef} className="swipe-button-next relative z-10">
                         {currentSlide === totalSlides ?
                             <RightArrow />
                             :
-                            <RightArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                            <RightArrow circleStrokeColor="stroke-white" className="stroke-white hover:stroke-black hover:fill-white" />
                         }
                     </button>
                     <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white relative z-10">{currentSlide}  of  {totalSlides}</pre>

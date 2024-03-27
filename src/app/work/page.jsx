@@ -212,21 +212,21 @@ const Work = () => {
                         {currentSlide === 1 ?
                             <LeftArrow />
                             :
-                            <LeftArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                            <LeftArrow circleStrokeColor="stroke-white" className="stroke-white hover:stroke-black hover:fill-white" />
                         }
                     </button>
                     <button ref={nextBtnRef} className="swipe-button-next relative z-10">
                         {currentSlide === totalSlides ?
                             <RightArrow />
                             :
-                            <RightArrow className="stroke-white hover:stroke-black hover:fill-white" />
+                            <RightArrow circleStrokeColor="stroke-white" className="stroke-white hover:stroke-black hover:fill-white" />
                         }
                     </button>
                     <pre className="pagination font-Jakarta text-xl lg:text-2xl text-white relative z-10">{currentSlide}  of  {totalSlides}</pre>
                 </div>
             </section>
-            <section id="booking" className="bg-[#1B1612] lg:bg-white flex flex-col justify-center items-center p-8 relative z-10">
-                <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{ width: "100%", height: 720 }} />
+            <section id="booking" className="bg-[#1B1612] lg:bg-white flex flex-col justify-center items-center p-8 relative">
+                <InlineWidget url="https://calendly.com/codingjoker0420/30min?hide_gdpr_banner=1" styles={{ width: "100%", height: 720, zIndex: 10 }} />
             </section>
             <Footer />
         </main>
