@@ -1,0 +1,15 @@
+.tooltip {
+    .tooltip-text {
+        visibility: hidden;
+    }
+}
+
+.tooltip:hover {
+    cursor: pointer;
+}
+
+.tooltip:hover {
+    .tooltip-text {
+        visibility: visible;
+    }
+}

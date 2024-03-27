@@ -2,7 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 import Aos from "aos";
+import 'aos/dist/aos.css';
 import Image from "next/image";
+import gsap from "gsap";
 import NavBar from "@/components/navbar/NavBar";
 import SocialMarque from "@/components/work/SocialMarque";
 import BrandMarque from "@/components/work/BrandMaque";
@@ -26,7 +28,6 @@ import Footer from "@/components/Footer";
 import { homeBg, mount, fortion, daitech, ghana, coWorkersMovement, line, Dali, man, arrowLeft, noiseOverlay, noiseOverlayTablet, noiseOverlayMobile, arrow } from "../../../public/assetes/img";
 
 import "./home.scss"
-import 'aos/dist/aos.css';
 
 const Home = () => {
 
@@ -60,44 +61,65 @@ const Home = () => {
         swiper.on('slideChange', () => setCurrentSlide(swiper.realIndex + 1));
     };
 
-    const [isHovered, setIsHovered] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
-
-    // const element = document.getElementById('home');
-    // const offset = element.offsetLeft
-
     useEffect(() => {
-        // const rect = element.getBoundingClientRect();
+        // .wrapper
+        const wrapper = document.querySelector('.sm_image-trail-section')
+        wrapper.addEventListener('mouseenter', (e) => gsap.to(image, { autoAlpha: 1 }));
+        wrapper.addEventListener('mouseleave', (e) => gsap.to(image, { autoAlpha: 0 }));
 
-        // Calculate the position of the mouse cursor relative to the element
-        // const mouseX = event.clientX - rect.left;
-        // const mouseY = event.clientY - rect.top;
-        const handleMouseMove = (event) => {
-            setPosition({ x: event.pageX, y: event.pageY });
-        };
+        // img
+        const image = document.querySelector('.sm_image-trail'),
+            moveTween = gsap.to(image, {
+                duration: 1,
+                paused: true,
+                ease: "power3"
+            }),
+            bgTween = gsap.fromTo(image, {
+                backgroundPosition: "50% 0%"
+            }, {
+                duration: 10,
+                backgroundPosition: "50% 100%",
+                repeat: -1,
+                ease: "none",
+                overwrite: "auto"
+            });
 
-        document.addEventListener('mousemove', handleMouseMove);
 
-        return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, []);
+        wrapper.addEventListener('mousemove', (e) => {
+            let vars = moveTween.vars;
+            vars.x = e.pageX;
+            vars.y = e.pageY;
+            vars.skewX = e.movementX * 0.08,
+                vars.skewY = e.movementY * -0.02,
+                vars.scaleX = 1 + Math.abs(e.movementX) * .003,
+                vars.scaleY = 1 + Math.abs(e.movementY) * .001,
+                moveTween.invalidate().restart();
+        });
+
+
+        // .container
+        const items = document.querySelectorAll('.sm_image-trail-container')
+        const imgArr = [
+            "/assetes/img/approach.svg",
+            "https://images.unsplash.com/photo-1643948962462-f1d6d486132f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+            "https://images.unsplash.com/photo-1643948684785-9ec1693fe1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+            "https://images.unsplash.com/photo-1643948962462-f1d6d486132f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+        ];
+        items.forEach((el, i) => {
+            el.addEventListener('mouseenter', (e) => {
+                image.style.backgroundImage = `url(${imgArr[i]})`;
+                bgTween.restart();
+            });
+        });
+    }, [])
 
     useEffect(() => {
         Aos.init(); // Initialize AOS
     }, []);
 
     return (
-        <main className="bg-[#FFFAF6] relative overflow-hidden" id="home1">
-            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+        <main className="bg-[#FFFAF6] relative overflow-hidden">
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block" />
             <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
             <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block z-10">
@@ -108,17 +130,17 @@ const Home = () => {
             </div>
             <NavBar />
             <section className="relative bg-[#1B1612] overflow-hidden px-6 sm:px-16 lg:px-24 pt-8 pb-20 sm:pb-16 xl:pb-72 lg:mt-5 lg:mx-10 lg:rounded-2xl">
-                <div className="hidden sm:block absolute bottom-0 -left-[500px] z-20">
+                <div className="absolute -right-[220px] lg:-right-[420px] top-0 h-full">
+                    <div className="relative overflow-hidden h-full hidden sm:block sm:scale-100">
+                        <div className="absolute left-0 sm:w-[304px] lg:w-[708px] bg-gradient-to-r from-[#1B1612] via-[#1B1612]/90 via-30% to-[#1B1612]/0 h-full z-10 drop-shadow-2xl"></div>
+                        <Image src={homeBg} alt="homebg" className="h-full w-full object-cover" />
+                    </div>
+                </div>
+                <div className="hidden sm:block absolute bottom-0 -left-[500px]">
                     <RedCircle />
                 </div>
                 <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[400px] sm:hidden">
                     <RedCircle />
-                </div>
-                <div className="absolute -right-[420px] top-0 h-full">
-                    <div className="relative overflow-hidden h-full hidden sm:block sm:scale-100">
-                        <div className="absolute left-0 sm:w-[708px] lg:w-[708px] bg-gradient-to-r from-[#1B1612] via-[#1B1612]/90 via-30% to-[#1B1612]/0 h-full z-10 drop-shadow-2xl"></div>
-                        <Image src={homeBg} alt="homebg" className="h-full xl:scale-y-110 xxl:scale-100" />
-                    </div>
                 </div>
                 <div className="mx-auto relative z-10 mt-28 sm:mt-24 lg:mt-56">
                     <div className="w-full flex flex-col gap-5 sm:gap-8 lg:gap-10">
@@ -176,11 +198,8 @@ const Home = () => {
                         So... to make it easier, think of us as your special ops digital product development team - tackling with your challenges and needs. Whether you are adding a new feature, a new product, or redesigning an existing product, we will help set you up for success.
                     </h3>
                 </div>
-                <div className="relative z-10">
-                    <div id="home" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="relative flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(0)}>
-                        {/* {isHovered && */}
-                        <Image src={arrowLeft} className="absolute z-50" style={{ left: position.x, top: position.y }} />
-                        {/* } */}
+                <div className="relative z-10 sm_image-trail-section">
+                    <div className="sm_image-trail-container relative flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(0)}>
                         <div className={`flex justify-between w-full ${visible1 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
                                 <h3 className="font-Grotesk font-medium text-sm lg:text-xl">01</h3>
@@ -249,7 +268,7 @@ const Home = () => {
                             </div>
                         }
                     </div>
-                    <div className="flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(1)}>
+                    <div className="sm_image-trail-container flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(1)}>
                         <div className={`flex justify-between w-full ${visible2 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
                                 <h3 className="font-Grotesk font-medium text-sm lg:text-xl">02</h3>
@@ -318,7 +337,7 @@ const Home = () => {
                             </div>
                         }
                     </div>
-                    <div className="flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(2)}>
+                    <div className="sm_image-trail-container flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(2)}>
                         <div className={`flex justify-between w-full ${visible3 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
                                 <h3 className="font-Grotesk font-medium text-sm lg:text-xl">03</h3>
@@ -387,7 +406,7 @@ const Home = () => {
                             </div>
                         }
                     </div>
-                    <div className="flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(3)}>
+                    <div className="sm_image-trail-container flex flex-col gap-5 lg:gap-10 hover:bg-[#232120] hover:cursor-pointer px-2 py-1 sm:px-6 sm:py-3 lg:px-10 lg:py-5" onClick={() => callFunctionByIndex(3)}>
                         <div className={`flex justify-between w-full ${visible4 ? "text-white" : "text-[#555]"} hover:text-white`}>
                             <div className="flex items-center gap-4">
                                 <h3 className="font-Grotesk font-medium text-sm lg:text-xl">04</h3>
@@ -456,6 +475,7 @@ const Home = () => {
                             </div>
                         }
                     </div>
+                    <div className="sm_image-trail"></div>
                 </div>
             </section>
             <section className="bg-[#1B1612] relative lg:overflow-hidden px-6 sm:px-16 lg:px-24 pt-20 pb-20 lg:mt-5 lg:mx-10 lg:rounded-2xl">
@@ -567,12 +587,6 @@ const Home = () => {
                                 <SwiperSlide>
                                     <Image src={man} alt="man" className="mx-auto" />
                                 </SwiperSlide>
-                                <SwiperSlide>
-                                    <Image src={man} alt="man" className="mx-auto" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Image src={man} alt="man" className="mx-auto" />
-                                </SwiperSlide>
                             </Swiper>
                             <button ref={prevBtnRef} className="swipe-button-prev relative z-10" >
                                 {currentSlide === 1 ?
@@ -592,17 +606,51 @@ const Home = () => {
                     </div>
                     <Image src={line} alt="line" className="hidden lg:block" />
                     <div className="flex flex-col gap-10 sm:w-2/5 pt-10 sm:pt-20">
-                        <h1 className="font-Grotesk font-medium text-white text-xl lg:text-4xl">Just amazing!</h1>
-                        <h3 className="font-Jakarta italic text-white text-base lg:text-3xl">
-                            “ Incode Agency has helped my team and I stay on the same page. Previously, we were all over the board. Using Incode Agency has definitely saved us time and money. “
-                        </h3>
-                        <div className="flex items-center gap-5">
-                            <Image src={Dali} alt="dali" />
-                            <div className="flex flex-col  gap-3">
-                                <h1 className="font-Grotesk font-medium text-white text-base lg:text-xl">Dali Bataneat</h1>
-                                <h3 className="font-Jakarta font-normal text-[#ccc] text-base lg:text-xl">CEO of DaITech Computers</h3>
-                            </div>
-                        </div>
+                        {currentSlide === 1 &&
+                            <>
+                                <h1 className="font-Grotesk font-medium text-white text-xl lg:text-4xl">Just amazing!</h1>
+                                <h3 className="font-Jakarta italic text-white text-base lg:text-3xl">
+                                    Slide1 “ Incode Agency has helped my team and I stay on the same page. Previously, we were all over the board. Using Incode Agency has definitely saved us time and money. “
+                                </h3>
+                                <div className="flex items-center gap-5">
+                                    <Image src={Dali} alt="dali" />
+                                    <div className="flex flex-col  gap-3">
+                                        <h1 className="font-Grotesk font-medium text-white text-base lg:text-xl">Dali Bataneat</h1>
+                                        <h3 className="font-Jakarta font-normal text-[#ccc] text-base lg:text-xl">CEO of DaITech Computers</h3>
+                                    </div>
+                                </div>
+                            </>
+                        }
+                        {currentSlide === 2 &&
+                            <>
+                                <h1 className="font-Grotesk font-medium text-white text-xl lg:text-4xl">Just amazing!</h1>
+                                <h3 className="font-Jakarta italic text-white text-base lg:text-3xl">
+                                    Slide2 “ Incode Agency has helped my team and I stay on the same page. Previously, we were all over the board. Using Incode Agency has definitely saved us time and money. “
+                                </h3>
+                                <div className="flex items-center gap-5">
+                                    <Image src={Dali} alt="dali" />
+                                    <div className="flex flex-col  gap-3">
+                                        <h1 className="font-Grotesk font-medium text-white text-base lg:text-xl">Dali Bataneat</h1>
+                                        <h3 className="font-Jakarta font-normal text-[#ccc] text-base lg:text-xl">CEO of DaITech Computers</h3>
+                                    </div>
+                                </div>
+                            </>
+                        }
+                        {currentSlide === 3 &&
+                            <>
+                                <h1 className="font-Grotesk font-medium text-white text-xl lg:text-4xl">Just amazing!</h1>
+                                <h3 className="font-Jakarta italic text-white text-base lg:text-3xl">
+                                    Slide3 “ Incode Agency has helped my team and I stay on the same page. Previously, we were all over the board. Using Incode Agency has definitely saved us time and money. “
+                                </h3>
+                                <div className="flex items-center gap-5">
+                                    <Image src={Dali} alt="dali" />
+                                    <div className="flex flex-col  gap-3">
+                                        <h1 className="font-Grotesk font-medium text-white text-base lg:text-xl">Dali Bataneat</h1>
+                                        <h3 className="font-Jakarta font-normal text-[#ccc] text-base lg:text-xl">CEO of DaITech Computers</h3>
+                                    </div>
+                                </div>
+                            </>
+                        }
                     </div>
                 </div>
                 <div className="flex justify-center sm:mt-12 lg:mt-20 relative z-10">

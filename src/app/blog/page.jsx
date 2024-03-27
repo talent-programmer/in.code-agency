@@ -35,7 +35,7 @@ const Blog = () => {
     };
 
     const getClass = (menuName) => {
-        let baseClasses = "font-Jakarta font-normal text-[#cccccc] text-xl cursor-pointer";
+        let baseClasses = "text-center font-Jakarta font-normal text-[#cccccc] text-xl cursor-pointer";
         if (menuName === activeMenu) {
             // Add extra classes for the active menu
             return `${baseClasses} px-4 py-2 border border-2 border-[#ccc] bg-white bg-opacity-15 rounded-3xl`;
@@ -58,6 +58,34 @@ const Blog = () => {
         },
     };
 
+    const breakpoints = {
+        // When window width is >= 320px
+        320: {
+          slidesPerView: 2,
+          spaceBetween:40,
+        },
+        // When window width is >= 390px
+        390: {
+            slidesPerView: 2,
+            spaceBetween:45,
+          },
+          // When window width is >= 490px
+        490: {
+            slidesPerView: 2.5,
+            spaceBetween:56,
+          },
+        // When window width is >= 590px
+        590: {
+          slidesPerView: 3,
+          spaceBetween: 62,
+        },
+        // When window width is >= 690px
+        690: {
+          slidesPerView: 3.5,
+          spaceBetween: 67,
+        },
+      };
+
     const [totalSlides, setTotalSlides] = useState();
     const [currentSlide, setCurrentSlide] = useState(1);
 
@@ -76,7 +104,7 @@ const Blog = () => {
 
     return (
         <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
-            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block" />
             <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
             <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
@@ -147,10 +175,10 @@ const Blog = () => {
                     </div>
                     <div className="md:hidden flex justify-center items-center w-full">
                         <Swiper
-                            slidesPerView={4}
+                            // slidesPerView={4}
                             ref={slideRef}
-                            // breakpoints={swiperSpaceBetweenBreakpoints}
-                            spaceBetween={82}
+                            breakpoints={breakpoints}
+                            // spaceBetween={82}
                         >
                             <SwiperSlide className="rounded-[30px]">
                                 <h3 className={getClass("All")} onClick={() => handleClick("All")}>

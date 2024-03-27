@@ -26,7 +26,7 @@ const SingleService = () => {
 
     return (
         <main className="bg-[#FFFAF6] w-full relative overflow-hidden">
-            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block" />
             <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
             <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="w-[100vh] fixed left-0 transform -translate-x-[47.5%] translate-y-[48vh] -rotate-90 hidden lg:block">
@@ -40,7 +40,7 @@ const SingleService = () => {
                 <div className="hidden absolute -right-96 top-72 lg:block">
                     <RedCircle />
                 </div>
-                <div className="mt-32 w-full relative overflow-y-hidden flex flex-col gap-8 lg:gap-10 pb-20 z-10">
+                <div className="mt-32 w-full relative overflow-y-clip flex flex-col gap-8 lg:gap-10 pb-20 z-10">
                     <div className="block absolute left-1/2 transform -translate-x-1/2 -bottom-[600px] lg:hidden">
                         <RedCircle />
                     </div>

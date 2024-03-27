@@ -47,7 +47,7 @@ const NavBar = () => {
         const onScroll = () => {
             const navbar = document.getElementById("navBar");
             if (window.pageYOffset > 0) {
-                navbar.classList.remove("mt-5")
+                navbar.classList.remove("lg:mt-5")
             }
             if (window.pageYOffset == 0) {
                 navbar.classList.add("lg:mt-5")

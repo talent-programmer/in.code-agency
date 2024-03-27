@@ -10,7 +10,7 @@ import { logoDesktop, logoMobile, arrow, noiseOverlay, noiseOverlayTablet, noise
 const ComingSoon = () => {
     return (
         <main className="bg-[#1B1612] relative pt-12 pb-8 overflow-hidden sm:pt-8 lg:pt-24 rounded-2xl">
-            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block mt-5" />
+            <Image src={noiseOverlay} className="fixed top-0 z-[1] opacity-60 hidden lg:block" />
             <Image src={noiseOverlayTablet} className="fixed top-0 z-[1] opacity-60 hidden sm:block lg:hidden" />
             <Image src={noiseOverlayMobile} className="fixed top-0 z-[1] opacity-60 block sm:hidden" />
             <div className="hidden absolute -right-48 -top-48 lg:block">

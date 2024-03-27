@@ -3,16 +3,19 @@
     height: 100%;
     overflow: hidden;
     background-color: none;
+    background: transparent;
 }
 
 .swiper-container {
     position: relative;
     overflow: hidden;
     background-color: none;
+    background: transparent;
 }
 
 .swiper-slide {
     background-color: rgba($color: #000000, $alpha: 0);
+    background: transparent;
 }
 
 .swipe-button-prev,
@@ -62,7 +65,36 @@
 }
 
 .tooltip:hover {
+    cursor: pointer;
+}
+
+.tooltip:hover {
     .tooltip-text {
         visibility: visible;
     }
+}
+
+// .sm_image-trail-container {
+//     // display: inline-block;
+//     // background: transparent;
+//     // border-bottom: 2px solid;
+//     // width: 100%;
+//     // height: 200px;
+//     // padding: 50px;
+//     // font-size: 4rem;
+// }
+
+div.sm_image-trail {
+    position: absolute;
+    width: 640px;
+    height: 360px;
+    top: 0;
+    left: 0;
+    background-position: 0 0;
+    background-size: cover;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
